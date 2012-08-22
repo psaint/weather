@@ -1,0 +1,2 @@
+serviceClass: com.swietoslawski.weather_yahoo.client.GreetingService
+path: 1892CF48B452A8D97B47DDCC88802A38.gwt.rpc
