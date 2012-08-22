@@ -137,21 +137,21 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 		String day;
 		
 		// We'll have 
-		for (int i = 0; i < forecasts.length; i++) {
+		for (int i = 0; i < forecasts.length - 1; i++) {
 			// Because results returned from Google API suck big we need to 
 			// loop through them bearing in mind that in first loop we 
 			// pull elements from Weather  forecastInformation and currentConditions 
 			// while subsequent iterations are relying on forecastConditions
-			if (i == 0) {
-				temp = weather.getTempF();
-				condition = weather.getIconCondition();
-				day = weather.getDay();
-			}
-			else {
+//			if (i == 0) {
+//				temp = weather.getTempF();
+//				condition = weather.getIconCondition();
+//				day = weather.getDay();
+//			}
+			//else {
 				temp = weather.getTemp(i);
 				condition = weather.getIconCondition(i);
 				day = weather.getDay(i);
-			}
+			//}
 			
 			WeatherWrapper forecast = new WeatherWrapper(city, temp , condition, day);
 			forecasts[i] = forecast;

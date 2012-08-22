@@ -94,7 +94,7 @@ public class Weather {
 				condition = conditions.item(j);
 				key = condition.getNodeName();
 				
-				if (key == "day_of_week" || key == "low" || key == "high" || key == "icon" || key == "conditon") {
+				if (key == "day_of_week" || key == "low" || key == "high" || key == "icon" || key == "condition") {
 					forecast.put(key, getData(condition));
 				} 
 			}
@@ -114,7 +114,7 @@ public class Weather {
 	 * ACCESORS for current weather conditions
 	 */
 	public String getIconCondition() {
-		return forecastInformation.get("icon");
+		return currentConditions.get("icon");
 	}
 	
 	public String getCity() {

@@ -13,6 +13,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RadioButton;
@@ -131,11 +132,18 @@ public class Weather_Yahoo implements EntryPoint {
 				StringBuilder html = new StringBuilder();
 				
 				for (WeatherWrapper w : result) {
-					html.append(w.getCity() + " ");
+					html.setLength(0);
+					html.append(w.getCity() + " " + w.getDay() + " " + w.getTemp());
+					String url = "http://www.google.com" + w.getCondition();
+					Image icon = new Image(url);
+					Label label = new Label(html.toString());
+					RootPanel.get().add(label);
+					RootPanel.get().add(icon);
+					
 				}
 				
 				// Show new weather report
-				displayHtml(html.toString());
+				//displayHtml(html.toString());
 			}
 		};
 		
