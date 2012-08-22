@@ -19,6 +19,7 @@ import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.swietoslawski.weather_yahoo.shared.WeatherWrapper;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -116,7 +117,7 @@ public class Weather_Yahoo implements EntryPoint {
 		hideHtml();
 		
 		// Setup callback
-		AsyncCallback<String> callback = new AsyncCallback<String>() {
+		AsyncCallback<WeatherWrapper[]> callback = new AsyncCallback<WeatherWrapper[]>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -125,11 +126,16 @@ public class Weather_Yahoo implements EntryPoint {
 			}
 
 			@Override
-			public void onSuccess(String result) {
-				String html = result;
+			public void onSuccess(WeatherWrapper[] result) {
+				
+				StringBuilder html = new StringBuilder();
+				
+				for (WeatherWrapper w : result) {
+					html.append(w.getCity() + " ");
+				}
 				
 				// Show new weather report
-				displayHtml(html);
+				displayHtml(html.toString());
 			}
 		};
 		
