@@ -10,6 +10,7 @@ import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -50,6 +51,7 @@ public class Weather implements EntryPoint {
 		Label lbl = new Label("City: ");
 		inputPanel.add(lbl);
 		
+		// TODO Replace text box with suggest box widget (typeahead) 
 		txBox = new TextBox();
 		txBox.setVisibleLength(20);
 		inputPanel.add(txBox);
@@ -132,17 +134,12 @@ public class Weather implements EntryPoint {
 			CurrentConditions currentConditions, Forecast[] forecasts) {
 		
 		// Remove current forecast
-		RootPanel.get("forecast").clear();
+		RootPanel.get("current-weather").clear();
+		RootPanel.get("weather-forecast").clear();
 		
-		// Render City
-		updateCity(forecastInformation.getCity());
-		
-		// Render current condition icon and description
-		updateCondition(currentConditions.getIcon(), currentConditions.getCondition());
-		
-		// Render Current temperature in Fahrenheit and Celsius
-		updateTemperature(currentConditions.getTemp_f(), currentConditions.getTemp_c());
-		
+		// Update current forecast
+		updateCurrent(forecastInformation.getCity(), currentConditions.getIcon(), currentConditions.getTemp_f(), currentConditions.getTemp_c(), currentConditions.getHumidity());
+				
 		// Render forecast for four days
 		// Each forecast in one row with:
 		//   - condition icon
@@ -152,6 +149,24 @@ public class Weather implements EntryPoint {
 		
 		// Reenable textbox
 		txBox.setEnabled(true);
+		
+	}
+
+	private void updateCurrent(String city, String icon, String temp_f, String temp_c, String humidity) {
+		Label c = new Label(city);
+		Label t_f = new Label(temp_f);
+		Label t_c = new Label(temp_c);
+		Image image = new Image(weatherProviderURL + icon);
+		Label h = new Label(humidity);
+		
+		FlowPanel flowPanel = new FlowPanel();
+		flowPanel.add(c);
+		flowPanel.add(image);
+		flowPanel.add(t_f);
+		flowPanel.add(t_c);
+		flowPanel.add(h);
+			
+		RootPanel.get("current-weather").add(flowPanel);
 		
 	}
 
@@ -176,21 +191,7 @@ public class Weather implements EntryPoint {
 			vPanel.add(hPanel);	
 		}
 		
-		RootPanel.get("forecast").add(vPanel);
-	}
-
-	private void updateTemperature(String temp_f, String temp_c) {
-		RootPanel.get("f").add(new Label(temp_f));
-		RootPanel.get("c").add(new Label(temp_c));
-	}
-
-	private void updateCondition(String icon, String condition) {
-		Image image = new Image(weatherProviderURL + icon);
-		RootPanel.get("icon").add(image);	
-	}
-
-	private void updateCity(String city) {
-		RootPanel.get("city").add(new Label(city));
+		RootPanel.get("weather-forecast").add(vPanel);
 	}
 
 }
