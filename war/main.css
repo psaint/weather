@@ -1,0 +1,53 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 0px;
+}
+
+/* Fit into iPhone 4 screen  iPhone 5 is just doubling this */
+body {
+	border: 1px solid black;
+	margin: 0px;
+	padding: 0px;
+	width: 320px;
+	height: 480px;
+	overflow: hidden;
+}
+
+#content {
+	height: 440px;
+}
+
+#toolbar {
+	background: navy;
+	border: 1px solid black;
+	height: 40px;
+}
+
+#toolbar .gwt-Button {
+	border: none;
+	background: none;
+	color: white;
+	cursor: pointer;
+	font-size: 24px;
+	margin: 0px 5px;
+	height: 40px;
+	width: 70px;	
+}
+
+#toolbar .gwt-Button:hover {
+	background-color: white;
+	color: navy;
+}
+
+#info-page {
+	border-radius: 20px;
+	background: whiteSmoke;
+	margin: 20px;
+	padding: 20px;
+}

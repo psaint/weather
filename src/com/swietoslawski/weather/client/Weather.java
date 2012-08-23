@@ -12,10 +12,12 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -43,6 +45,50 @@ public class Weather implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		
+		// TODO We need to delegate UI management to a separate class
+		
+		
+		showContentView();
+		showToolbarView();
+		
+		return;
+	}
+
+	/**
+	 * This method renders main view with first of the cities from favorite list
+	 * and if user has not added any cities yet will prompt user with dialog box
+	 * to do so
+	 */
+	private void showContentView() {
+		
+		// Check if user has list of cities
+		if (hasCities()) {
+			
+			// Render forecast for first city on the list
+			showForecastView(0);
+		}
+		else {
+			// Render boilerplate page with instructions how
+			// to add cities for weather forecast
+			showHelpView();
+		}
+	}
+
+	private void showHelpView() {
+		StringBuilder html = new StringBuilder();
+		html.append("<div id=\"info-page\">");
+		html.append("<h1>Welcome</h1>");
+		html.append("<p>Your list of cities to report weather on is empty!.</p>");
+		html.append("<p>Click the plus button below to add city.</p>");
+		html.append("<p>Enjoy!</p>");
+		html.append("</div>");
+		
+		RootPanel.get("content").clear();
+		RootPanel.get("content").add(new HTML(html.toString()));
+	}
+	
+	private void showAddCityView() {
 		HorizontalPanel inputPanel = new HorizontalPanel();
 		
 		// Align child widgets along middle of panel
@@ -82,7 +128,80 @@ public class Weather implements EntryPoint {
 		inputPanel.setCellVerticalAlignment(btnSubmit, HasVerticalAlignment.ALIGN_BOTTOM);
 		
 		
-		RootPanel.get("input-container").add(inputPanel);
+		RootPanel.get("content").add(inputPanel);
+	}
+	
+	private void showForecastView(int n) {
+		// TODO Add code to render forecast for n-th city on the list
+		
+	}
+
+	private boolean hasCities() {
+		// TODO Add logic to figure out if user has favorite cities
+		return false;
+	}
+
+	/**
+	 * This function renders bottom toolbar
+	 */
+	private void showToolbarView() {
+		
+		// Four buttons:
+		//   - add new city (plus icon)
+		//   - view list of cities (bullets icon) - will allow to delete city
+		//   - help (i icon) will show help of how to use app
+		//   - config (wrench icon) will display page allowing to configure some settings
+		Button add = new Button("Add", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				clearContent();
+				showAddCityView();
+			}
+		});
+		
+		Button list = new Button("List", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		Button config = new Button("Config", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		Button help = new Button("Help", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		HorizontalPanel hPanel = new HorizontalPanel();
+		hPanel.add(add);
+		hPanel.add(list);
+		hPanel.add(config);
+		hPanel.add(help);
+		hPanel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_JUSTIFY);
+		hPanel.setWidth("100%");
+		
+		// Add panel to page
+		RootPanel.get("toolbar").add(hPanel);
+	}
+
+	protected void clearContent() {
+		// TODO replace calls to RootPanel for content element with instance variable
+		RootPanel.get("content").clear();
 	}
 
 	protected void validateAndSubmit() {
@@ -134,8 +253,11 @@ public class Weather implements EntryPoint {
 			CurrentConditions currentConditions, Forecast[] forecasts) {
 		
 		// Remove current forecast
-		RootPanel.get("current-weather").clear();
-		RootPanel.get("weather-forecast").clear();
+		RootPanel.get("content").clear();
+		RootPanel.get("content").clear();
+		
+		// Re-render city search box
+		showAddCityView();
 		
 		// Update current forecast
 		updateCurrent(forecastInformation.getCity(), currentConditions.getIcon(), currentConditions.getTemp_f(), currentConditions.getTemp_c(), currentConditions.getHumidity());
@@ -166,8 +288,7 @@ public class Weather implements EntryPoint {
 		flowPanel.add(t_c);
 		flowPanel.add(h);
 			
-		RootPanel.get("current-weather").add(flowPanel);
-		
+		RootPanel.get("content").add(flowPanel);
 	}
 
 	private void updateForecast(Forecast[] forecasts) {
@@ -191,7 +312,7 @@ public class Weather implements EntryPoint {
 			vPanel.add(hPanel);	
 		}
 		
-		RootPanel.get("weather-forecast").add(vPanel);
+		RootPanel.get("content").add(vPanel);
 	}
 
 }
