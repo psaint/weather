@@ -13,9 +13,14 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.swietoslawski.weather.shared.CurrentConditions;
+import com.swietoslawski.weather.shared.Forecast;
+import com.swietoslawski.weather.shared.ForecastInformation;
 import com.swietoslawski.weather.shared.WeatherWrapper;
 
 /**
@@ -25,6 +30,10 @@ public class Weather implements EntryPoint {
 	private TextBox txBox;
 	private Button btnSubmit;
 	HTML weatherHtml;
+	
+	// TODO This is duplicated in WeatherServiceImpl class. We need to solve this
+	//      kludge. 
+	private final String weatherProviderURL = "http://www.google.com";
 	
 	// Proxy of weather service class
 	private WeatherServiceAsync weatherService = GWT.create(WeatherService.class);
@@ -72,12 +81,6 @@ public class Weather implements EntryPoint {
 		
 		
 		RootPanel.get("input-container").add(inputPanel);
-		
-		// Create widget for HTML output
-		weatherHtml = new HTML();
-		
-		RootPanel.get("output-container").add(weatherHtml);
-		
 	}
 
 	protected void validateAndSubmit() {
@@ -96,8 +99,7 @@ public class Weather implements EntryPoint {
 	}
 
 	private void fetchWeatherHtml(String city) {
-		// Hide existing weather report
-		hideHtml();
+		
 		
 		// Setup callback
 		AsyncCallback<WeatherWrapper> callback = new AsyncCallback<WeatherWrapper>() {
@@ -109,31 +111,15 @@ public class Weather implements EntryPoint {
 			}
 
 			@Override
-			public void onSuccess(WeatherWrapper result) {
+			public void onSuccess(WeatherWrapper weather) {
 				
-				@SuppressWarnings("unused")
-				StringBuilder html = new StringBuilder();
+				// Extract data from weather cast
+				ForecastInformation forecastInformation = weather.getForecastInformation();
+				CurrentConditions currentConditions = weather.getCurrentConditions();
+				Forecast[] forecasts = weather.getForecastConditions();
 				
-				// Get main weather cast info
-				
-				// Get current weather condition
-				
-				// Loop through forecasts
-				
-//				for (Weather w : result) {
-//					html.setLength(0);
-//					html.append(w.getDayOfWeek() + ": ");
-//					html.append(w.getHigh()+ " " + w.getLow() + " " + w.getCondition());
-//					String url = "http://www.google.com" + w.getIcon();
-//					Image icon = new Image(url);
-//					Label label = new Label(html.toString());
-//					RootPanel.get().add(label);
-//					RootPanel.get().add(icon);
-//					
-//				}
-				
-				// Show new weather report
-				//displayHtml(html.toString());
+				// Update forecast
+				updateForecast(forecastInformation, currentConditions, forecasts);
 			}
 		};
 		
@@ -142,12 +128,69 @@ public class Weather implements EntryPoint {
 		
 	}
 
-	private void displayHtml(String html) {
-		weatherHtml.setHTML(html);
-		RootPanel.get("output-container").setVisible(true);
+	protected void updateForecast(ForecastInformation forecastInformation,
+			CurrentConditions currentConditions, Forecast[] forecasts) {
+		
+		// Remove current forecast
+		RootPanel.get("forecast").clear();
+		
+		// Render City
+		updateCity(forecastInformation.getCity());
+		
+		// Render current condition icon and description
+		updateCondition(currentConditions.getIcon(), currentConditions.getCondition());
+		
+		// Render Current temperature in Fahrenheit and Celsius
+		updateTemperature(currentConditions.getTemp_f(), currentConditions.getTemp_c());
+		
+		// Render forecast for four days
+		// Each forecast in one row with:
+		//   - condition icon
+		//   - Week day name
+		//   - High and low temperature in Fahrenheit 
+		updateForecast(forecasts);
+		
+		// Reenable textbox
+		txBox.setEnabled(true);
+		
 	}
 
-	private void hideHtml() {
-		RootPanel.get("output-container").setVisible(false);
+	private void updateForecast(Forecast[] forecasts) {
+		
+		
+		// Forecast for following days will be rendered in rows
+		VerticalPanel vPanel = new VerticalPanel();
+		
+		for (Forecast forecast : forecasts) {
+			Image img = new Image(weatherProviderURL + forecast.getIcon());
+			Label wday = new Label(forecast.getDay_of_week());
+			Label high = new Label(forecast.getHigh());
+			Label low = new Label(forecast.getLow());
+			
+			HorizontalPanel hPanel = new HorizontalPanel();
+			hPanel.add(img);
+			hPanel.add(wday);
+			hPanel.add(high);
+			hPanel.add(low);
+			
+			vPanel.add(hPanel);	
+		}
+		
+		RootPanel.get("forecast").add(vPanel);
 	}
+
+	private void updateTemperature(String temp_f, String temp_c) {
+		RootPanel.get("f").add(new Label(temp_f));
+		RootPanel.get("c").add(new Label(temp_c));
+	}
+
+	private void updateCondition(String icon, String condition) {
+		Image image = new Image(weatherProviderURL + icon);
+		RootPanel.get("icon").add(image);	
+	}
+
+	private void updateCity(String city) {
+		RootPanel.get("city").add(new Label(city));
+	}
+
 }

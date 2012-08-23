@@ -97,8 +97,10 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 	     conn.setReadTimeout( 10000 );       // 10 sec
 	     
 	     // Google API will block requests (randomly if this string is not set)
-	     // I used to get error of Not supported APIs?!!?
-	     conn.setRequestProperty( "User-agent", "spider" );
+	     // I used to get error:
+	     //		Unsupported API
+	     // Let's pretend that the request are coming from Chrome
+	     conn.setRequestProperty( "User-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1");
 		 
 		 BufferedReader rd = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));
 		 String line;

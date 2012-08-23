@@ -12,8 +12,8 @@ public class CurrentConditions implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String condition;
-	private byte temp_f;
-	private byte temp_c;
+	private String temp_f;
+	private String temp_c;
 	private String humidity;
 	private String icon;
 	private String wind_condition;
@@ -21,7 +21,7 @@ public class CurrentConditions implements Serializable {
 	@SuppressWarnings("unused")
 	private CurrentConditions() {}
 	
-	public CurrentConditions(String condition, byte temp_f, byte temp_c,
+	public CurrentConditions(String condition, String temp_f, String temp_c,
 			String humidity, String icon, String wind_condition) {
 		this.condition = condition;
 		this.temp_f = temp_f;
@@ -35,11 +35,11 @@ public class CurrentConditions implements Serializable {
 		return condition;
 	}
 
-	public byte getTemp_f() {
+	public String getTemp_f() {
 		return temp_f;
 	}
 
-	public byte getTemp_c() {
+	public String getTemp_c() {
 		return temp_c;
 	}
 

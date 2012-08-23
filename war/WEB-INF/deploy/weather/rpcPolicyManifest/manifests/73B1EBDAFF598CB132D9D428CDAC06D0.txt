@@ -1,0 +1,2 @@
+serviceClass: com.swietoslawski.weather.client.WeatherService
+path: DBE134BD6A43C1B11E9D5346F76E08FB.gwt.rpc

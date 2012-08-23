@@ -200,7 +200,7 @@ public class WeatherXML {
 		//      Current conditions and array of Forecasts.
 		WeatherWrapper weather;
 		ForecastInformation forecastInformation = new ForecastInformation(getCity(), getDate());
-		CurrentConditions currentConditions = new CurrentConditions(getCondition(), Byte.parseByte(getTempF()), Byte.parseByte(getTempC()), getHumidity(), getIcon(), getWind());
+		CurrentConditions currentConditions = new CurrentConditions(getCondition(), getTempF(), getTempC(), getHumidity(), getIcon(), getWind());
 		Forecast[] forecasts = new Forecast[4];
 		for (byte i = 0; i < forecasts.length; i++) {
 			forecasts[i] = new Forecast(getDay(i), getLow(i), getHight(i), getIcon(i), getCondition(i));
