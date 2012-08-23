@@ -21,7 +21,7 @@ import com.swietoslawski.weather_yahoo.client.WeatherService;
 import com.swietoslawski.weather_yahoo.client.ZipValidator;
 import com.swietoslawski.weather_yahoo.shared.Weather;
 import com.swietoslawski.weather_yahoo.shared.WeatherException;
-import com.swietoslawski.weather_yahoo.shared.WeatherWrapper;
+import com.swietoslawski.weather_yahoo.shared.WeatherXML;
 //import org.apache.commons.logging.Log;
 //import org.apache.commons.logging.LogFactory;
 
@@ -29,27 +29,25 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 		WeatherService {
 
 	private static final long serialVersionUID = 1L;
-//	private static Log log = LogFactory.getLog(WeatherServiceImpl.class);
-//	private static DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+	private final String weatherURL = "http://www.google.com/ig/api?";
 	
 	@Override
-	public WeatherWrapper[] getWeatherHtml(String zip, boolean isCelcius)
+	public Weather getWeather(String city)
 			throws WeatherException {
 
 		// Validation of the code in client side does not guarantee that the such
 		// validated input was not tampered after by man in the middle attack 
 		// For AJAX application the input should be also re-validated on server side!!!
-		if (!ZipValidator.isValid(zip)) {
-			//log.warn("Invalid zipcode: " + zip);
+		if (!ZipValidator.isValid(city)) {
 			throw new WeatherException("Zip-code must have 5 digits");
 		}
 		
-		Document rss = null;
+		Document weatherDOM = null;
 		
 		
 		// TODO Replace all this exception catch with one generic 
 		try {
-			rss = getWeatherRssDocument(zip, isCelcius);
+			weatherDOM = getWeatherDOM(city);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,14 +59,15 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 			e.printStackTrace();
 		}
 		
-		WeatherWrapper[] weather = getWeatherHtml(rss);
-		return weather;
+		WeatherXML weatherXML = getWeather(weatherDOM);
+		
+		return weatherXML.asWeather();
 	}
 	
-	private Document getWeatherRssDocument(String zip, boolean isCelcius) 
+	private Document getWeatherDOM(String city) 
 		throws IOException, ParserConfigurationException, SAXException {
 		
-		String url_string = getWeatherUrl(zip, isCelcius);
+		String url_string = getWeatherUrl(city);
 		URL url = new URL(url_string);
 		
 		// Reading XML file
@@ -98,7 +97,6 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 		 // Set up a request.
 	     conn.setConnectTimeout( 10000 );    // 10 sec
 	     conn.setReadTimeout( 10000 );       // 10 sec
-	     //conn.setInstanceFollowRedirects( true );
 	     
 	     // Google API will block requests (randomly if this string is not set)
 	     // I used to get error of Not supported APIs?!!?
@@ -120,49 +118,20 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 		return doc;
 	}
 
-	private WeatherWrapper[] getWeatherHtml(Document doc) {
+	private WeatherXML getWeather(Document weatherRSS) {
 		
-		Weather weather = new Weather(doc);
-		WeatherWrapper[] forecasts = new WeatherWrapper[5];
+		WeatherXML weatherXML = new WeatherXML(weatherRSS);
 		
-		// We need to convert Weather object into nice WeatherWrappers
-		// bundle them as array and send them back
+		// We need to extract info from WeatherXML and wrap it 
+		// into serializable class Weather that will be simple to 
+		// use and work with on client side
 		
-		// City is always the same for each day we just add it for the sake
-		// of keeping the WeatherWrapper made of objects with the same fields
-		final String city = weather.getCity();
 		
-		String temp;
-		String condition;
-		String day;
-		
-		// We'll have 
-		for (int i = 0; i < forecasts.length - 1; i++) {
-			// Because results returned from Google API suck big we need to 
-			// loop through them bearing in mind that in first loop we 
-			// pull elements from Weather  forecastInformation and currentConditions 
-			// while subsequent iterations are relying on forecastConditions
-//			if (i == 0) {
-//				temp = weather.getTempF();
-//				condition = weather.getIconCondition();
-//				day = weather.getDay();
-//			}
-			//else {
-				temp = weather.getTemp(i);
-				condition = weather.getIconCondition(i);
-				day = weather.getDay(i);
-			//}
-			
-			WeatherWrapper forecast = new WeatherWrapper(city, temp , condition, day);
-			forecasts[i] = forecast;
-		}
-		
-		return forecasts;
+		return weatherXML;
 	}
 	
-	private String getWeatherUrl(String city, boolean isCelcius) {
-		final String base = "http://www.google.com/ig/api?";
-		return base + "weather=" + city;
+	private String getWeatherUrl(String city) {		
+		return weatherURL + "weather=" + city;
 	}
 
 }

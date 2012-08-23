@@ -13,14 +13,10 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.Panel;
-import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
-import com.swietoslawski.weather_yahoo.shared.WeatherWrapper;
+import com.swietoslawski.weather_yahoo.shared.Weather;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -28,8 +24,6 @@ import com.swietoslawski.weather_yahoo.shared.WeatherWrapper;
 public class Weather_Yahoo implements EntryPoint {
 	private TextBox txBox;
 	private Button btnSubmit;
-	private RadioButton ucRadio;
-	private RadioButton ufRadio;
 	HTML weatherHtml;
 	
 	// Proxy of weather service class
@@ -44,25 +38,14 @@ public class Weather_Yahoo implements EntryPoint {
 		// Align child widgets along middle of panel
 		inputPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 		
-		Label lbl = new Label("5-digit zipcode: ");
+		Label lbl = new Label("City: ");
 		inputPanel.add(lbl);
 		
 		txBox = new TextBox();
 		txBox.setVisibleLength(20);
 		inputPanel.add(txBox);
 		
-		// Radio button group to select units in C or F
-		Panel radioPanel = new VerticalPanel();
-		
-		ucRadio = new RadioButton("units", "Celcius");
-		ufRadio = new RadioButton("units", "Fahrenheit");
-		
-		// Default to Celcius
-		ucRadio.setValue(true);
-		
-		inputPanel.add(ucRadio);
-		inputPanel.add(ufRadio);
-		
+				
 		// Submit button
 		btnSubmit = new Button("Submit", new ClickHandler() {
 			
@@ -98,9 +81,9 @@ public class Weather_Yahoo implements EntryPoint {
 	}
 
 	protected void validateAndSubmit() {
-		String zip = txBox.getText().trim();
+		String city = txBox.getText().trim();
 		
-		if (!ZipValidator.isValid(zip)) {
+		if (!ZipValidator.isValid(city)) {
 			Window.alert("Zip-code must have 5 digits");
 			return;
 		}
@@ -109,16 +92,15 @@ public class Weather_Yahoo implements EntryPoint {
 		txBox.setEnabled(false);
 		
 		// Get choice of temperature
-		boolean celcius = ucRadio.getValue();
-		fetchWeatherHtml(zip, celcius);
+		fetchWeatherHtml(city);
 	}
 
-	private void fetchWeatherHtml(String zip, boolean isCelcius) {
+	private void fetchWeatherHtml(String city) {
 		// Hide existing weather report
 		hideHtml();
 		
 		// Setup callback
-		AsyncCallback<WeatherWrapper[]> callback = new AsyncCallback<WeatherWrapper[]>() {
+		AsyncCallback<Weather> callback = new AsyncCallback<Weather>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -127,20 +109,28 @@ public class Weather_Yahoo implements EntryPoint {
 			}
 
 			@Override
-			public void onSuccess(WeatherWrapper[] result) {
+			public void onSuccess(Weather result) {
 				
+				@SuppressWarnings("unused")
 				StringBuilder html = new StringBuilder();
 				
-				for (WeatherWrapper w : result) {
-					html.setLength(0);
-					html.append(w.getCity() + " " + w.getDay() + " " + w.getTemp());
-					String url = "http://www.google.com" + w.getCondition();
-					Image icon = new Image(url);
-					Label label = new Label(html.toString());
-					RootPanel.get().add(label);
-					RootPanel.get().add(icon);
-					
-				}
+				// Get main weather cast info
+				
+				// Get current weather condition
+				
+				// Loop through forecasts
+				
+//				for (Weather w : result) {
+//					html.setLength(0);
+//					html.append(w.getDayOfWeek() + ": ");
+//					html.append(w.getHigh()+ " " + w.getLow() + " " + w.getCondition());
+//					String url = "http://www.google.com" + w.getIcon();
+//					Image icon = new Image(url);
+//					Label label = new Label(html.toString());
+//					RootPanel.get().add(label);
+//					RootPanel.get().add(icon);
+//					
+//				}
 				
 				// Show new weather report
 				//displayHtml(html.toString());
@@ -148,7 +138,7 @@ public class Weather_Yahoo implements EntryPoint {
 		};
 		
 		// Call remote service and define callback behavior
-		weatherService.getWeatherHtml(zip, isCelcius, callback);
+		weatherService.getWeather(city, callback);
 		
 	}
 
