@@ -4,17 +4,17 @@
   
   <servlet>
     <servlet-name>weatherServiceImpl</servlet-name>
-    <servlet-class>com.swietoslawski.weather_yahoo.server.WeatherServiceImpl</servlet-class>
+    <servlet-class>com.swietoslawski.weather.server.WeatherServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
     <servlet-name>weatherServiceImpl</servlet-name>
-    <url-pattern>/weather_yahoo/weatherService</url-pattern>
+    <url-pattern>/weather/weatherService</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Weather_Yahoo.html</welcome-file>
+    <welcome-file>Weather.html</welcome-file>
   </welcome-file-list>
 
   <servlet>

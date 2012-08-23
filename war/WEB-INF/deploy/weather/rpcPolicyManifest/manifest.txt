@@ -1,0 +1,2 @@
+# Module weather
+# RPC service class, partial path of RPC policy file
