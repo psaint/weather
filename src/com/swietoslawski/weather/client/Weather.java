@@ -227,6 +227,10 @@ public class Weather implements EntryPoint {
 
 			@Override
 			public void onFailure(Throwable caught) {
+				
+				// TODO this shoudl set flag in our object so we can then confirm
+				//      back to user when he is adding a city that it was found
+				
 				Window.alert("Error: " + caught.getMessage());
 				txBox.setEnabled(true);
 			}
@@ -238,6 +242,10 @@ public class Weather implements EntryPoint {
 				ForecastInformation forecastInformation = weather.getForecastInformation();
 				CurrentConditions currentConditions = weather.getCurrentConditions();
 				Forecast[] forecasts = weather.getForecastConditions();
+				
+				// TODO we should save the weather info in fields, reset failure falg
+				// and not update forecasts updating forecast should be invoked 
+				// only when user is viewing home page
 				
 				// Update forecast
 				updateForecast(forecastInformation, currentConditions, forecasts);

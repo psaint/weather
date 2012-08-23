@@ -4,14 +4,14 @@ var $gwt_version = "2.5.0rc1";
 var $wnd = parent;
 var $doc = $wnd.document;
 var $moduleName, $moduleBase;
-var $strongName = '5BB3F26EC23789352767F11C546D324F';
+var $strongName = '5EC40EB257C56865942A40891413A2F5';
 var $stats = $wnd.__gwtStatsEvent ? function(a) {return $wnd.__gwtStatsEvent(a);} : null,
 $sessionId = $wnd.__gwtStatsSessionId ? $wnd.__gwtStatsSessionId : null;
 $stats && $stats({moduleName:'weather',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalStart'});
 </script></head>
 <body>
 <script><!--
-var _, seedTable = {}, Q$Object = 0, Q$String = 1, Q$JavaScriptException = 2, Q$Style$HasCssName = 3, Q$Style$TextAlign = 4, Q$ClickHandler = 5, Q$DomEvent$Type = 6, Q$KeyPressHandler = 7, Q$CloseHandler = 8, Q$HasAttachHandlers = 9, Q$EventHandler = 10, Q$HasHandlers = 11, Q$RequestException = 12, Q$HasDirection$Direction = 13, Q$LongLibBase$LongEmul = 14, Q$EventListener = 15, Q$Timer = 16, Q$SerializationException = 17, Q$RequestCallbackAdapter$ResponseReader = 18, Q$HasVisibility = 19, Q$IsWidget = 20, Q$RootPanel = 21, Q$UIObject = 22, Q$ValueBoxBase$TextAlignment = 23, Q$Widget = 24, Q$XMLHttpRequest$ResponseType = 25, Q$SimpleEventBus$Command = 26, Q$UmbrellaException = 27, Q$Weather$1 = 28, Q$CurrentConditions = 29, Q$Forecast = 30, Q$ForecastInformation = 31, Q$Forecast_$1 = 32, Q$WeatherWrapper = 33, Q$Serializable = 34, Q$CharSequence = 35, Q$Comparable = 36, Q$Enum = 37, Q$Integer = 38, Q$Number = 39, Q$StackTraceElement = 40, Q$Throwable = 41, Q$List = 42, Q$Map = 43, Q$Map$Entry = 44, Q$Set = 45, CM$ = {};
+var _, seedTable = {}, Q$Object = 0, Q$String = 1, Q$JavaScriptException = 2, Q$Style$HasCssName = 3, Q$Style$TextAlign = 4, Q$ClickHandler = 5, Q$DomEvent$Type = 6, Q$KeyPressHandler = 7, Q$CloseHandler = 8, Q$HasAttachHandlers = 9, Q$EventHandler = 10, Q$HasHandlers = 11, Q$RequestException = 12, Q$HasDirection$Direction = 13, Q$LongLibBase$LongEmul = 14, Q$SafeUri = 15, Q$SafeUriString = 16, Q$EventListener = 17, Q$Timer = 18, Q$SerializationException = 19, Q$RequestCallbackAdapter$ResponseReader = 20, Q$HasVisibility = 21, Q$IsWidget = 22, Q$RootPanel = 23, Q$UIObject = 24, Q$ValueBoxBase$TextAlignment = 25, Q$Widget = 26, Q$XMLHttpRequest$ResponseType = 27, Q$SimpleEventBus$Command = 28, Q$UmbrellaException = 29, Q$CurrentConditions = 30, Q$Forecast = 31, Q$ForecastInformation = 32, Q$Forecast_$1 = 33, Q$WeatherWrapper = 34, Q$Serializable = 35, Q$CharSequence = 36, Q$Comparable = 37, Q$Enum = 38, Q$Integer = 39, Q$Number = 40, Q$StackTraceElement = 41, Q$Throwable = 42, Q$List = 43, Q$Map = 44, Q$Map$Entry = 45, Q$Set = 46, CM$ = {};
 function newSeed(id){
   return new seedTable[id];
 }
@@ -70,9 +70,13 @@ _.toString = function(){
 }
 ;
 _.typeMarker$ = nullMethod;
+function currentTimeMillis(){
+  return (new Date).getTime();
+}
+
 function $initCause(this$static, cause){
   if (this$static.cause) {
-    throw new IllegalStateException_0("Can't overwrite cause");
+    throw new IllegalStateException_1("Can't overwrite cause");
   }
   if (cause == this$static) {
     throw new IllegalArgumentException_1('Self-causation not permitted');
@@ -104,36 +108,28 @@ _.toString$ = function toString_1(){
 ;
 _.cause = null;
 _.detailMessage = null;
-function Exception_0(){
-  $fillInStackTrace($clinit_StackTraceCreator$CollectorChrome());
-}
-
-function Exception_1(message){
-  $fillInStackTrace($clinit_StackTraceCreator$CollectorChrome());
+function Exception_0(message){
+  $fillInStackTrace();
   this.detailMessage = message;
 }
 
 defineSeed(7, 8, makeCastMap([Q$Serializable, Q$Throwable]));
-function RuntimeException_0(){
-  Exception_0.call(this);
+function RuntimeException_0(message){
+  Exception_0.call(this, message);
 }
 
-function RuntimeException_1(message){
-  Exception_1.call(this, message);
-}
-
-function RuntimeException_2(message, cause){
-  $fillInStackTrace($clinit_StackTraceCreator$CollectorChrome());
+function RuntimeException_1(message, cause){
+  $fillInStackTrace();
   this.cause = cause;
   this.detailMessage = message;
 }
 
-defineSeed(6, 7, makeCastMap([Q$Serializable, Q$Throwable]), RuntimeException_1);
+defineSeed(6, 7, makeCastMap([Q$Serializable, Q$Throwable]), RuntimeException_0);
 function JavaScriptException_0(e){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
   this.e = e;
   this.description = '';
-  $createStackTrace(new StackTraceCreator$CollectorChromeNoSourceMap_0, this);
+  $createStackTrace(this);
 }
 
 function getExceptionDescription(e){
@@ -154,7 +150,7 @@ function getExceptionName0(e){
 }
 
 function getExceptionProperties(e){
-  return instanceOfJso(e)?getProperties(dynamicCastJso(e)):'';
+  return instanceOfJso(e)?$getProperties(dynamicCastJso(e)):'';
 }
 
 defineSeed(5, 6, makeCastMap([Q$JavaScriptException, Q$Serializable, Q$Throwable]), JavaScriptException_0);
@@ -185,7 +181,7 @@ function apply(jsFunction, thisObj, arguments_0){
 function enter(){
   var now;
   if (entryDepth != 0) {
-    now = (new Date).getTime();
+    now = currentTimeMillis();
     if (now - watchdogEntryDepthLastScheduled > 2000) {
       watchdogEntryDepthLastScheduled = now;
       watchdogEntryDepthTimerId = watchdogEntryDepthSchedule();
@@ -288,7 +284,41 @@ function $flushFinallyCommands(this$static){
   }
 }
 
+function $flushPostEventPumpCommands(this$static){
+  var oldDeferred;
+  if (this$static.deferredCommands) {
+    oldDeferred = this$static.deferredCommands;
+    this$static.deferredCommands = null;
+    !this$static.incrementalCommands && (this$static.incrementalCommands = []);
+    runScheduledTasks(oldDeferred, this$static.incrementalCommands);
+  }
+  !!this$static.incrementalCommands && (this$static.incrementalCommands = runRepeatingTasks(this$static.incrementalCommands));
+}
+
+function $isWorkQueued(this$static){
+  return !!this$static.deferredCommands || !!this$static.incrementalCommands;
+}
+
+function $maybeSchedulePostEventPumpCommands(this$static){
+  if (!this$static.shouldBeRunning) {
+    this$static.shouldBeRunning = true;
+    !this$static.flusher && (this$static.flusher = new SchedulerImpl$Flusher_0(this$static));
+    scheduleFixedDelayImpl(this$static.flusher, 1);
+    !this$static.rescue && (this$static.rescue = new SchedulerImpl$Rescuer_0(this$static));
+    scheduleFixedDelayImpl(this$static.rescue, 50);
+  }
+}
+
+function $scheduleDeferred(this$static, cmd){
+  this$static.deferredCommands = push(this$static.deferredCommands, [cmd, false]);
+  $maybeSchedulePostEventPumpCommands(this$static);
+}
+
 function SchedulerImpl_0(){
+}
+
+function execute(cmd){
+  return cmd.execute();
 }
 
 function push(queue, task){
@@ -297,12 +327,44 @@ function push(queue, task){
   return queue;
 }
 
+function runRepeatingTasks(tasks){
+  var canceledSomeTasks, i, length_0, newTasks, start, t;
+  length_0 = tasks.length;
+  if (length_0 == 0) {
+    return null;
+  }
+  canceledSomeTasks = false;
+  start = currentTimeMillis();
+  while (currentTimeMillis() - start < 100) {
+    for (i = 0; i < length_0; ++i) {
+      t = tasks[i];
+      if (!t) {
+        continue;
+      }
+      if (!t[0].execute()) {
+        tasks[i] = null;
+        canceledSomeTasks = true;
+      }
+    }
+  }
+  if (canceledSomeTasks) {
+    newTasks = [];
+    for (i = 0; i < length_0; ++i) {
+      !!tasks[i] && (newTasks[newTasks.length] = tasks[i] , undefined);
+    }
+    return newTasks.length == 0?null:newTasks;
+  }
+   else {
+    return tasks;
+  }
+}
+
 function runScheduledTasks(tasks, rescheduled){
   var $e0, i, j, t;
   for (i = 0 , j = tasks.length; i < j; ++i) {
     t = tasks[i];
     try {
-      t[1]?t[0].nullMethod() && (rescheduled = push(rescheduled, t)):($wnd.__gwt_initWindowCloseHandler($entry(onClosing), $entry(onClosed)) , undefined);
+      t[1]?t[0].execute() && (rescheduled = push(rescheduled, t)):$execute(t[0]);
     }
      catch ($e0) {
       $e0 = caught_0($e0);
@@ -313,10 +375,49 @@ function runScheduledTasks(tasks, rescheduled){
   return rescheduled;
 }
 
+function scheduleFixedDelayImpl(cmd, delayMs){
+  $clinit_SchedulerImpl();
+  $wnd.setTimeout(function(){
+    var ret = $entry(execute)(cmd);
+    ret && $wnd.setTimeout(arguments.callee, delayMs);
+  }
+  , delayMs);
+}
+
 defineSeed(14, 12, {}, SchedulerImpl_0);
+_.deferredCommands = null;
 _.entryCommands = null;
 _.finallyCommands = null;
+_.flushRunning = false;
+_.flusher = null;
+_.incrementalCommands = null;
+_.rescue = null;
+_.shouldBeRunning = false;
 var INSTANCE;
+function SchedulerImpl$Flusher_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(15, 1, {}, SchedulerImpl$Flusher_0);
+_.execute = function execute_0(){
+  this.this$0.flushRunning = true;
+  $flushPostEventPumpCommands(this.this$0);
+  this.this$0.flushRunning = false;
+  return this.this$0.shouldBeRunning = $isWorkQueued(this.this$0);
+}
+;
+_.this$0 = null;
+function SchedulerImpl$Rescuer_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(16, 1, {}, SchedulerImpl$Rescuer_0);
+_.execute = function execute_1(){
+  this.this$0.flushRunning && scheduleFixedDelayImpl(this.this$0.flusher, 1);
+  return this.this$0.shouldBeRunning;
+}
+;
+_.this$0 = null;
 function extractNameFromToString(fnToString){
   var index, start, toReturn;
   toReturn = '';
@@ -329,17 +430,29 @@ function extractNameFromToString(fnToString){
   return toReturn.length > 0?toReturn:'anonymous';
 }
 
-function getProperties(e){
-  return $getProperties(($clinit_StackTraceCreator$CollectorChrome() , e));
-}
-
-function parseInt_0(number){
-  return parseInt(number) || -1;
-}
-
 function splice(arr, length_0){
   arr.length >= length_0 && arr.splice(0, length_0);
   return arr;
+}
+
+function $createStackTrace(e){
+  var i, j, stack, stackTrace;
+  stack = $inferFrom(instanceOfJso(e.e)?dynamicCastJso(e.e):null);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
+}
+
+function $fillInStackTrace(){
+  var i, j, stack, stackTrace;
+  stack = splice($inferFrom($makeException()), 2);
+  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
+  for (i = 0 , j = stackTrace.length; i < j; ++i) {
+    stackTrace[i] = new StackTraceElement_0(stack[i]);
+  }
+  $setStackTrace(stackTrace);
 }
 
 function $getProperties(e){
@@ -369,157 +482,15 @@ function $makeException(){
   }
 }
 
-function StackTraceCreator$Collector_0(){
-}
-
-defineSeed(17, 1, {}, StackTraceCreator$Collector_0);
-_.collect = function collect(){
-  var seen = {};
-  var toReturn = [];
-  var callee = arguments.callee.caller.caller;
-  while (callee) {
-    var name_0 = this.extractName(callee.toString());
-    toReturn.push(name_0);
-    var keyName = ':' + name_0;
-    var withThisName = seen[keyName];
-    if (withThisName) {
-      var i, j;
-      for (i = 0 , j = withThisName.length; i < j; i++) {
-        if (withThisName[i] === callee) {
-          return toReturn;
-        }
-      }
-    }
-    (withThisName || (seen[keyName] = [])).push(callee);
-    callee = callee.caller;
-  }
-  return toReturn;
-}
-;
-_.extractName = function extractName(fnToString){
-  return extractNameFromToString(fnToString);
-}
-;
-_.inferFrom = function inferFrom(e){
-  return [];
-}
-;
-function $inferFrom(this$static, e){
+function $inferFrom(e){
   var i, j, stack;
   stack = e && e.stack?e.stack.split('\n'):[];
   for (i = 0 , j = stack.length; i < j; ++i) {
-    stack[i] = this$static.extractName(stack[i]);
+    stack[i] = extractNameFromToString(stack[i]);
   }
   return stack;
 }
 
-defineSeed(19, 17, {});
-_.collect = function collect_0(){
-  return splice(this.inferFrom($makeException()), this.toSplice());
-}
-;
-_.inferFrom = function inferFrom_0(e){
-  return $inferFrom(this, e);
-}
-;
-_.toSplice = function toSplice(){
-  return 2;
-}
-;
-function $clinit_StackTraceCreator$CollectorChrome(){
-  $clinit_StackTraceCreator$CollectorChrome = nullMethod;
-  Error.stackTraceLimit = 128;
-}
-
-function $collect(this$static){
-  var res;
-  res = splice($inferFrom_0(this$static, $makeException()), 3);
-  res.length == 0 && (res = splice((new StackTraceCreator$Collector_0).collect(), 1));
-  return res;
-}
-
-function $createStackTrace(this$static, e){
-  var stack;
-  stack = $inferFrom_0(this$static, instanceOfJso(e.e)?dynamicCastJso(e.e):null);
-  $parseStackTrace(stack);
-}
-
-function $fillInStackTrace(){
-  var stack;
-  stack = $collect(new StackTraceCreator$CollectorChromeNoSourceMap_0);
-  $parseStackTrace(stack);
-}
-
-function $inferFrom_0(this$static, e){
-  var stack;
-  stack = $inferFrom(this$static, e);
-  return stack.length == 0?(new StackTraceCreator$Collector_0).inferFrom(e):splice(stack, 1);
-}
-
-function $parseStackTrace(stack){
-  var col, endFileUrl, fileName, i, j, lastColon, location_0, stackElements, stackTrace;
-  stackTrace = initDim(_3Ljava_lang_StackTraceElement_2_classLit, makeCastMap([Q$Serializable]), Q$StackTraceElement, stack.length, 0);
-  for (i = 0 , j = stackTrace.length; i < j; ++i) {
-    stackElements = $split(stack[i], '@@', 0);
-    col = -1;
-    fileName = 'Unknown';
-    if (stackElements.length == 2 && stackElements[1] != null) {
-      location_0 = stackElements[1];
-      lastColon = $lastIndexOf(location_0, fromCodePoint(58));
-      endFileUrl = $lastIndexOf_0(location_0, fromCodePoint(58), lastColon - 1);
-      fileName = location_0.substr(0, endFileUrl - 0);
-      if (lastColon != -1 && endFileUrl != -1) {
-        parseInt_0(location_0.substr(endFileUrl + 1, lastColon - (endFileUrl + 1)));
-        col = parseInt_0($substring(location_0, lastColon + 1));
-      }
-    }
-    stackTrace[i] = new StackTraceElement_0(stackElements[0], fileName + '@' + col);
-  }
-  $setStackTrace(stackTrace);
-}
-
-defineSeed(18, 19, {});
-_.collect = function collect_1(){
-  return $collect(this);
-}
-;
-_.extractName = function extractName_0(fnToString){
-  var closeParen, index, location_0, toReturn;
-  if (fnToString.length == 0) {
-    return 'anonymous';
-  }
-  toReturn = $trim(fnToString);
-  toReturn.indexOf('at ') == 0 && (toReturn = $substring(toReturn, 3));
-  index = toReturn.indexOf('[');
-  index != -1 && (toReturn = $trim(toReturn.substr(0, index - 0)) + $trim($substring(toReturn, toReturn.indexOf(']', index) + 1)));
-  index = toReturn.indexOf('(');
-  if (index == -1) {
-    location_0 = toReturn;
-    toReturn = '';
-  }
-   else {
-    closeParen = toReturn.indexOf(')', index);
-    location_0 = toReturn.substr(index + 1, closeParen - (index + 1));
-    toReturn = $trim(toReturn.substr(0, index - 0));
-  }
-  index = $indexOf_0(toReturn, fromCodePoint(46));
-  index != -1 && (toReturn = $substring(toReturn, index + 1));
-  return (toReturn.length > 0?toReturn:'anonymous') + '@@' + location_0;
-}
-;
-_.inferFrom = function inferFrom_1(e){
-  return $inferFrom_0(this, e);
-}
-;
-_.toSplice = function toSplice_0(){
-  return 3;
-}
-;
-function StackTraceCreator$CollectorChromeNoSourceMap_0(){
-  $clinit_StackTraceCreator$CollectorChrome();
-}
-
-defineSeed(20, 18, {}, StackTraceCreator$CollectorChromeNoSourceMap_0);
 defineSeed(21, 1, {});
 function $append(this$static, x){
   this$static.string += x;
@@ -542,18 +513,63 @@ function $getPropertyString(this$static, name_0){
   return this$static[name_0] == null?null:String(this$static[name_0]);
 }
 
+function $setInnerHTML(this$static, html){
+  this$static.innerHTML = html || '';
+}
+
 function $getParentElement(node){
   var parent_0 = node.parentNode;
   (!parent_0 || parent_0.nodeType != 1) && (parent_0 = null);
   return parent_0;
 }
 
-function $isOrHasChild(parent_0, child){
-  return parent_0.contains(child);
+function $imgSetSrc(img, src){
+  img.src = src;
 }
 
-function $getTabIndex(elem){
-  return typeof elem.tabIndex != 'undefined'?elem.tabIndex:-1;
+function $dispatchEvent(target, evt){
+  target.dispatchEvent(evt);
+}
+
+function $setInnerText(elem, text){
+  elem.textContent = text || '';
+}
+
+function $eventGetRelatedTarget(evt){
+  var relatedTarget = evt.relatedTarget;
+  if (!relatedTarget) {
+    return null;
+  }
+  try {
+    var nodeName = relatedTarget.nodeName;
+    return relatedTarget;
+  }
+   catch (e) {
+    return null;
+  }
+}
+
+function $isOrHasChild(parent_0, child){
+  return parent_0 === child || !!(parent_0.compareDocumentPosition(child) & 16);
+}
+
+function $toString(elem){
+  var doc = elem.ownerDocument;
+  var temp = elem.cloneNode(true);
+  var tempDiv = doc.createElement('DIV');
+  tempDiv.appendChild(temp);
+  outer = tempDiv.innerHTML;
+  temp.innerHTML = '';
+  return outer;
+}
+
+function getGeckoVersion(){
+  var result = /rv:([0-9]+)\.([0-9]+)(\.([0-9]+))?.*?/.exec(navigator.userAgent.toLowerCase());
+  if (result && result.length >= 3) {
+    var version = parseInt(result[1]) * 1000000 + parseInt(result[2]) * 1000 + parseInt(result.length >= 5 && !isNaN(result[4])?result[4]:0);
+    return version;
+  }
+  return -1;
 }
 
 function $getElementById(this$static, elementId){
@@ -672,7 +688,7 @@ function ClickEvent_0(){
 
 defineSeed(40, 41, {}, ClickEvent_0);
 _.dispatch = function dispatch(handler){
-  $validateAndSubmit(dynamicCast(dynamicCast(handler, Q$ClickHandler), Q$Weather$1).this$0);
+  dynamicCast(handler, Q$ClickHandler).onClick(this);
 }
 ;
 _.getAssociatedType_0 = function getAssociatedType_0(){
@@ -922,7 +938,7 @@ function LegacyHandlerWrapper_0(){
 
 defineSeed(58, 1, {}, LegacyHandlerWrapper_0);
 function UmbrellaException_1(causes){
-  RuntimeException_2.call(this, makeMessage(causes), makeCause(causes));
+  RuntimeException_1.call(this, makeMessage(causes), makeCause(causes));
   this.causes = causes;
 }
 
@@ -979,7 +995,7 @@ function $fireOnResponseReceived(this$static, callback){
   this$static.xmlHttpRequest = null;
   errorMsg = $getBrowserSpecificFailure(xhr);
   if (errorMsg != null) {
-    exception = new RuntimeException_1(errorMsg);
+    exception = new RuntimeException_0(errorMsg);
     $onFailure(callback.callback, exception);
   }
    else {
@@ -1048,7 +1064,7 @@ function $clinit_Timer(){
 
 function $cancel_0(this$static){
   this$static.isRepeating?clearInterval_0(this$static.timerId):clearTimeout_0(this$static.timerId);
-  $remove_3(timers, this$static);
+  $remove_4(timers, this$static);
 }
 
 function $schedule(this$static, delayMillis){
@@ -1056,7 +1072,7 @@ function $schedule(this$static, delayMillis){
     throw new IllegalArgumentException_1('must be non-negative');
   }
   this$static.isRepeating?clearInterval_0(this$static.timerId):clearTimeout_0(this$static.timerId);
-  $remove_3(timers, this$static);
+  $remove_4(timers, this$static);
   this$static.isRepeating = false;
   this$static.timerId = createTimeout(this$static, delayMillis);
   $add_3(timers, this$static);
@@ -1079,15 +1095,15 @@ function createTimeout(timer, delay){
 
 defineSeed(65, 1, makeCastMap([Q$Timer]));
 _.fire = function fire_0(){
-  this.isRepeating || $remove_3(timers, this);
+  this.isRepeating || $remove_4(timers, this);
   $fireOnTimeout(this.this$0, this.val$callback);
 }
 ;
 _.isRepeating = false;
 _.timerId = 0;
-var timers;
 --></script>
 <script><!--
+var timers;
 function Request$3_0(this$0, val$callback){
   $clinit_Timer();
   this.this$0 = this$0;
@@ -1218,17 +1234,19 @@ _.toString$ = function toString_5(){
 ;
 _.name_0 = null;
 function RequestException_0(message){
-  Exception_1.call(this, message);
+  Exception_0.call(this, message);
 }
 
 defineSeed(69, 7, makeCastMap([Q$RequestException, Q$Serializable, Q$Throwable]), RequestException_0);
 function RequestPermissionException_0(url){
-  Exception_1.call(this, 'The URL ' + url + ' is invalid or violates the same-origin security restriction');
+  $fillInStackTrace();
+  this.detailMessage = 'The URL ' + url + ' is invalid or violates the same-origin security restriction';
 }
 
 defineSeed(70, 69, makeCastMap([Q$RequestException, Q$Serializable, Q$Throwable]), RequestPermissionException_0);
 function RequestTimeoutException_0(timeoutMillis){
-  Exception_1.call(this, 'A request timeout has expired after ' + timeoutMillis + ' ms');
+  $fillInStackTrace();
+  this.detailMessage = 'A request timeout has expired after ' + timeoutMillis + ' ms';
 }
 
 defineSeed(71, 69, makeCastMap([Q$RequestException, Q$Serializable, Q$Throwable]), RequestTimeoutException_0);
@@ -1432,7 +1450,7 @@ function init(){
   var runtimeValue;
   !!$stats && onModuleStart('com.google.gwt.useragent.client.UserAgentAsserter');
   runtimeValue = $getRuntimeValue();
-  $equals('safari', runtimeValue) || ($wnd.alert('ERROR: Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (safari) does not match the runtime user.agent value (' + runtimeValue + '). Expect more errors.\n') , undefined);
+  $equals('gecko1_8', runtimeValue) || ($wnd.alert('ERROR: Possible problem with your *.gwt.xml module file.\nThe compile time user.agent value (gecko1_8) does not match the runtime user.agent value (' + runtimeValue + '). Expect more errors.\n') , undefined);
   !!$stats && onModuleStart('com.google.gwt.user.client.DocumentModeAsserter');
   $onModuleLoad();
   !!$stats && onModuleStart('com.swietoslawski.weather.client.Weather');
@@ -1450,17 +1468,47 @@ function onModuleStart(mainClassName){
   return $stats({moduleName:$moduleName, sessionId:$sessionId, subSystem:'startup', evtGroup:'moduleStartup', millis:(new Date).getTime(), type:'onModuleLoadStart', className:mainClassName});
 }
 
-defineSeed(85, 1, {});
+function SafeUriString_0(uri){
+  if (uri == null) {
+    throw new NullPointerException_1('uri is null');
+  }
+  this.uri = uri;
+}
+
+defineSeed(86, 1, makeCastMap([Q$SafeUri, Q$SafeUriString]), SafeUriString_0);
+_.equals$ = function equals_1(obj){
+  if (!instanceOf(obj, Q$SafeUri)) {
+    return false;
+  }
+  return $equals(this.uri, dynamicCast(dynamicCast(obj, Q$SafeUri), Q$SafeUriString).uri);
+}
+;
+_.hashCode$ = function hashCode_3(){
+  return getHashCode_0(this.uri);
+}
+;
+_.uri = null;
+function $clinit_UriUtils(){
+  $clinit_UriUtils = nullMethod;
+  new RegExp('%5B', 'g');
+  new RegExp('%5D', 'g');
+}
+
+defineSeed(88, 1, {});
 function PassthroughParser_0(){
 }
 
-defineSeed(86, 1, {}, PassthroughParser_0);
+defineSeed(89, 1, {}, PassthroughParser_0);
 var INSTANCE_0 = null;
 function PassthroughRenderer_0(){
 }
 
-defineSeed(87, 85, {}, PassthroughRenderer_0);
+defineSeed(90, 88, {}, PassthroughRenderer_0);
 var INSTANCE_1 = null;
+function appendChild(parent_0, child){
+  $appendChild(parent_0, ($clinit_PotentialElement() , $resolve(child)));
+}
+
 function dispatchEvent_0(evt, elem, listener){
   var prevCurrentEvent;
   prevCurrentEvent = currentEvent;
@@ -1470,8 +1518,8 @@ function dispatchEvent_0(evt, elem, listener){
   currentEvent = prevCurrentEvent;
 }
 
-function setStyleAttribute(elem, value){
-  elem.style['verticalAlign'] = value;
+function setStyleAttribute(elem, attr, value){
+  elem.style[attr] = value;
 }
 
 var currentEvent = null, sCaptureElem = null;
@@ -1490,7 +1538,7 @@ function $onModuleLoad(){
 function Timer$1_0(){
 }
 
-defineSeed(92, 1, makeCastMap([Q$CloseHandler, Q$EventHandler]), Timer$1_0);
+defineSeed(95, 1, makeCastMap([Q$CloseHandler, Q$EventHandler]), Timer$1_0);
 _.onClose = function onClose(event_0){
   while (($clinit_Timer() , timers).size_0 > 0) {
     $cancel_0(dynamicCast($get_0(timers, 0), Q$Timer));
@@ -1517,10 +1565,6 @@ function maybeInitializeCloseHandlers(){
   }
 }
 
-function onClosed(){
-  closeHandlersInitialized && fire((!handlers_0 && (handlers_0 = new Window$WindowHandlers_0) , handlers_0));
-}
-
 function onClosing(){
   var event_0;
   if (closeHandlersInitialized) {
@@ -1541,7 +1585,7 @@ function Window$ClosingEvent_0(){
   $clinit_Window$ClosingEvent();
 }
 
-defineSeed(94, 44, {}, Window$ClosingEvent_0);
+defineSeed(97, 44, {}, Window$ClosingEvent_0);
 _.dispatch = function dispatch_2(handler){
   throwClassCastExceptionUnlessNull(handler);
   null.nullMethod();
@@ -1556,7 +1600,7 @@ function Window$WindowHandlers_0(){
   HandlerManager_0.call(this, null);
 }
 
-defineSeed(95, 54, makeCastMap([Q$HasHandlers]), Window$WindowHandlers_0);
+defineSeed(98, 54, makeCastMap([Q$HasHandlers]), Window$WindowHandlers_0);
 function $eventGetTypeInt(eventType){
   switch (eventType) {
     case 'blur':
@@ -1621,6 +1665,7 @@ function $eventGetTypeInt(eventType){
 function $maybeInitializeEventSystem(){
   if (!eventSystemIsInitialized) {
     $initEventSystem();
+    $initSyntheticMouseUpEvents();
     eventSystemIsInitialized = true;
   }
 }
@@ -1692,8 +1737,9 @@ function $initEventSystem(){
 }
 
 function $sinkBitlessEvent(elem, eventTypeName){
+  var geckoVersion;
   $maybeInitializeEventSystem();
-  $sinkBitlessEventImpl(elem, eventTypeName);
+  $equals('dragleave', eventTypeName) && (geckoVersion = getGeckoVersion() , geckoVersion != -1 && geckoVersion <= 1009000)?('dragexit' == 'dragexit' && (elem.ondragexit = dispatchDragEvent) , undefined):$sinkBitlessEventImpl(elem, eventTypeName);
 }
 
 function $sinkBitlessEventImpl(elem, eventTypeName){
@@ -1727,11 +1773,6 @@ function $sinkBitlessEventImpl(elem, eventTypeName){
       break;
     default:throw 'Trying to sink unknown event type ' + eventTypeName;
   }
-}
-
-function $sinkEvents(elem, bits){
-  $maybeInitializeEventSystem();
-  $sinkEventsImpl(elem, bits);
 }
 
 function $sinkEventsImpl(elem, bits){
@@ -1769,6 +1810,27 @@ function $sinkEventsImpl(elem, bits){
 }
 
 var captureElem = null, dispatchCapturedEvent = null, dispatchCapturedMouseEvent = null, dispatchDragEvent = null, dispatchEvent_1 = null, dispatchUnhandledEvent = null;
+function $initSyntheticMouseUpEvents(){
+  $wnd.addEventListener('mouseout', $entry(function(evt){
+    var cap = captureElem;
+    if (cap && !evt.relatedTarget) {
+      if ('html' == evt.target.tagName.toLowerCase()) {
+        var muEvent = $doc.createEvent('MouseEvents');
+        muEvent.initMouseEvent('mouseup', true, true, $wnd, 0, evt.screenX, evt.screenY, evt.clientX, evt.clientY, evt.ctrlKey, evt.altKey, evt.shiftKey, evt.metaKey, evt.button, null);
+        cap.dispatchEvent(muEvent);
+      }
+    }
+  }
+  ), true);
+  $wnd.addEventListener('DOMMouseScroll', dispatchCapturedMouseEvent, true);
+}
+
+function $sinkEvents(elem, bits){
+  $maybeInitializeEventSystem();
+  $sinkEventsImpl(elem, bits);
+  bits & 131072 && elem.addEventListener('DOMMouseScroll', dispatchEvent_1, false);
+}
+
 function $initWindowCloseHandler(){
   var oldOnBeforeUnload = $wnd.onbeforeunload;
   var oldOnUnload = $wnd.onunload;
@@ -1804,18 +1866,19 @@ function $initWindowCloseHandler(){
 }
 
 function IncompatibleRemoteServiceException_0(){
-  RuntimeException_1.call(this, 'This application is out of date, please click the refresh button on your browser.');
+  RuntimeException_0.call(this, 'This application is out of date, please click the refresh button on your browser.');
 }
 
 function IncompatibleRemoteServiceException_1(msg){
-  Exception_1.call(this, 'This application is out of date, please click the refresh button on your browser. ( ' + msg + ' )');
+  $fillInStackTrace();
+  this.detailMessage = 'This application is out of date, please click the refresh button on your browser. ( ' + msg + ' )';
 }
 
 function IncompatibleRemoteServiceException_2(cause){
-  RuntimeException_2.call(this, 'The response could not be deserialized', cause);
+  RuntimeException_1.call(this, 'The response could not be deserialized', cause);
 }
 
-defineSeed(101, 6, makeCastMap([Q$Serializable, Q$Throwable]), IncompatibleRemoteServiceException_0, IncompatibleRemoteServiceException_1, IncompatibleRemoteServiceException_2);
+defineSeed(104, 6, makeCastMap([Q$Serializable, Q$Throwable]), IncompatibleRemoteServiceException_0, IncompatibleRemoteServiceException_1, IncompatibleRemoteServiceException_2);
 function deserialize(streamReader, instance){
   setDetailMessage(instance, $getString(streamReader, $readInt(streamReader)));
 }
@@ -1829,14 +1892,14 @@ function serialize(streamWriter, instance){
 }
 
 function InvocationException_0(s){
-  RuntimeException_2.call(this, s, null);
+  RuntimeException_1.call(this, s, null);
 }
 
 function InvocationException_1(s, cause){
-  RuntimeException_2.call(this, s, cause);
+  RuntimeException_1.call(this, s, cause);
 }
 
-defineSeed(103, 6, makeCastMap([Q$Serializable, Q$Throwable]), InvocationException_0, InvocationException_1);
+defineSeed(106, 6, makeCastMap([Q$Serializable, Q$Throwable]), InvocationException_0, InvocationException_1);
 function $create(this$static, serviceEntryPoint){
   this$static.builder = new RequestBuilder_0(($clinit_RequestBuilder() , POST), serviceEntryPoint);
   return this$static;
@@ -1879,13 +1942,13 @@ function $setRequestData(this$static, data){
 function RpcRequestBuilder_0(){
 }
 
-defineSeed(104, 1, {}, RpcRequestBuilder_0);
+defineSeed(107, 1, {}, RpcRequestBuilder_0);
 _.builder = null;
 function RpcTokenException_0(){
-  RuntimeException_1.call(this, 'Invalid RPC token');
+  RuntimeException_0.call(this, 'Invalid RPC token');
 }
 
-defineSeed(105, 6, makeCastMap([Q$Serializable, Q$Throwable]), RpcTokenException_0);
+defineSeed(108, 6, makeCastMap([Q$Serializable, Q$Throwable]), RpcTokenException_0);
 function deserialize_0(streamReader, instance){
   setDetailMessage(instance, $getString(streamReader, $readInt(streamReader)));
 }
@@ -1895,20 +1958,20 @@ function instantiate_0(streamReader){
 }
 
 function SerializationException_0(msg){
-  Exception_1.call(this, msg);
+  Exception_0.call(this, msg);
 }
 
-defineSeed(107, 7, makeCastMap([Q$SerializationException, Q$Serializable, Q$Throwable]), SerializationException_0);
+defineSeed(110, 7, makeCastMap([Q$SerializationException, Q$Serializable, Q$Throwable]), SerializationException_0);
 function ServiceDefTarget$NoServiceEntryPointSpecifiedException_0(){
   InvocationException_0.call(this, 'Service implementation URL not specified');
 }
 
-defineSeed(108, 103, makeCastMap([Q$Serializable, Q$Throwable]), ServiceDefTarget$NoServiceEntryPointSpecifiedException_0);
+defineSeed(111, 106, makeCastMap([Q$Serializable, Q$Throwable]), ServiceDefTarget$NoServiceEntryPointSpecifiedException_0);
 function StatusCodeException_0(statusCode, encodedResponse){
-  RuntimeException_2.call(this, statusCode + ' ' + encodedResponse, null);
+  RuntimeException_1.call(this, statusCode + ' ' + encodedResponse, null);
 }
 
-defineSeed(109, 103, makeCastMap([Q$Serializable, Q$Throwable]), StatusCodeException_0);
+defineSeed(112, 106, makeCastMap([Q$Serializable, Q$Throwable]), StatusCodeException_0);
 function serialize_0(streamWriter, instance){
   $writeString(streamWriter, instance.nullField);
 }
@@ -1943,7 +2006,7 @@ function $setVersion(this$static, version){
   this$static.version = version;
 }
 
-defineSeed(114, 1, {});
+defineSeed(117, 1, {});
 _.flags = 0;
 _.version = 7;
 function $readObject(this$static){
@@ -1959,7 +2022,7 @@ function $readObject(this$static){
   return id = ($add_3(this$static.seenArray, null) , this$static.seenArray.size_0) , instance = $instantiate(this$static.serializer, this$static, typeSignature) , $set(this$static.seenArray, id - 1, instance) , $deserialize(this$static.serializer, this$static, instance, typeSignature) , instance;
 }
 
-defineSeed(115, 114, {});
+defineSeed(118, 117, {});
 function $addString(this$static, string){
   var index, o;
   if (string == null) {
@@ -1988,15 +2051,17 @@ function $writeString(this$static, value){
   $writeInt(this$static, $addString(this$static, value));
 }
 
-defineSeed(116, 114, {});
+defineSeed(119, 117, {});
 function $getString(this$static, index){
   return index > 0?this$static.stringTable[index - 1]:null;
 }
 
+--></script>
+<script><!--
 function $prepareToRead(this$static, encoded){
   this$static.results = eval(encoded);
   this$static.index_0 = this$static.results.length;
-  $clear(this$static.seenArray);
+  $clear_0(this$static.seenArray);
   $setVersion(this$static, $readInt(this$static));
   $setFlags(this$static, $readInt(this$static));
   if (this$static.version != 7) {
@@ -2008,10 +2073,6 @@ function $prepareToRead(this$static, encoded){
   this$static.stringTable = this$static.results[--this$static.index_0];
 }
 
-function $readByte(this$static){
-  return this$static.results[--this$static.index_0];
-}
-
 function $readInt(this$static){
   return this$static.results[--this$static.index_0];
 }
@@ -2021,7 +2082,7 @@ function ClientSerializationStreamReader_0(serializer){
   this.serializer = serializer;
 }
 
-defineSeed(117, 115, {}, ClientSerializationStreamReader_0);
+defineSeed(120, 118, {}, ClientSerializationStreamReader_0);
 _.index_0 = 0;
 _.results = null;
 _.serializer = null;
@@ -2031,7 +2092,7 @@ function $clinit_ClientSerializationStreamWriter(){
   regex_0 = getQuotingRegex();
 }
 
-function $toString(this$static){
+function $toString_0(this$static){
   var buffer;
   buffer = new StringBuffer_0;
   append(buffer, '' + this$static.version);
@@ -2052,8 +2113,6 @@ function $writeStringTable(this$static, buffer){
   return buffer;
 }
 
---></script>
-<script><!--
 function ClientSerializationStreamWriter_0(moduleBaseURL, serializationPolicyStrongName){
   $clinit_ClientSerializationStreamWriter();
   this.objectMap = new IdentityHashMap_0;
@@ -2111,9 +2170,9 @@ function quoteString(str){
   return out + str.substring(idx);
 }
 
-defineSeed(118, 116, {}, ClientSerializationStreamWriter_0);
+defineSeed(121, 119, {}, ClientSerializationStreamWriter_0);
 _.toString$ = function toString_6(){
-  return $toString(this);
+  return $toString_0(this);
 }
 ;
 _.encodeBuffer = null;
@@ -2168,17 +2227,17 @@ function RemoteServiceProxy_0(moduleBaseURL, serializer){
   this.moduleBaseURL = moduleBaseURL;
   this.remoteServiceURL = moduleBaseURL + 'weatherService';
   this.serializer = serializer;
-  this.serializationPolicyName = '8E59165A703CD4DAE3BDFF0ECACE8FC6';
+  this.serializationPolicyName = 'DBE134BD6A43C1B11E9D5346F76E08FB';
 }
 
 function getEncodedInstance(encodedResponse){
   if (encodedResponse.indexOf('//OK') == 0 || encodedResponse.indexOf('//EX') == 0) {
-    return $substring(encodedResponse, 4);
+    return encodedResponse.substr(4, encodedResponse.length - 4);
   }
   return encodedResponse;
 }
 
-defineSeed(119, 1, {});
+defineSeed(122, 1, {});
 _.moduleBaseURL = null;
 _.remoteServiceURL = null;
 _.rpcRequestBuilder = null;
@@ -2187,7 +2246,7 @@ _.serializationPolicyName = null;
 _.serializer = null;
 function $finish_0(this$static, callback){
   var payload;
-  payload = $toString(this$static.streamWriter);
+  payload = $toString_0(this$static.streamWriter);
   !!$stats && $stats_0($timeStat(this$static.statsContext, this$static.fullServiceName, 'requestSerialized'));
   return $doInvoke(this$static.this$0, this$static.fullServiceName, this$static.statsContext, payload, callback);
 }
@@ -2199,7 +2258,7 @@ function RemoteServiceProxy$ServiceHelper_0(this$0){
   this.statsContext = new RpcStatsContext_0;
 }
 
-defineSeed(120, 1, {}, RemoteServiceProxy$ServiceHelper_0);
+defineSeed(123, 1, {}, RemoteServiceProxy$ServiceHelper_0);
 _.fullServiceName = null;
 _.methodName = null;
 _.statsContext = null;
@@ -2236,7 +2295,7 @@ function $onResponseReceived(this$static, response){
     !!$stats && $stats_0($timeStat(this$static.statsContext, this$static.methodName, 'responseDeserialized'));
   }
   try {
-    !caught?(dynamicCast(result, Q$WeatherWrapper) , new StringBuilder_0):$onFailure(this$static.callback, caught);
+    !caught?$onSuccess(this$static.callback, dynamicCast(result, Q$WeatherWrapper)):$onFailure(this$static.callback, caught);
   }
    finally {
     !!$stats && $stats_0($timeStat(this$static.statsContext, this$static.methodName, 'end'));
@@ -2250,7 +2309,7 @@ function RequestCallbackAdapter_0(streamFactory, methodName, statsContext, callb
   this.statsContext = statsContext;
 }
 
-defineSeed(121, 1, {}, RequestCallbackAdapter_0);
+defineSeed(124, 1, {}, RequestCallbackAdapter_0);
 _.callback = null;
 _.methodName = null;
 _.statsContext = null;
@@ -2276,63 +2335,63 @@ function values_1(){
   return $VALUES_1;
 }
 
-defineSeed(122, 35, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]));
+defineSeed(125, 35, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]));
 var $VALUES_1, BOOLEAN, BYTE, CHAR, DOUBLE, FLOAT, INT, LONG, OBJECT, SHORT, STRING, VOID;
 function RequestCallbackAdapter$ResponseReader$1_0(){
   Enum_0.call(this, 'BOOLEAN', 0);
 }
 
-defineSeed(123, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$1_0);
+defineSeed(126, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$1_0);
 function RequestCallbackAdapter$ResponseReader$10_0(){
   Enum_0.call(this, 'STRING', 9);
 }
 
-defineSeed(124, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$10_0);
+defineSeed(127, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$10_0);
 function RequestCallbackAdapter$ResponseReader$11_0(){
   Enum_0.call(this, 'VOID', 10);
 }
 
-defineSeed(125, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$11_0);
+defineSeed(128, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$11_0);
 function RequestCallbackAdapter$ResponseReader$2_0(){
   Enum_0.call(this, 'BYTE', 1);
 }
 
-defineSeed(126, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$2_0);
+defineSeed(129, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$2_0);
 function RequestCallbackAdapter$ResponseReader$3_0(){
   Enum_0.call(this, 'CHAR', 2);
 }
 
-defineSeed(127, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$3_0);
+defineSeed(130, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$3_0);
 function RequestCallbackAdapter$ResponseReader$4_0(){
   Enum_0.call(this, 'DOUBLE', 3);
 }
 
-defineSeed(128, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$4_0);
+defineSeed(131, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$4_0);
 function RequestCallbackAdapter$ResponseReader$5_0(){
   Enum_0.call(this, 'FLOAT', 4);
 }
 
-defineSeed(129, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$5_0);
+defineSeed(132, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$5_0);
 function RequestCallbackAdapter$ResponseReader$6_0(){
   Enum_0.call(this, 'INT', 5);
 }
 
-defineSeed(130, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$6_0);
+defineSeed(133, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$6_0);
 function RequestCallbackAdapter$ResponseReader$7_0(){
   Enum_0.call(this, 'LONG', 6);
 }
 
-defineSeed(131, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$7_0);
+defineSeed(134, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$7_0);
 function RequestCallbackAdapter$ResponseReader$8_0(){
   Enum_0.call(this, 'OBJECT', 7);
 }
 
-defineSeed(132, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$8_0);
+defineSeed(135, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$8_0);
 function RequestCallbackAdapter$ResponseReader$9_0(){
   Enum_0.call(this, 'SHORT', 8);
 }
 
-defineSeed(133, 122, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$9_0);
+defineSeed(136, 125, makeCastMap([Q$RequestCallbackAdapter$ResponseReader, Q$Serializable, Q$Comparable, Q$Enum]), RequestCallbackAdapter$ResponseReader$9_0);
 function $bytesStat(this$static, method, bytes, eventType){
   var stat = this$static.timeStat(method, eventType);
   stat.bytes = bytes;
@@ -2355,7 +2414,7 @@ function RpcStatsContext_1(requestId){
   this.requestId = requestId;
 }
 
-defineSeed(134, 1, {}, RpcStatsContext_0);
+defineSeed(137, 1, {}, RpcStatsContext_0);
 _.timeStat = function timeStat(method, eventType){
   return $timeStat(this, method, eventType);
 }
@@ -2383,7 +2442,7 @@ function SerializerBase_0(methodMapNative){
   this.methodMapNative = methodMapNative;
 }
 
-defineSeed(135, 1, {});
+defineSeed(138, 1, {});
 _.methodMapNative = null;
 function $deserialize_0(this$static, stream, instance, signature){
   this$static[signature][1](stream, instance);
@@ -2391,6 +2450,15 @@ function $deserialize_0(this$static, stream, instance, signature){
 
 function $instantiate_0(this$static, stream, signature){
   return this$static[signature][0](stream);
+}
+
+function $replaceNode(node, newNode){
+  var p = node.parentNode;
+  if (!p) {
+    return;
+  }
+  p.insertBefore(newNode, node);
+  p.removeChild(node);
 }
 
 function $setElement(this$static, elem){
@@ -2401,17 +2469,12 @@ function $sinkBitlessEvent_0(this$static, eventTypeName){
   $sinkBitlessEvent(this$static.element, eventTypeName);
 }
 
-function setVisible(elem, visible){
-  elem.style.display = visible?'':'none';
-  elem.setAttribute('aria-hidden', String(!visible));
-}
-
-defineSeed(141, 1, makeCastMap([Q$HasVisibility, Q$UIObject]));
+defineSeed(144, 1, makeCastMap([Q$HasVisibility, Q$UIObject]));
 _.toString$ = function toString_7(){
   if (!this.element) {
     return '(null handle)';
   }
-  return this.element.outerHTML;
+  return $toString(this.element);
 }
 ;
 _.element = null;
@@ -2429,7 +2492,7 @@ function $fireEvent_0(this$static, event_0){
 function $onAttach(this$static){
   var bitsToAdd;
   if (this$static.attached) {
-    throw new IllegalStateException_0("Should only call onAttach when the widget is detached from the browser's document");
+    throw new IllegalStateException_1("Should only call onAttach when the widget is detached from the browser's document");
   }
   this$static.attached = true;
   $setEventListener(this$static.element, this$static);
@@ -2445,7 +2508,7 @@ function $onBrowserEvent(this$static, event_0){
   switch ($eventGetTypeInt(event_0.type)) {
     case 16:
     case 32:
-      related = event_0.relatedTarget;
+      related = $eventGetRelatedTarget(event_0);
       if (!!related && $isOrHasChild(this$static.element, related)) {
         return;
       }
@@ -2456,7 +2519,7 @@ function $onBrowserEvent(this$static, event_0){
 
 function $onDetach(this$static){
   if (!this$static.attached) {
-    throw new IllegalStateException_0("Should only call onDetach when the widget is attached to the browser's document");
+    throw new IllegalStateException_1("Should only call onDetach when the widget is attached to the browser's document");
   }
   try {
     this$static.doDetachChildren();
@@ -2475,8 +2538,15 @@ function $removeFromParent(this$static){
     this$static.parent_0.remove(this$static);
   }
    else if (this$static.parent_0) {
-    throw new IllegalStateException_0("This widget's parent does not implement HasWidgets");
+    throw new IllegalStateException_1("This widget's parent does not implement HasWidgets");
   }
+}
+
+function $replaceElement(this$static, elem){
+  this$static.attached && (this$static.element.__listener = null , undefined);
+  !!this$static.element && $replaceNode(this$static.element, elem);
+  this$static.element = elem;
+  this$static.attached && $setEventListener(this$static.element, this$static);
 }
 
 function $setParent(this$static, parent_0){
@@ -2492,14 +2562,14 @@ function $setParent(this$static, parent_0){
   }
    else {
     if (oldParent) {
-      throw new IllegalStateException_0('Cannot set a new parent without first clearing the old parent');
+      throw new IllegalStateException_1('Cannot set a new parent without first clearing the old parent');
     }
     this$static.parent_0 = parent_0;
     parent_0.attached && this$static.onAttach();
   }
 }
 
-defineSeed(140, 141, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(143, 144, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.doAttachChildren = function doAttachChildren(){
 }
 ;
@@ -2521,7 +2591,16 @@ _.attached = false;
 _.eventsToSink = 0;
 _.handlerManager = null;
 _.parent_0 = null;
-defineSeed(139, 140, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+function $clear(this$static){
+  var it;
+  it = new WidgetCollection$WidgetIterator_0(this$static.children);
+  while (it.index_0 < it.this$0.size_0 - 1) {
+    $next(it);
+    $remove_2(it);
+  }
+}
+
+defineSeed(142, 143, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.doAttachChildren = function doAttachChildren_0(){
   tryCommand(this, ($clinit_AttachDetachException() , attachCommand));
 }
@@ -2554,10 +2633,10 @@ function $remove(this$static, w){
 }
 
 function ComplexPanel_0(){
-  this.children = new WidgetCollection_0;
+  this.children = new WidgetCollection_0(this);
 }
 
-defineSeed(138, 139, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(141, 142, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.iterator = function iterator_0(){
   return new WidgetCollection$WidgetIterator_0(this.children);
 }
@@ -2576,7 +2655,7 @@ function changeToStaticPositioning(elem){
   elem.style['position'] = '';
 }
 
-defineSeed(137, 138, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(140, 141, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.remove = function remove_0(w){
   var removed;
   removed = $remove(this, w);
@@ -2601,7 +2680,7 @@ function tryCommand(hasWidgets, c){
   for (w$iterator = hasWidgets.iterator(); w$iterator.hasNext();) {
     w = dynamicCast(w$iterator.next(), Q$Widget);
     try {
-      c.execute(w);
+      c.execute_0(w);
     }
      catch ($e0) {
       $e0 = caught_0($e0);
@@ -2619,21 +2698,21 @@ function tryCommand(hasWidgets, c){
   }
 }
 
-defineSeed(142, 59, makeCastMap([Q$UmbrellaException, Q$Serializable, Q$Throwable]), AttachDetachException_0);
+defineSeed(145, 59, makeCastMap([Q$UmbrellaException, Q$Serializable, Q$Throwable]), AttachDetachException_0);
 var attachCommand, detachCommand;
 function AttachDetachException$1_0(){
 }
 
-defineSeed(143, 1, {}, AttachDetachException$1_0);
-_.execute = function execute(w){
+defineSeed(146, 1, {}, AttachDetachException$1_0);
+_.execute_0 = function execute_2(w){
   w.onAttach();
 }
 ;
 function AttachDetachException$2_0(){
 }
 
-defineSeed(144, 1, {}, AttachDetachException$2_0);
-_.execute = function execute_0(w){
+defineSeed(147, 1, {}, AttachDetachException$2_0);
+_.execute_0 = function execute_3(w){
   $onDetach(w);
 }
 ;
@@ -2641,11 +2720,11 @@ function $setEnabled(this$static, enabled){
   this$static.element['disabled'] = !enabled;
 }
 
-defineSeed(147, 140, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(150, 143, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.onAttach = function onAttach_0(){
   var tabIndex;
   $onAttach(this);
-  tabIndex = $getTabIndex(this.element);
+  tabIndex = this.element.tabIndex;
   -1 == tabIndex && (this.element.tabIndex = 0 , undefined);
 }
 ;
@@ -2653,16 +2732,16 @@ function ButtonBase_0(elem){
   this.element = elem;
 }
 
-defineSeed(146, 147, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
-function Button_0(handler){
+defineSeed(149, 150, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+function Button_0(html, handler){
   var e;
-  ButtonBase_0.call(this, (e = $doc.createElement('BUTTON') , e.setAttribute('type', 'button') , e));
+  ButtonBase_0.call(this, (e = $doc.createElement('BUTTON') , e.type = 'button' , e));
   this.element['className'] = 'gwt-Button';
-  this.element.innerHTML = 'Submit';
+  $setInnerHTML(this.element, html);
   $addDomHandler(this, handler, ($clinit_ClickEvent() , $clinit_ClickEvent() , TYPE));
 }
 
-defineSeed(145, 146, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Button_0);
+defineSeed(148, 149, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Button_0);
 function $getWidgetTd(this$static, w){
   if (w.parent_0 != this$static) {
     return null;
@@ -2673,14 +2752,22 @@ function $getWidgetTd(this$static, w){
 function $setCellVerticalAlignment(this$static, w, align){
   var td;
   td = $getWidgetTd(this$static, w);
-  !!td && setStyleAttribute(td, align.verticalAlignString);
+  !!td && setStyleAttribute(td, 'verticalAlign', align.verticalAlignString);
 }
 
-defineSeed(148, 138, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+function CellPanel_0(){
+  ComplexPanel_0.call(this);
+  this.table = $doc.createElement('table');
+  this.body_0 = $doc.createElement('tbody');
+  $appendChild(this.table, ($clinit_PotentialElement() , $resolve(this.body_0)));
+  $setElement(this, this.table);
+}
+
+defineSeed(151, 141, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.body_0 = null;
 _.table = null;
-function $setTextOrHtml(this$static){
-  this$static.element.textContent = 'City: ';
+function $setTextOrHtml(this$static, content_0, isHtml){
+  isHtml?$setInnerHTML(this$static.element, content_0):$setInnerText(this$static.element, content_0);
   if (this$static.textDir != this$static.initialElementDir) {
     this$static.textDir = this$static.initialElementDir;
     setDirectionOnElement(this$static.element, this$static.initialElementDir);
@@ -2693,51 +2780,58 @@ function DirectionalTextHelper_0(element){
   this.textDir = this.initialElementDir;
 }
 
-defineSeed(149, 1, {}, DirectionalTextHelper_0);
+defineSeed(152, 1, {}, DirectionalTextHelper_0);
 _.element = null;
 _.initialElementDir = null;
 _.textDir = null;
+function FlowPanel_0(){
+  ComplexPanel_0.call(this);
+  $setElement(this, $doc.createElement('div'));
+}
+
+defineSeed(153, 141, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), FlowPanel_0);
 function LabelBase_0(element){
   this.element = element;
   this.directionalTextHelper = new DirectionalTextHelper_0(this.element);
 }
 
-defineSeed(152, 140, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(156, 143, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 _.directionalTextHelper = null;
 function Label_0(element){
   LabelBase_0.call(this, element, $equalsIgnoreCase('span', element.tagName));
 }
 
-function Label_1(){
+function Label_1(text){
   LabelBase_0.call(this, $doc.createElement('div'));
   this.element['className'] = 'gwt-Label';
-  $setTextOrHtml(this.directionalTextHelper);
+  $setTextOrHtml(this.directionalTextHelper, text, false);
 }
 
-defineSeed(151, 152, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Label_1);
-function HTML_0(){
+defineSeed(155, 156, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Label_1);
+function HTML_0(html){
   Label_0.call(this, $doc.createElement('div'));
   this.element['className'] = 'gwt-HTML';
+  $setTextOrHtml(this.directionalTextHelper, html, true);
 }
 
-defineSeed(150, 151, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), HTML_0);
+defineSeed(154, 155, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), HTML_0);
 function $clinit_HasHorizontalAlignment(){
   $clinit_HasHorizontalAlignment = nullMethod;
   new HasHorizontalAlignment$HorizontalAlignmentConstant_0(($clinit_Style$TextAlign() , 'center'));
-  new HasHorizontalAlignment$HorizontalAlignmentConstant_0('justify');
+  ALIGN_JUSTIFY = new HasHorizontalAlignment$HorizontalAlignmentConstant_0('justify');
   ALIGN_LEFT = new HasHorizontalAlignment$HorizontalAlignmentConstant_0('left');
   new HasHorizontalAlignment$HorizontalAlignmentConstant_0('right');
   ALIGN_LOCALE_START = ALIGN_LEFT;
   ALIGN_DEFAULT = ALIGN_LOCALE_START;
 }
 
-var ALIGN_DEFAULT, ALIGN_LEFT, ALIGN_LOCALE_START;
-defineSeed(153, 1, {});
+var ALIGN_DEFAULT, ALIGN_JUSTIFY, ALIGN_LEFT, ALIGN_LOCALE_START;
+defineSeed(157, 1, {});
 function HasHorizontalAlignment$HorizontalAlignmentConstant_0(textAlignString){
   this.textAlignString = textAlignString;
 }
 
-defineSeed(154, 153, {}, HasHorizontalAlignment$HorizontalAlignmentConstant_0);
+defineSeed(158, 157, {}, HasHorizontalAlignment$HorizontalAlignmentConstant_0);
 _.textAlignString = null;
 function $clinit_HasVerticalAlignment(){
   $clinit_HasVerticalAlignment = nullMethod;
@@ -2751,13 +2845,17 @@ function HasVerticalAlignment$VerticalAlignmentConstant_0(verticalAlignString){
   this.verticalAlignString = verticalAlignString;
 }
 
-defineSeed(155, 1, {}, HasVerticalAlignment$VerticalAlignmentConstant_0);
+defineSeed(159, 1, {}, HasVerticalAlignment$VerticalAlignmentConstant_0);
 _.verticalAlignString = null;
 function $add_1(this$static, w){
   var td, td_0;
-  td = (td_0 = $doc.createElement('td') , td_0['align'] = this$static.horzAlign.textAlignString , setStyleAttribute(td_0, this$static.vertAlign.verticalAlignString) , td_0);
+  td = (td_0 = $doc.createElement('td') , td_0['align'] = this$static.horzAlign.textAlignString , setStyleAttribute(td_0, 'verticalAlign', this$static.vertAlign.verticalAlignString) , td_0);
   $appendChild(this$static.tableRow, ($clinit_PotentialElement() , $resolve(td)));
   $add(this$static, w, td);
+}
+
+function $setHorizontalAlignment(this$static, align){
+  this$static.horzAlign = align;
 }
 
 function $setVerticalAlignment(this$static, align){
@@ -2765,20 +2863,16 @@ function $setVerticalAlignment(this$static, align){
 }
 
 function HorizontalPanel_0(){
-  ComplexPanel_0.call(this);
-  this.table = $doc.createElement('table');
-  this.body_0 = $doc.createElement('tbody');
-  $appendChild(this.table, ($clinit_PotentialElement() , $resolve(this.body_0)));
-  $setElement(this, this.table);
+  CellPanel_0.call(this);
   this.horzAlign = ($clinit_HasHorizontalAlignment() , ALIGN_DEFAULT);
   this.vertAlign = ($clinit_HasVerticalAlignment() , ALIGN_TOP);
   this.tableRow = $doc.createElement('tr');
-  $appendChild(this.body_0, $resolve(this.tableRow));
+  $appendChild(this.body_0, ($clinit_PotentialElement() , $resolve(this.tableRow)));
   this.table['cellSpacing'] = '0';
   this.table['cellPadding'] = '0';
 }
 
-defineSeed(156, 148, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), HorizontalPanel_0);
+defineSeed(160, 151, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), HorizontalPanel_0);
 _.remove = function remove_1(w){
   var removed, td;
   td = $getParentElement(w.element);
@@ -2788,6 +2882,77 @@ _.remove = function remove_1(w){
 }
 ;
 _.tableRow = null;
+function $clinit_Image(){
+  $clinit_Image = nullMethod;
+  new HashMap_0;
+}
+
+function $changeState(this$static, newState){
+  this$static.state = newState;
+}
+
+function Image_1(url){
+  $changeState(this, new Image$UnclippedState_0(this, url));
+  this.element['className'] = 'gwt-Image';
+}
+
+function Image_2(url){
+  $clinit_Image();
+  Image_1.call(this, ($clinit_UriUtils() , new SafeUriString_0(url)));
+}
+
+defineSeed(161, 143, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), Image_2);
+_.onBrowserEvent = function onBrowserEvent_0(event_0){
+  $eventGetTypeInt(event_0.type) == 32768 && !!this.state && (this.element['__gwtLastUnhandledEvent'] = '' , undefined);
+  $onBrowserEvent(this, event_0);
+}
+;
+_.onLoad = function onLoad_0(){
+  $onLoad(this.state, this);
+}
+;
+_.state = null;
+--></script>
+<script><!--
+function $onLoad(this$static, image){
+  var unhandledEvent;
+  unhandledEvent = $getPropertyString(image.element, '__gwtLastUnhandledEvent');
+  $equals('load', unhandledEvent) && (this$static.syntheticEventCommand = new Image$State$1_0(this$static, image) , $scheduleDeferred(($clinit_SchedulerImpl() , INSTANCE), this$static.syntheticEventCommand));
+}
+
+defineSeed(162, 1, {});
+_.syntheticEventCommand = null;
+function $execute(this$static){
+  var evt, evt_0;
+  if (this$static.val$image.state != this$static.this$1 || this$static != this$static.this$1.syntheticEventCommand) {
+    return;
+  }
+  this$static.this$1.syntheticEventCommand = null;
+  if (!this$static.val$image.attached) {
+    this$static.val$image.element['__gwtLastUnhandledEvent'] = 'load';
+    return;
+  }
+  evt = (evt_0 = $doc.createEvent('HTMLEvents') , evt_0.initEvent('load', false, false) , evt_0);
+  $dispatchEvent(this$static.val$image.element, evt);
+}
+
+function Image$State$1_0(this$1, val$image){
+  this.this$1 = this$1;
+  this.val$image = val$image;
+}
+
+defineSeed(163, 1, {}, Image$State$1_0);
+_.this$1 = null;
+_.val$image = null;
+function Image$UnclippedState_0(image, url){
+  $replaceElement(image, $doc.createElement('img'));
+  $sinkEvents(image.element, 32768);
+  image.eventsToSink == -1?$sinkEvents(image.element, 133398655 | (image.element.__eventBits || 0)):(image.eventsToSink |= 133398655);
+  !!image.state && (image.element['__gwtLastUnhandledEvent'] = '' , undefined);
+  $imgSetSrc(image.element, url.uri);
+}
+
+defineSeed(164, 162, {}, Image$UnclippedState_0);
 function $clinit_PotentialElement(){
   $clinit_PotentialElement = nullMethod;
   declareShim();
@@ -2833,7 +2998,7 @@ function detachNow(widget){
     $onDetach(widget);
   }
    finally {
-    $remove_4(widgetsToDetach, widget);
+    $remove_5(widgetsToDetach, widget);
   }
 }
 
@@ -2870,20 +3035,20 @@ function get(id){
   return rp;
 }
 
-defineSeed(158, 137, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel_0);
+defineSeed(166, 140, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel_0);
 var maybeDetachCommand, rootPanels, widgetsToDetach;
 function RootPanel$1_0(){
 }
 
-defineSeed(159, 1, {}, RootPanel$1_0);
-_.execute = function execute_1(w){
+defineSeed(167, 1, {}, RootPanel$1_0);
+_.execute_0 = function execute_4(w){
   w.attached && $onDetach(w);
 }
 ;
 function RootPanel$2_0(){
 }
 
-defineSeed(160, 1, makeCastMap([Q$CloseHandler, Q$EventHandler]), RootPanel$2_0);
+defineSeed(168, 1, makeCastMap([Q$CloseHandler, Q$EventHandler]), RootPanel$2_0);
 _.onClose = function onClose_0(closeEvent){
   detachWidgets();
 }
@@ -2892,20 +3057,20 @@ function RootPanel$DefaultRootPanel_0(){
   RootPanel_0.call(this, $doc.body);
 }
 
-defineSeed(161, 158, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel$DefaultRootPanel_0);
+defineSeed(169, 166, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$RootPanel, Q$UIObject, Q$Widget]), RootPanel$DefaultRootPanel_0);
 function ValueBoxBase_0(elem){
   this.element = elem;
   new AutoDirectionHandler_0;
 }
 
-defineSeed(164, 147, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
-_.onBrowserEvent = function onBrowserEvent_0(event_0){
+defineSeed(172, 150, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+_.onBrowserEvent = function onBrowserEvent_1(event_0){
   var type;
   type = $eventGetTypeInt(event_0.type);
   (type & 896) != 0?$onBrowserEvent(this, event_0):$onBrowserEvent(this, event_0);
 }
 ;
-_.onLoad = function onLoad_0(){
+_.onLoad = function onLoad_1(){
 }
 ;
 function $clinit_TextBoxBase(){
@@ -2913,7 +3078,7 @@ function $clinit_TextBoxBase(){
   $clinit_ValueBoxBase$TextAlignment();
 }
 
-defineSeed(163, 164, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
+defineSeed(171, 172, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]));
 function TextBox_0(){
   var e;
   $clinit_TextBoxBase();
@@ -2925,9 +3090,7 @@ function TextBox_1(element){
   this.element['className'] = 'gwt-TextBox';
 }
 
-defineSeed(162, 163, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), TextBox_0);
---></script>
-<script><!--
+defineSeed(170, 171, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), TextBox_0);
 function $clinit_ValueBoxBase$TextAlignment(){
   $clinit_ValueBoxBase$TextAlignment = nullMethod;
   CENTER_0 = new ValueBoxBase$TextAlignment$1_0;
@@ -2942,28 +3105,45 @@ function values_2(){
   return $VALUES_2;
 }
 
-defineSeed(165, 35, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]));
+defineSeed(173, 35, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]));
 var $VALUES_2, CENTER_0, JUSTIFY_0, LEFT_0, RIGHT_0;
 function ValueBoxBase$TextAlignment$1_0(){
   Enum_0.call(this, 'CENTER', 0);
 }
 
-defineSeed(166, 165, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$1_0);
+defineSeed(174, 173, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$1_0);
 function ValueBoxBase$TextAlignment$2_0(){
   Enum_0.call(this, 'JUSTIFY', 1);
 }
 
-defineSeed(167, 165, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$2_0);
+defineSeed(175, 173, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$2_0);
 function ValueBoxBase$TextAlignment$3_0(){
   Enum_0.call(this, 'LEFT', 2);
 }
 
-defineSeed(168, 165, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$3_0);
+defineSeed(176, 173, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$3_0);
 function ValueBoxBase$TextAlignment$4_0(){
   Enum_0.call(this, 'RIGHT', 3);
 }
 
-defineSeed(169, 165, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$4_0);
+defineSeed(177, 173, makeCastMap([Q$ValueBoxBase$TextAlignment, Q$Serializable, Q$Comparable, Q$Enum]), ValueBoxBase$TextAlignment$4_0);
+function VerticalPanel_0(){
+  CellPanel_0.call(this);
+  this.horzAlign = ($clinit_HasHorizontalAlignment() , ALIGN_DEFAULT);
+  this.vertAlign = ($clinit_HasVerticalAlignment() , ALIGN_TOP);
+  this.table['cellSpacing'] = '0';
+  this.table['cellPadding'] = '0';
+}
+
+defineSeed(178, 151, makeCastMap([Q$HasAttachHandlers, Q$HasHandlers, Q$EventListener, Q$HasVisibility, Q$IsWidget, Q$UIObject, Q$Widget]), VerticalPanel_0);
+_.remove = function remove_2(w){
+  var removed, td;
+  td = $getParentElement(w.element);
+  removed = $remove(this, w);
+  removed && $removeChild(this.body_0, $getParentElement(td));
+  return removed;
+}
+;
 function $add_2(this$static, w){
   $insert(this$static, w, this$static.size_0);
 }
@@ -3018,16 +3198,18 @@ function $remove_1(this$static, w){
   $remove_0(this$static, index);
 }
 
-function WidgetCollection_0(){
+function WidgetCollection_0(parent_0){
+  this.parent_0 = parent_0;
   this.array = initDim(_3Lcom_google_gwt_user_client_ui_Widget_2_classLit, makeCastMap([Q$Serializable]), Q$Widget, 4, 0);
 }
 
-defineSeed(170, 1, {}, WidgetCollection_0);
+defineSeed(179, 1, {}, WidgetCollection_0);
 _.iterator = function iterator_1(){
   return new WidgetCollection$WidgetIterator_0(this);
 }
 ;
 _.array = null;
+_.parent_0 = null;
 _.size_0 = 0;
 function $next(this$static){
   if (this$static.index_0 >= this$static.this$0.size_0) {
@@ -3036,11 +3218,18 @@ function $next(this$static){
   return this$static.this$0.array[++this$static.index_0];
 }
 
+function $remove_2(this$static){
+  if (this$static.index_0 < 0 || this$static.index_0 >= this$static.this$0.size_0) {
+    throw new IllegalStateException_0;
+  }
+  this$static.this$0.parent_0.remove(this$static.this$0.array[this$static.index_0--]);
+}
+
 function WidgetCollection$WidgetIterator_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(171, 1, {}, WidgetCollection$WidgetIterator_0);
+defineSeed(180, 1, {}, WidgetCollection$WidgetIterator_0);
 _.hasNext = function hasNext(){
   return this.index_0 < this.this$0.size_0 - 1;
 }
@@ -3150,13 +3339,13 @@ function values_3(){
   return $VALUES_3;
 }
 
-defineSeed(175, 35, makeCastMap([Q$XMLHttpRequest$ResponseType, Q$Serializable, Q$Comparable, Q$Enum]), XMLHttpRequest$ResponseType_0);
+defineSeed(184, 35, makeCastMap([Q$XMLHttpRequest$ResponseType, Q$Serializable, Q$Comparable, Q$Enum]), XMLHttpRequest$ResponseType_0);
 _.responseTypeString = null;
 var $VALUES_3, ArrayBuffer, Default;
 function SimpleEventBus$1_0(){
 }
 
-defineSeed(176, 1, {}, SimpleEventBus$1_0);
+defineSeed(185, 1, {}, SimpleEventBus$1_0);
 function SimpleEventBus$2_0(this$0, val$type, val$handler){
   this.this$0 = this$0;
   this.val$type = val$type;
@@ -3164,35 +3353,106 @@ function SimpleEventBus$2_0(this$0, val$type, val$handler){
   this.val$handler = val$handler;
 }
 
-defineSeed(177, 1, makeCastMap([Q$SimpleEventBus$Command]), SimpleEventBus$2_0);
+defineSeed(186, 1, makeCastMap([Q$SimpleEventBus$Command]), SimpleEventBus$2_0);
 _.this$0 = null;
 _.val$handler = null;
 _.val$source = null;
 _.val$type = null;
 function $onModuleLoad_0(this$static){
+  var html, add, list, config, help, hPanel;
+  html = new StringBuilder_0;
+  html.impl.string += '<div id="info-page">';
+  html.impl.string += '<h1>Welcome<\/h1>';
+  html.impl.string += '<p>Your list of cities to report weather on is empty!.<\/p>';
+  html.impl.string += '<p>Click the plus button below to add city.<\/p>';
+  html.impl.string += '<p>Enjoy!<\/p>';
+  html.impl.string += '<\/div>';
+  $clear(get('content'));
+  $add_0(get('content'), new HTML_0(html.impl.string));
+  add = new Button_0('Add', new Weather$3_0(this$static));
+  list = new Button_0('List', new Weather$4_0);
+  config = new Button_0('Config', new Weather$5_0);
+  help = new Button_0('Help', new Weather$6_0);
+  hPanel = new HorizontalPanel_0;
+  $add_1(hPanel, add);
+  $add_1(hPanel, list);
+  $add_1(hPanel, config);
+  $add_1(hPanel, help);
+  $setHorizontalAlignment(hPanel, ($clinit_HasHorizontalAlignment() , ALIGN_JUSTIFY));
+  hPanel.element.style['width'] = '100%';
+  $add_0(get('toolbar'), hPanel);
+  return;
+}
+
+function $showAddCityView(this$static){
   var inputPanel, lbl;
   inputPanel = new HorizontalPanel_0;
   $setVerticalAlignment(inputPanel, ($clinit_HasVerticalAlignment() , ALIGN_MIDDLE));
-  lbl = new Label_1;
+  lbl = new Label_1('City: ');
   $add_1(inputPanel, lbl);
   this$static.txBox = new TextBox_0;
   this$static.txBox.element.size = 20;
   $add_1(inputPanel, this$static.txBox);
-  this$static.btnSubmit = new Button_0(new Weather$1_0(this$static));
+  this$static.btnSubmit = new Button_0('Submit', new Weather$1_0(this$static));
   $addDomHandler(this$static.txBox, new Weather$2_0(this$static), ($clinit_KeyPressEvent() , $clinit_KeyPressEvent() , TYPE_0));
   $add_1(inputPanel, this$static.btnSubmit);
   $setCellVerticalAlignment(inputPanel, this$static.btnSubmit, ALIGN_BOTTOM);
-  $add_0(get('input-container'), inputPanel);
-  this$static.weatherHtml = new HTML_0;
-  $add_0(get('output-container'), this$static.weatherHtml);
+  $add_0(get('content'), inputPanel);
+}
+
+function $updateCurrent(city, icon, temp_f, temp_c, humidity){
+  var c, flowPanel, h, image, t_c, t_f;
+  c = new Label_1(city);
+  t_f = new Label_1(temp_f);
+  t_c = new Label_1(temp_c);
+  image = new Image_2('http://www.google.com' + icon);
+  h = new Label_1(humidity);
+  flowPanel = new FlowPanel_0;
+  $add(flowPanel, c, flowPanel.element);
+  $add(flowPanel, image, flowPanel.element);
+  $add(flowPanel, t_f, flowPanel.element);
+  $add(flowPanel, t_c, flowPanel.element);
+  $add(flowPanel, h, flowPanel.element);
+  $add_0(get('content'), flowPanel);
+}
+
+function $updateForecast(this$static, forecastInformation, currentConditions, forecasts){
+  $clear(get('content'));
+  $clear(get('content'));
+  $showAddCityView(this$static);
+  $updateCurrent(forecastInformation.city, currentConditions.icon, currentConditions.temp_f, currentConditions.temp_c, currentConditions.humidity);
+  $updateForecast_0(forecasts);
+  $setEnabled(this$static.txBox, true);
+}
+
+function $updateForecast_0(forecasts){
+  var forecast, forecast$index, forecast$max, hPanel, high, img, low, vPanel, wday, tr, td, td_0;
+  vPanel = new VerticalPanel_0;
+  for (forecast$index = 0 , forecast$max = forecasts.length; forecast$index < forecast$max; ++forecast$index) {
+    forecast = forecasts[forecast$index];
+    img = new Image_2('http://www.google.com' + forecast.icon);
+    wday = new Label_1(forecast.day_of_week);
+    high = new Label_1(forecast.high);
+    low = new Label_1(forecast.low);
+    hPanel = new HorizontalPanel_0;
+    $add_1(hPanel, img);
+    $add_1(hPanel, wday);
+    $add_1(hPanel, high);
+    $add_1(hPanel, low);
+    tr = $doc.createElement('tr');
+    td = (td_0 = $doc.createElement('td') , td_0['align'] = vPanel.horzAlign.textAlignString , setStyleAttribute(td_0, 'verticalAlign', vPanel.vertAlign.verticalAlignString) , td_0);
+    $appendChild(tr, ($clinit_PotentialElement() , $resolve(td)));
+    appendChild(vPanel.body_0, tr);
+    $add(vPanel, hPanel, td);
+  }
+  $add_0(get('content'), vPanel);
 }
 
 function $validateAndSubmit(this$static){
   var city, callback;
   city = $trim($getPropertyString(this$static.txBox.element, 'value'));
   $setEnabled(this$static.txBox, false);
-  setVisible(get('output-container').element, false);
-  callback = new Weather$3_0(this$static);
+  callback = new Weather$7_0(this$static);
   $getWeather(this$static.weatherService, city, callback);
 }
 
@@ -3200,32 +3460,75 @@ function Weather_0(){
   this.weatherService = new WeatherService_Proxy_0;
 }
 
-defineSeed(178, 1, {}, Weather_0);
+defineSeed(187, 1, {}, Weather_0);
 _.btnSubmit = null;
 _.txBox = null;
-_.weatherHtml = null;
 function Weather$1_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(179, 1, makeCastMap([Q$ClickHandler, Q$EventHandler, Q$Weather$1]), Weather$1_0);
+defineSeed(188, 1, makeCastMap([Q$ClickHandler, Q$EventHandler]), Weather$1_0);
+_.onClick = function onClick(event_0){
+  $validateAndSubmit(this.this$0);
+}
+;
 _.this$0 = null;
 function Weather$2_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(180, 1, makeCastMap([Q$KeyPressHandler, Q$EventHandler]), Weather$2_0);
+defineSeed(189, 1, makeCastMap([Q$KeyPressHandler, Q$EventHandler]), Weather$2_0);
 _.this$0 = null;
+function Weather$3_0(this$0){
+  this.this$0 = this$0;
+}
+
+defineSeed(190, 1, makeCastMap([Q$ClickHandler, Q$EventHandler]), Weather$3_0);
+_.onClick = function onClick_0(event_0){
+  $clear(get('content'));
+  $showAddCityView(this.this$0);
+}
+;
+_.this$0 = null;
+function Weather$4_0(){
+}
+
+defineSeed(191, 1, makeCastMap([Q$ClickHandler, Q$EventHandler]), Weather$4_0);
+_.onClick = function onClick_1(event_0){
+}
+;
+function Weather$5_0(){
+}
+
+defineSeed(192, 1, makeCastMap([Q$ClickHandler, Q$EventHandler]), Weather$5_0);
+_.onClick = function onClick_2(event_0){
+}
+;
+function Weather$6_0(){
+}
+
+defineSeed(193, 1, makeCastMap([Q$ClickHandler, Q$EventHandler]), Weather$6_0);
+_.onClick = function onClick_3(event_0){
+}
+;
 function $onFailure(this$static, caught){
   alert_0('Error: ' + caught.getMessage());
   $setEnabled(this$static.this$0.txBox, true);
 }
 
-function Weather$3_0(this$0){
+function $onSuccess(this$static, weather){
+  var currentConditions, forecastInformation, forecasts;
+  forecastInformation = weather.forecastInformation;
+  currentConditions = weather.currentConditions;
+  forecasts = weather.forecastConditions;
+  $updateForecast(this$static.this$0, forecastInformation, currentConditions, forecasts);
+}
+
+function Weather$7_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(181, 1, {}, Weather$3_0);
+defineSeed(194, 1, {}, Weather$7_0);
 _.this$0 = null;
 function $clinit_WeatherService_Proxy(){
   $clinit_WeatherService_Proxy = nullMethod;
@@ -3234,7 +3537,7 @@ function $clinit_WeatherService_Proxy(){
 
 function $createStreamWriter(this$static){
   var toReturn, clientSerializationStreamWriter;
-  toReturn = (clientSerializationStreamWriter = new ClientSerializationStreamWriter_0(this$static.moduleBaseURL, this$static.serializationPolicyName) , $clearImpl(clientSerializationStreamWriter.objectMap) , $clearImpl(clientSerializationStreamWriter.stringMap) , $clear(clientSerializationStreamWriter.stringTable) , clientSerializationStreamWriter.encodeBuffer = new StringBuffer_0 , $writeString(clientSerializationStreamWriter, clientSerializationStreamWriter.moduleBaseURL) , $writeString(clientSerializationStreamWriter, clientSerializationStreamWriter.serializationPolicyStrongName) , clientSerializationStreamWriter);
+  toReturn = (clientSerializationStreamWriter = new ClientSerializationStreamWriter_0(this$static.moduleBaseURL, this$static.serializationPolicyName) , $clearImpl(clientSerializationStreamWriter.objectMap) , $clearImpl(clientSerializationStreamWriter.stringMap) , $clear_0(clientSerializationStreamWriter.stringTable) , clientSerializationStreamWriter.encodeBuffer = new StringBuffer_0 , $writeString(clientSerializationStreamWriter, clientSerializationStreamWriter.moduleBaseURL) , $writeString(clientSerializationStreamWriter, clientSerializationStreamWriter.serializationPolicyStrongName) , clientSerializationStreamWriter);
   return toReturn;
 }
 
@@ -3264,17 +3567,17 @@ function WeatherService_Proxy_0(){
   RemoteServiceProxy_0.call(this, getModuleBaseURL(), SERIALIZER);
 }
 
-defineSeed(182, 119, {}, WeatherService_Proxy_0);
+defineSeed(195, 122, {}, WeatherService_Proxy_0);
 var SERIALIZER;
 function $clinit_WeatherService_TypeSerializer(){
   var result, result_0;
   $clinit_WeatherService_TypeSerializer = nullMethod;
-  methodMapNative_0 = (result = {} , result['com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533'] = [instantiate, deserialize, serialize] , result['com.google.gwt.user.client.rpc.RpcTokenException/2345075298'] = [instantiate_0, deserialize_0] , result['com.google.gwt.user.client.rpc.XsrfToken/4254043109'] = [undefined, undefined, serialize_0] , result['com.swietoslawski.weather.shared.CurrentConditions/162178090'] = [instantiate_2, deserialize_3] , result['com.swietoslawski.weather.shared.Forecast/2587521146'] = [instantiate_5, deserialize_6] , result['com.swietoslawski.weather.shared.ForecastInformation/1812623049'] = [instantiate_3, deserialize_4] , result['[Lcom.swietoslawski.weather.shared.Forecast;/2130153464'] = [instantiate_4, deserialize_5] , result['com.swietoslawski.weather.shared.WeatherException/2094505090'] = [instantiate_6, deserialize_7] , result['com.swietoslawski.weather.shared.WeatherWrapper/2968611299'] = [instantiate_7, deserialize_8] , result['java.lang.String/2004016611'] = [instantiate_1, deserialize_2, serialize_1] , result);
+  methodMapNative_0 = (result = {} , result['com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533'] = [instantiate, deserialize, serialize] , result['com.google.gwt.user.client.rpc.RpcTokenException/2345075298'] = [instantiate_0, deserialize_0] , result['com.google.gwt.user.client.rpc.XsrfToken/4254043109'] = [undefined, undefined, serialize_0] , result['com.swietoslawski.weather.shared.CurrentConditions/3333662775'] = [instantiate_2, deserialize_3] , result['com.swietoslawski.weather.shared.Forecast/2587521146'] = [instantiate_5, deserialize_6] , result['com.swietoslawski.weather.shared.ForecastInformation/1812623049'] = [instantiate_3, deserialize_4] , result['[Lcom.swietoslawski.weather.shared.Forecast;/2130153464'] = [instantiate_4, deserialize_5] , result['com.swietoslawski.weather.shared.WeatherException/2094505090'] = [instantiate_6, deserialize_7] , result['com.swietoslawski.weather.shared.WeatherWrapper/2968611299'] = [instantiate_7, deserialize_8] , result['java.lang.String/2004016611'] = [instantiate_1, deserialize_2, serialize_1] , result);
   result_0 = [];
   result_0[getHashCode(Lcom_google_gwt_user_client_rpc_IncompatibleRemoteServiceException_2_classLit)] = 'com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException/3936916533';
   result_0[getHashCode(Lcom_google_gwt_user_client_rpc_RpcTokenException_2_classLit)] = 'com.google.gwt.user.client.rpc.RpcTokenException/2345075298';
   result_0[getHashCode(Lcom_google_gwt_user_client_rpc_XsrfToken_2_classLit)] = 'com.google.gwt.user.client.rpc.XsrfToken/4254043109';
-  result_0[getHashCode(Lcom_swietoslawski_weather_shared_CurrentConditions_2_classLit)] = 'com.swietoslawski.weather.shared.CurrentConditions/162178090';
+  result_0[getHashCode(Lcom_swietoslawski_weather_shared_CurrentConditions_2_classLit)] = 'com.swietoslawski.weather.shared.CurrentConditions/3333662775';
   result_0[getHashCode(Lcom_swietoslawski_weather_shared_Forecast_2_classLit)] = 'com.swietoslawski.weather.shared.Forecast/2587521146';
   result_0[getHashCode(Lcom_swietoslawski_weather_shared_ForecastInformation_2_classLit)] = 'com.swietoslawski.weather.shared.ForecastInformation/1812623049';
   result_0[getHashCode(_3Lcom_swietoslawski_weather_shared_Forecast_2_classLit)] = '[Lcom.swietoslawski.weather.shared.Forecast;/2130153464';
@@ -3288,24 +3591,24 @@ function WeatherService_TypeSerializer_0(){
   SerializerBase_0.call(this, methodMapNative_0);
 }
 
-defineSeed(183, 135, {}, WeatherService_TypeSerializer_0);
+defineSeed(196, 138, {}, WeatherService_TypeSerializer_0);
 var methodMapNative_0 = null;
 function CurrentConditions_0(){
 }
 
-defineSeed(184, 1, makeCastMap([Q$CurrentConditions, Q$Serializable]), CurrentConditions_0);
+defineSeed(197, 1, makeCastMap([Q$CurrentConditions, Q$Serializable]), CurrentConditions_0);
 _.condition = null;
 _.humidity = null;
 _.icon = null;
-_.temp_c = 0;
-_.temp_f = 0;
+_.temp_c = null;
+_.temp_f = null;
 _.wind_condition = null;
 function deserialize_3(streamReader, instance){
   setCondition(instance, $getString(streamReader, $readInt(streamReader)));
   setHumidity(instance, $getString(streamReader, $readInt(streamReader)));
   setIcon(instance, $getString(streamReader, $readInt(streamReader)));
-  setTemp_c(instance, $readByte(streamReader));
-  setTemp_f(instance, $readByte(streamReader));
+  setTemp_c(instance, $getString(streamReader, $readInt(streamReader)));
+  setTemp_f(instance, $getString(streamReader, $readInt(streamReader)));
   setWind_condition(instance, $getString(streamReader, $readInt(streamReader)));
 }
 
@@ -3340,7 +3643,7 @@ function setWind_condition(instance, value){
 function Forecast_0(){
 }
 
-defineSeed(186, 1, makeCastMap([Q$Forecast, Q$Serializable]), Forecast_0);
+defineSeed(199, 1, makeCastMap([Q$Forecast, Q$Serializable]), Forecast_0);
 _.condition = null;
 _.day_of_week = null;
 _.high = null;
@@ -3349,7 +3652,7 @@ _.low = null;
 function ForecastInformation_0(){
 }
 
-defineSeed(187, 1, makeCastMap([Q$ForecastInformation, Q$Serializable]), ForecastInformation_0);
+defineSeed(200, 1, makeCastMap([Q$ForecastInformation, Q$Serializable]), ForecastInformation_0);
 _.city = null;
 _.forecast_date = null;
 function deserialize_4(streamReader, instance){
@@ -3412,10 +3715,10 @@ function setLow(instance, value){
 }
 
 function WeatherException_0(){
-  Exception_0.call(this);
+  $fillInStackTrace();
 }
 
-defineSeed(191, 7, makeCastMap([Q$Serializable, Q$Throwable]), WeatherException_0);
+defineSeed(204, 7, makeCastMap([Q$Serializable, Q$Throwable]), WeatherException_0);
 function deserialize_7(streamReader, instance){
   setDetailMessage(instance, $getString(streamReader, $readInt(streamReader)));
 }
@@ -3427,7 +3730,7 @@ function instantiate_6(streamReader){
 function WeatherWrapper_0(){
 }
 
-defineSeed(193, 1, makeCastMap([Q$WeatherWrapper, Q$Serializable]), WeatherWrapper_0);
+defineSeed(206, 1, makeCastMap([Q$WeatherWrapper, Q$Serializable]), WeatherWrapper_0);
 _.currentConditions = null;
 _.forecastConditions = null;
 _.forecastInformation = null;
@@ -3454,10 +3757,10 @@ function setForecastInformation(instance, value){
 }
 
 function ArrayStoreException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
-defineSeed(195, 6, makeCastMap([Q$Serializable, Q$Throwable]), ArrayStoreException_0);
+defineSeed(208, 6, makeCastMap([Q$Serializable, Q$Throwable]), ArrayStoreException_0);
 function Class_0(){
 }
 
@@ -3497,6 +3800,8 @@ function isInstantiable(seedId){
   return typeof seedId == 'number' && seedId > 0;
 }
 
+--></script>
+<script><!--
 function setClassLiteral(seedId, clazz){
   var proto;
   clazz.seedId = seedId;
@@ -3524,7 +3829,7 @@ function setClassLiteral(seedId, clazz){
   proto.___clazz$ = clazz;
 }
 
-defineSeed(196, 1, {}, Class_0);
+defineSeed(209, 1, {}, Class_0);
 _.toString$ = function toString_8(){
   return ((this.modifiers & 2) != 0?'interface ':(this.modifiers & 1) != 0?'':'class ') + this.typeName;
 }
@@ -3533,34 +3838,38 @@ _.modifiers = 0;
 _.seedId = 0;
 _.typeName = null;
 function ClassCastException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
-defineSeed(197, 6, makeCastMap([Q$Serializable, Q$Throwable]), ClassCastException_0);
+defineSeed(210, 6, makeCastMap([Q$Serializable, Q$Throwable]), ClassCastException_0);
 function IllegalArgumentException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
 function IllegalArgumentException_1(message){
-  RuntimeException_1.call(this, message);
+  RuntimeException_0.call(this, message);
 }
 
-defineSeed(198, 6, makeCastMap([Q$Serializable, Q$Throwable]), IllegalArgumentException_0, IllegalArgumentException_1);
-function IllegalStateException_0(s){
-  RuntimeException_1.call(this, s);
+defineSeed(211, 6, makeCastMap([Q$Serializable, Q$Throwable]), IllegalArgumentException_0, IllegalArgumentException_1);
+function IllegalStateException_0(){
+  $fillInStackTrace();
 }
 
-defineSeed(199, 6, makeCastMap([Q$Serializable, Q$Throwable]), IllegalStateException_0);
+function IllegalStateException_1(s){
+  RuntimeException_0.call(this, s);
+}
+
+defineSeed(212, 6, makeCastMap([Q$Serializable, Q$Throwable]), IllegalStateException_0, IllegalStateException_1);
 function IndexOutOfBoundsException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
 function IndexOutOfBoundsException_1(message){
-  RuntimeException_1.call(this, message);
+  RuntimeException_0.call(this, message);
 }
 
-defineSeed(200, 6, makeCastMap([Q$Serializable, Q$Throwable]), IndexOutOfBoundsException_0, IndexOutOfBoundsException_1);
-defineSeed(202, 1, makeCastMap([Q$Serializable, Q$Number]));
+defineSeed(213, 6, makeCastMap([Q$Serializable, Q$Throwable]), IndexOutOfBoundsException_0, IndexOutOfBoundsException_1);
+defineSeed(215, 1, makeCastMap([Q$Serializable, Q$Number]));
 function Integer_0(value){
   this.value = value;
 }
@@ -3597,12 +3906,12 @@ function valueOf(i){
   return new Integer_0(i);
 }
 
-defineSeed(201, 202, makeCastMap([Q$Serializable, Q$Comparable, Q$Integer, Q$Number]), Integer_0);
-_.equals$ = function equals_1(o){
+defineSeed(214, 215, makeCastMap([Q$Serializable, Q$Comparable, Q$Integer, Q$Number]), Integer_0);
+_.equals$ = function equals_2(o){
   return instanceOf(o, Q$Integer) && dynamicCast(o, Q$Integer).value == this.value;
 }
 ;
-_.hashCode$ = function hashCode_3(){
+_.hashCode$ = function hashCode_4(){
   return this.value;
 }
 ;
@@ -3618,34 +3927,32 @@ function $clinit_Integer$BoxedValues(){
 
 var boxedValues;
 function NullPointerException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
 function NullPointerException_1(message){
-  RuntimeException_1.call(this, message);
+  RuntimeException_0.call(this, message);
 }
 
-defineSeed(204, 6, makeCastMap([Q$Serializable, Q$Throwable]), NullPointerException_0, NullPointerException_1);
+defineSeed(217, 6, makeCastMap([Q$Serializable, Q$Throwable]), NullPointerException_0, NullPointerException_1);
 function $clinit_Number$__Digits(){
   $clinit_Number$__Digits = nullMethod;
   digits_0 = initValues(_3C_classLit, makeCastMap([Q$Serializable]), -1, [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]);
 }
 
 var digits_0;
-function StackTraceElement_0(methodName, fileName){
+function StackTraceElement_0(methodName){
   this.className = 'Unknown';
   this.methodName = methodName;
-  this.fileName = fileName;
   this.lineNumber = -1;
 }
 
-defineSeed(206, 1, makeCastMap([Q$Serializable, Q$StackTraceElement]), StackTraceElement_0);
+defineSeed(219, 1, makeCastMap([Q$Serializable, Q$StackTraceElement]), StackTraceElement_0);
 _.toString$ = function toString_10(){
-  return this.className + '.' + this.methodName + '(' + (this.fileName != null?this.fileName:'Unknown Source') + (this.lineNumber >= 0?':' + this.lineNumber:'') + ')';
+  return this.className + '.' + this.methodName + '(Unknown Source' + (this.lineNumber >= 0?':' + this.lineNumber:'') + ')';
 }
 ;
 _.className = null;
-_.fileName = null;
 _.lineNumber = 0;
 _.methodName = null;
 function $charAt(this$static, index){
@@ -3665,60 +3972,6 @@ function $equalsIgnoreCase(this$static, other){
   return this$static == other || this$static.toLowerCase() == other.toLowerCase();
 }
 
-function $indexOf_0(this$static, str){
-  return this$static.indexOf(str);
-}
-
-function $lastIndexOf(this$static, str){
-  return this$static.lastIndexOf(str);
-}
-
-function $lastIndexOf_0(this$static, str, start){
-  return this$static.lastIndexOf(str, start);
-}
-
-function $split(this$static, regex, maxMatch){
-  var compiled = new RegExp(regex, 'g');
-  var out = [];
-  var count = 0;
-  var trail = this$static;
-  var lastTrail = null;
-  while (true) {
-    var matchObj = compiled.exec(trail);
-    if (matchObj == null || trail == '' || count == maxMatch - 1 && maxMatch > 0) {
-      out[count] = trail;
-      break;
-    }
-     else {
-      out[count] = trail.substring(0, matchObj.index);
-      trail = trail.substring(matchObj.index + matchObj[0].length, trail.length);
-      compiled.lastIndex = 0;
-      if (lastTrail == trail) {
-        out[count] = trail.substring(0, 1);
-        trail = trail.substring(1);
-      }
-      lastTrail = trail;
-      count++;
-    }
-  }
-  if (maxMatch == 0 && this$static.length > 0) {
-    var lastNonEmpty = out.length;
-    while (lastNonEmpty > 0 && out[lastNonEmpty - 1] == '') {
-      --lastNonEmpty;
-    }
-    lastNonEmpty < out.length && out.splice(lastNonEmpty, out.length - lastNonEmpty);
-  }
-  var jr = __createArray(out.length);
-  for (var i = 0; i < out.length; ++i) {
-    jr[i] = out[i];
-  }
-  return jr;
-}
-
-function $substring(this$static, beginIndex){
-  return this$static.substr(beginIndex, this$static.length - beginIndex);
-}
-
 function $trim(this$static){
   if (this$static.length == 0 || this$static[0] > ' ' && this$static[this$static.length - 1] > ' ') {
     return this$static;
@@ -3728,34 +3981,18 @@ function $trim(this$static){
   return r2;
 }
 
-function __createArray(numElements){
-  return initDim(_3Ljava_lang_String_2_classLit, makeCastMap([Q$Serializable]), Q$String, numElements, 0);
-}
-
 function __valueOf(x, start, end){
   x = x.slice(start, end);
   return String.fromCharCode.apply(null, x);
 }
 
-function fromCodePoint(codePoint){
-  var hiSurrogate, loSurrogate;
-  if (codePoint >= 65536) {
-    hiSurrogate = 55296 + (~~(codePoint - 65536) >> 10 & 1023) & 65535;
-    loSurrogate = 56320 + (codePoint - 65536 & 1023) & 65535;
-    return String.fromCharCode(hiSurrogate) + String.fromCharCode(loSurrogate);
-  }
-   else {
-    return String.fromCharCode(codePoint & 65535);
-  }
-}
-
 _ = String.prototype;
 _.castableTypeMap$ = makeCastMap([Q$String, Q$Serializable, Q$CharSequence, Q$Comparable]);
-_.equals$ = function equals_2(other){
+_.equals$ = function equals_3(other){
   return $equals(this, other);
 }
 ;
-_.hashCode$ = function hashCode_4(){
+_.hashCode$ = function hashCode_5(){
   return getHashCode_0(this);
 }
 ;
@@ -3814,7 +4051,7 @@ function StringBuffer_0(){
   this.impl = new StringBufferImplAppend_0;
 }
 
-defineSeed(208, 1, makeCastMap([Q$CharSequence]), StringBuffer_0);
+defineSeed(221, 1, makeCastMap([Q$CharSequence]), StringBuffer_0);
 _.toString$ = function toString_11(){
   return this.impl.string;
 }
@@ -3837,7 +4074,7 @@ function StringBuilder_1(s){
   $append(this.impl, s);
 }
 
-defineSeed(209, 1, makeCastMap([Q$CharSequence]), StringBuilder_0, StringBuilder_1);
+defineSeed(222, 1, makeCastMap([Q$CharSequence]), StringBuilder_0, StringBuilder_1);
 _.toString$ = function toString_12(){
   return this.impl.string;
 }
@@ -3847,10 +4084,10 @@ function identityHashCode(o){
 }
 
 function UnsupportedOperationException_0(message){
-  RuntimeException_1.call(this, message);
+  RuntimeException_0.call(this, message);
 }
 
-defineSeed(211, 6, makeCastMap([Q$Serializable, Q$Throwable]), UnsupportedOperationException_0);
+defineSeed(224, 6, makeCastMap([Q$Serializable, Q$Throwable]), UnsupportedOperationException_0);
 function $advanceToFind(iter, o){
   var t;
   while (iter.hasNext()) {
@@ -3862,7 +4099,7 @@ function $advanceToFind(iter, o){
   return null;
 }
 
-function $toString_0(this$static){
+function $toString_1(this$static){
   var comma, iter, sb, value;
   sb = new StringBuffer_0;
   comma = null;
@@ -3877,23 +4114,21 @@ function $toString_0(this$static){
   return sb.impl.string;
 }
 
-defineSeed(212, 1, {});
-_.add = function add(o){
+defineSeed(225, 1, {});
+_.add = function add_0(o){
   throw new UnsupportedOperationException_0('Add not supported on this collection');
 }
 ;
-_.contains_0 = function contains(o){
+_.contains = function contains(o){
   var iter;
   iter = $advanceToFind(this.iterator(), o);
   return !!iter;
 }
 ;
 _.toString$ = function toString_13(){
-  return $toString_0(this);
+  return $toString_1(this);
 }
 ;
---></script>
-<script><!--
 function $implFindEntry(this$static, key){
   var entry, iter, k;
   for (iter = new AbstractHashMap$EntrySetIterator_0(this$static.entrySet().this$0); $hasNext(iter.iter);) {
@@ -3912,12 +4147,12 @@ function $keySet(this$static){
   return new AbstractMap$1_0(this$static, entrySet);
 }
 
-defineSeed(214, 1, makeCastMap([Q$Map]));
+defineSeed(227, 1, makeCastMap([Q$Map]));
 _.containsKey = function containsKey(key){
   return !!$implFindEntry(this, key);
 }
 ;
-_.equals$ = function equals_3(obj){
+_.equals$ = function equals_4(obj){
   var entry, entry$iterator, otherKey, otherMap, otherValue;
   if (obj === this) {
     return true;
@@ -3949,7 +4184,7 @@ _.get = function get_0(key){
   return !entry?null:entry.getValue();
 }
 ;
-_.hashCode$ = function hashCode_5(){
+_.hashCode$ = function hashCode_6(){
   var entry, entry$iterator, hashCode;
   hashCode = 0;
   for (entry$iterator = new AbstractHashMap$EntrySetIterator_0(this.entrySet().this$0); $hasNext(entry$iterator.iter);) {
@@ -4102,7 +4337,7 @@ function $putStringValue(this$static, key, value){
   return result;
 }
 
-function $remove_2(this$static, key){
+function $remove_3(this$static, key){
   return !key?$removeNullSlot(this$static):$removeHashValue(this$static, key, ~~getHashCode(key));
 }
 
@@ -4133,7 +4368,7 @@ function $removeNullSlot(this$static){
   return result;
 }
 
-defineSeed(213, 214, makeCastMap([Q$Map]));
+defineSeed(226, 227, makeCastMap([Q$Map]));
 _.containsKey = function containsKey_0(key){
   return $containsKey(this, key);
 }
@@ -4163,8 +4398,8 @@ _.nullSlot = null;
 _.nullSlotLive = false;
 _.size_0 = 0;
 _.stringMap = null;
-defineSeed(216, 212, makeCastMap([Q$Set]));
-_.equals$ = function equals_4(o){
+defineSeed(229, 225, makeCastMap([Q$Set]));
+_.equals$ = function equals_5(o){
   var iter, other, otherItem;
   if (o === this) {
     return true;
@@ -4178,14 +4413,14 @@ _.equals$ = function equals_4(o){
   }
   for (iter = other.iterator(); iter.hasNext();) {
     otherItem = iter.next();
-    if (!this.contains_0(otherItem)) {
+    if (!this.contains(otherItem)) {
       return false;
     }
   }
   return true;
 }
 ;
-_.hashCode$ = function hashCode_6(){
+_.hashCode$ = function hashCode_7(){
   var hashCode, iter, next;
   hashCode = 0;
   for (iter = this.iterator(); iter.hasNext();) {
@@ -4215,8 +4450,8 @@ function AbstractHashMap$EntrySet_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(215, 216, makeCastMap([Q$Set]), AbstractHashMap$EntrySet_0);
-_.contains_0 = function contains_0(o){
+defineSeed(228, 229, makeCastMap([Q$Set]), AbstractHashMap$EntrySet_0);
+_.contains = function contains_0(o){
   return $contains(this, o);
 }
 ;
@@ -4238,7 +4473,7 @@ function AbstractHashMap$EntrySetIterator_0(this$0){
   this.iter = new AbstractList$IteratorImpl_0(list);
 }
 
-defineSeed(217, 1, {}, AbstractHashMap$EntrySetIterator_0);
+defineSeed(230, 1, {}, AbstractHashMap$EntrySetIterator_0);
 _.hasNext = function hasNext_0(){
   return $hasNext(this.iter);
 }
@@ -4248,8 +4483,8 @@ _.next = function next_1(){
 }
 ;
 _.iter = null;
-defineSeed(219, 1, makeCastMap([Q$Map$Entry]));
-_.equals$ = function equals_5(other){
+defineSeed(232, 1, makeCastMap([Q$Map$Entry]));
+_.equals$ = function equals_6(other){
   var entry;
   if (instanceOf(other, Q$Map$Entry)) {
     entry = dynamicCast(other, Q$Map$Entry);
@@ -4260,7 +4495,7 @@ _.equals$ = function equals_5(other){
   return false;
 }
 ;
-_.hashCode$ = function hashCode_7(){
+_.hashCode$ = function hashCode_8(){
   var keyHash, valueHash;
   keyHash = 0;
   valueHash = 0;
@@ -4277,7 +4512,7 @@ function AbstractHashMap$MapEntryNull_0(this$0){
   this.this$0 = this$0;
 }
 
-defineSeed(218, 219, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryNull_0);
+defineSeed(231, 232, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryNull_0);
 _.getKey = function getKey(){
   return null;
 }
@@ -4296,7 +4531,7 @@ function AbstractHashMap$MapEntryString_0(this$0, key){
   this.key = key;
 }
 
-defineSeed(220, 219, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryString_0);
+defineSeed(233, 232, makeCastMap([Q$Map$Entry]), AbstractHashMap$MapEntryString_0);
 _.getKey = function getKey_0(){
   return this.key;
 }
@@ -4319,17 +4554,17 @@ function indexOutOfBounds(index, size){
   throw new IndexOutOfBoundsException_1('Index: ' + index + ', Size: ' + size);
 }
 
-defineSeed(221, 212, makeCastMap([Q$List]));
-_.add_0 = function add_0(index, element){
+defineSeed(234, 225, makeCastMap([Q$List]));
+_.add_0 = function add_1(index, element){
   throw new UnsupportedOperationException_0('Add not supported on this list');
 }
 ;
-_.add = function add_1(obj){
+_.add = function add_2(obj){
   this.add_0(this.size_1(), obj);
   return true;
 }
 ;
-_.equals$ = function equals_6(o){
+_.equals$ = function equals_7(o){
   var elem, elemOther, iter, iterOther, other;
   if (o === this) {
     return true;
@@ -4353,7 +4588,7 @@ _.equals$ = function equals_6(o){
   return true;
 }
 ;
-_.hashCode$ = function hashCode_8(){
+_.hashCode$ = function hashCode_9(){
   var iter, k, obj;
   k = 1;
   iter = new AbstractList$IteratorImpl_0(this);
@@ -4392,7 +4627,7 @@ function AbstractList$IteratorImpl_0(this$0){
   this.this$0_0 = this$0;
 }
 
-defineSeed(222, 1, {}, AbstractList$IteratorImpl_0);
+defineSeed(235, 1, {}, AbstractList$IteratorImpl_0);
 _.hasNext = function hasNext_1(){
   return $hasNext(this);
 }
@@ -4419,7 +4654,7 @@ function AbstractList$ListIteratorImpl_0(this$0, start){
   this.i = start;
 }
 
-defineSeed(223, 222, {}, AbstractList$ListIteratorImpl_0);
+defineSeed(236, 235, {}, AbstractList$ListIteratorImpl_0);
 _.this$0 = null;
 function $iterator(this$static){
   var outerIter;
@@ -4432,8 +4667,8 @@ function AbstractMap$1_0(this$0, val$entrySet){
   this.val$entrySet = val$entrySet;
 }
 
-defineSeed(224, 216, makeCastMap([Q$Set]), AbstractMap$1_0);
-_.contains_0 = function contains_1(key){
+defineSeed(237, 229, makeCastMap([Q$Set]), AbstractMap$1_0);
+_.contains = function contains_1(key){
   return $containsKey(this.this$0, key);
 }
 ;
@@ -4451,7 +4686,7 @@ function AbstractMap$1$1_0(val$outerIter){
   this.val$outerIter = val$outerIter;
 }
 
-defineSeed(225, 1, {}, AbstractMap$1$1_0);
+defineSeed(238, 1, {}, AbstractMap$1$1_0);
 _.hasNext = function hasNext_2(){
   return $hasNext(this.val$outerIter.iter);
 }
@@ -4468,7 +4703,7 @@ function $add_3(this$static, o){
   return true;
 }
 
-function $clear(this$static){
+function $clear_0(this$static){
   this$static.array = initDim(_3Ljava_lang_Object_2_classLit, makeCastMap([Q$Serializable]), Q$Object, 0, 0);
   this$static.size_0 = 0;
 }
@@ -4478,7 +4713,7 @@ function $get_0(this$static, index){
   return this$static.array[index];
 }
 
-function $indexOf_1(this$static, o, index){
+function $indexOf_0(this$static, o, index){
   for (; index < this$static.size_0; ++index) {
     if (equalsWithNullCheck(o, this$static.array[index])) {
       return index;
@@ -4487,9 +4722,9 @@ function $indexOf_1(this$static, o, index){
   return -1;
 }
 
-function $remove_3(this$static, o){
+function $remove_4(this$static, o){
   var i, previous;
-  i = $indexOf_1(this$static, o, 0);
+  i = $indexOf_0(this$static, o, 0);
   if (i == -1) {
     return false;
   }
@@ -4518,19 +4753,19 @@ function splice_1(array, index, deleteCount, value){
   array.splice(index, deleteCount, value);
 }
 
-defineSeed(226, 221, makeCastMap([Q$Serializable, Q$List]), ArrayList_0);
-_.add_0 = function add_2(index, o){
+defineSeed(239, 234, makeCastMap([Q$Serializable, Q$List]), ArrayList_0);
+_.add_0 = function add_3(index, o){
   (index < 0 || index > this.size_0) && indexOutOfBounds(index, this.size_0);
   splice_1(this.array, index, 0, o);
   ++this.size_0;
 }
 ;
-_.add = function add_3(o){
+_.add = function add_4(o){
   return $add_3(this, o);
 }
 ;
-_.contains_0 = function contains_2(o){
-  return $indexOf_1(this, o, 0) != -1;
+_.contains = function contains_2(o){
+  return $indexOf_0(this, o, 0) != -1;
 }
 ;
 _.get_0 = function get_2(index){
@@ -4551,8 +4786,8 @@ var EMPTY_LIST;
 function Collections$EmptyList_0(){
 }
 
-defineSeed(228, 221, makeCastMap([Q$Serializable, Q$List]), Collections$EmptyList_0);
-_.contains_0 = function contains_3(object){
+defineSeed(241, 234, makeCastMap([Q$Serializable, Q$List]), Collections$EmptyList_0);
+_.contains = function contains_3(object){
   return false;
 }
 ;
@@ -4568,8 +4803,8 @@ function HashMap_0(){
   $clearImpl(this);
 }
 
-defineSeed(229, 213, makeCastMap([Q$Serializable, Q$Map]), HashMap_0);
-_.equals = function equals_7(value1, value2){
+defineSeed(242, 226, makeCastMap([Q$Serializable, Q$Map]), HashMap_0);
+_.equals = function equals_8(value1, value2){
   return maskUndefined(value1) === maskUndefined(value2) || value1 != null && equals__devirtual$(value1, value2);
 }
 ;
@@ -4587,20 +4822,20 @@ function $contains_0(this$static, o){
   return $containsKey(this$static.map, o);
 }
 
-function $remove_4(this$static, o){
-  return $remove_2(this$static.map, o) != null;
+function $remove_5(this$static, o){
+  return $remove_3(this$static.map, o) != null;
 }
 
 function HashSet_0(){
   this.map = new HashMap_0;
 }
 
-defineSeed(230, 216, makeCastMap([Q$Serializable, Q$Set]), HashSet_0);
-_.add = function add_4(o){
+defineSeed(243, 229, makeCastMap([Q$Serializable, Q$Set]), HashSet_0);
+_.add = function add_5(o){
   return $add_4(this, o);
 }
 ;
-_.contains_0 = function contains_4(o){
+_.contains = function contains_4(o){
   return $containsKey(this.map, o);
 }
 ;
@@ -4613,7 +4848,7 @@ _.size_1 = function size_6(){
 }
 ;
 _.toString$ = function toString_16(){
-  return $toString_0($keySet(this.map));
+  return $toString_1($keySet(this.map));
 }
 ;
 _.map = null;
@@ -4621,8 +4856,8 @@ function IdentityHashMap_0(){
   $clearImpl(this);
 }
 
-defineSeed(231, 213, makeCastMap([Q$Serializable, Q$Map]), IdentityHashMap_0);
-_.equals$ = function equals_8(obj){
+defineSeed(244, 226, makeCastMap([Q$Serializable, Q$Map]), IdentityHashMap_0);
+_.equals$ = function equals_9(obj){
   var entry, entry$iterator, otherKey, otherMap, otherValue;
   if (obj === this) {
     return true;
@@ -4648,7 +4883,7 @@ _.equals$ = function equals_8(obj){
   return true;
 }
 ;
-_.equals = function equals_9(value1, value2){
+_.equals = function equals_10(value1, value2){
   return maskUndefined(value1) === maskUndefined(value2);
 }
 ;
@@ -4656,7 +4891,7 @@ _.getHashCode = function getHashCode_2(key){
   return getHashCode(key);
 }
 ;
-_.hashCode$ = function hashCode_9(){
+_.hashCode$ = function hashCode_10(){
   var entry, entry$iterator, hashCode;
   hashCode = 0;
   for (entry$iterator = new AbstractHashMap$EntrySetIterator_0((new AbstractHashMap$EntrySet_0(this)).this$0); $hasNext(entry$iterator.iter);) {
@@ -4672,7 +4907,7 @@ function MapEntryImpl_0(key, value){
   this.value = value;
 }
 
-defineSeed(232, 219, makeCastMap([Q$Map$Entry]), MapEntryImpl_0);
+defineSeed(245, 232, makeCastMap([Q$Map$Entry]), MapEntryImpl_0);
 _.getKey = function getKey_1(){
   return this.key;
 }
@@ -4691,10 +4926,10 @@ _.setValue = function setValue_1(value){
 _.key = null;
 _.value = null;
 function NoSuchElementException_0(){
-  RuntimeException_0.call(this);
+  $fillInStackTrace();
 }
 
-defineSeed(233, 6, makeCastMap([Q$Serializable, Q$Throwable]), NoSuchElementException_0);
+defineSeed(246, 6, makeCastMap([Q$Serializable, Q$Throwable]), NoSuchElementException_0);
 function equalsWithNullCheck(a, b){
   return maskUndefined(a) === maskUndefined(b) || a != null && equals__devirtual$(a, b);
 }
@@ -4717,7 +4952,7 @@ function gwtOnLoad(errFn, modName, modBase, softPermutationId){
 
 --></script>
 <script><!--
-var Ljava_lang_Object_2_classLit = createForClass('java.lang.', 'Object', 1), Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptObject$', 9), _3Ljava_lang_Object_2_classLit = createForArray('[Ljava.lang.', 'Object;', 238), Ljava_lang_Throwable_2_classLit = createForClass('java.lang.', 'Throwable', 8), Ljava_lang_Exception_2_classLit = createForClass('java.lang.', 'Exception', 7), Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang.', 'RuntimeException', 6), Ljava_lang_StackTraceElement_2_classLit = createForClass('java.lang.', 'StackTraceElement', 206), _3Ljava_lang_StackTraceElement_2_classLit = createForArray('[Ljava.lang.', 'StackTraceElement;', 240), Lcom_google_gwt_lang_SeedUtil_2_classLit = createForClass('com.google.gwt.lang.', 'SeedUtil', 82), Ljava_lang_Enum_2_classLit = createForClass('java.lang.', 'Enum', 35), Lcom_swietoslawski_weather_client_Weather_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather', 178), Lcom_swietoslawski_weather_client_Weather$1_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$1', 179), Lcom_swietoslawski_weather_client_Weather$2_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$2', 180), Lcom_swietoslawski_weather_client_Weather$3_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$3', 181), Ljava_lang_Number_2_classLit = createForClass('java.lang.', 'Number', 202), _3C_classLit = createForArray('', '[C', 241), Ljava_lang_Class_2_classLit = createForClass('java.lang.', 'Class', 196), Ljava_lang_Integer_2_classLit = createForClass('java.lang.', 'Integer', 201), _3Ljava_lang_Integer_2_classLit = createForArray('[Ljava.lang.', 'Integer;', 242), Ljava_lang_String_2_classLit = createForClass('java.lang.', 'String', 2), _3Ljava_lang_String_2_classLit = createForArray('[Ljava.lang.', 'String;', 239), Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang.', 'ClassCastException', 197), Ljava_lang_StringBuilder_2_classLit = createForClass('java.lang.', 'StringBuilder', 209), Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang.', 'ArrayStoreException', 195), Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptException', 5), Lcom_google_gwt_user_client_ui_UIObject_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'UIObject', 141), Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Widget', 140), Lcom_google_gwt_user_client_ui_Panel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Panel', 139), Lcom_google_gwt_user_client_ui_ComplexPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ComplexPanel', 138), Lcom_google_gwt_user_client_ui_CellPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'CellPanel', 148), Lcom_google_gwt_user_client_ui_HorizontalPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HorizontalPanel', 156), Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'UmbrellaException', 60), Lcom_google_gwt_event_shared_UmbrellaException_2_classLit = createForClass('com.google.gwt.event.shared.', 'UmbrellaException', 59), Lcom_google_gwt_user_client_ui_AttachDetachException_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException', 142), Lcom_google_gwt_user_client_ui_AttachDetachException$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$1', 143), Lcom_google_gwt_user_client_ui_AttachDetachException$2_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$2', 144), Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$AutoHorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasHorizontalAlignment$AutoHorizontalAlignmentConstant', 153), Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$HorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasHorizontalAlignment$HorizontalAlignmentConstant', 154), Lcom_google_gwt_user_client_ui_HasVerticalAlignment$VerticalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasVerticalAlignment$VerticalAlignmentConstant', 155), Lcom_google_gwt_user_client_ui_LabelBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'LabelBase', 152), Lcom_google_gwt_user_client_ui_Label_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Label', 151), Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForEnum('com.google.gwt.i18n.client.', 'HasDirection$Direction', 75, values_0), _3Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForArray('[Lcom.google.gwt.i18n.client.', 'HasDirection$Direction;', 243), Lcom_google_gwt_user_client_ui_FocusWidget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'FocusWidget', 147), Lcom_google_gwt_user_client_ui_ValueBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ValueBoxBase', 164), Lcom_google_gwt_user_client_ui_TextBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'TextBoxBase', 163), Lcom_google_gwt_user_client_ui_TextBox_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'TextBox', 162), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment', 165, values_2), _3Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit = createForArray('[Lcom.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment;', 244), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$1_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$1', 166, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$2_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$2', 167, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$3_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$3', 168, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$4_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$4', 169, null), Lcom_google_gwt_i18n_client_AutoDirectionHandler_2_classLit = createForClass('com.google.gwt.i18n.client.', 'AutoDirectionHandler', 73), Lcom_google_gwt_user_client_ui_ButtonBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ButtonBase', 146), Lcom_google_gwt_user_client_ui_Button_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Button', 145), Lcom_google_gwt_user_client_ui_AbsolutePanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AbsolutePanel', 137), Lcom_google_gwt_user_client_ui_RootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel', 158), Lcom_google_gwt_user_client_ui_RootPanel$DefaultRootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$DefaultRootPanel', 161), Lcom_google_gwt_user_client_ui_RootPanel$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$1', 159), Lcom_google_gwt_user_client_ui_RootPanel$2_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$2', 160), Lcom_google_gwt_user_client_ui_HTML_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HTML', 150), Lcom_google_gwt_core_client_impl_StringBufferImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImpl', 21), Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RemoteServiceProxy', 119), Lcom_swietoslawski_weather_client_WeatherService_1Proxy_2_classLit = createForClass('com.swietoslawski.weather.client.', 'WeatherService_Proxy', 182), Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy$ServiceHelper_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RemoteServiceProxy$ServiceHelper', 120), Lcom_google_gwt_user_client_rpc_InvocationException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'InvocationException', 103), Lcom_google_gwt_user_client_rpc_ServiceDefTarget$NoServiceEntryPointSpecifiedException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'ServiceDefTarget$NoServiceEntryPointSpecifiedException', 108), Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event', 45), Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent', 44), Lcom_google_gwt_event_dom_client_DomEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent', 43), Lcom_google_gwt_event_dom_client_KeyEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'KeyEvent', 49), Lcom_google_gwt_event_dom_client_KeyPressEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'KeyPressEvent', 50), Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event$Type', 48), Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent$Type', 47), Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent$Type', 46), Ljava_util_AbstractMap_2_classLit = createForClass('java.util.', 'AbstractMap', 214), Ljava_util_AbstractHashMap_2_classLit = createForClass('java.util.', 'AbstractHashMap', 213), Ljava_util_HashMap_2_classLit = createForClass('java.util.', 'HashMap', 229), Ljava_util_AbstractCollection_2_classLit = createForClass('java.util.', 'AbstractCollection', 212), Ljava_util_AbstractSet_2_classLit = createForClass('java.util.', 'AbstractSet', 216), Ljava_util_AbstractHashMap$EntrySet_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySet', 215), Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySetIterator', 217), Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util.', 'AbstractMapEntry', 219), Ljava_util_AbstractHashMap$MapEntryNull_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryNull', 218), Ljava_util_AbstractHashMap$MapEntryString_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryString', 220), Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util.', 'AbstractMap$1', 224), Ljava_util_AbstractMap$1$1_2_classLit = createForClass('java.util.', 'AbstractMap$1$1', 225), Ljava_util_HashSet_2_classLit = createForClass('java.util.', 'HashSet', 230), Lcom_google_gwt_core_client_impl_StackTraceCreator$Collector_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$Collector', 17), Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorMoz_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$CollectorMoz', 19), Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorChrome_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$CollectorChrome', 18), Lcom_google_gwt_core_client_impl_StackTraceCreator$CollectorChromeNoSourceMap_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StackTraceCreator$CollectorChromeNoSourceMap', 20), Lcom_google_gwt_core_client_impl_StringBufferImplAppend_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImplAppend', 22), Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client.', 'Scheduler', 12), Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl', 14), Lcom_google_gwt_user_client_rpc_impl_SerializerBase_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'SerializerBase', 135), Lcom_swietoslawski_weather_client_WeatherService_1TypeSerializer_2_classLit = createForClass('com.swietoslawski.weather.client.', 'WeatherService_TypeSerializer', 183), Lcom_google_gwt_user_client_rpc_IncompatibleRemoteServiceException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'IncompatibleRemoteServiceException', 101), Lcom_google_gwt_user_client_rpc_RpcTokenException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'RpcTokenException', 105), Lcom_google_gwt_user_client_rpc_XsrfToken_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'XsrfToken', null), Lcom_swietoslawski_weather_shared_CurrentConditions_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'CurrentConditions', 184), Lcom_swietoslawski_weather_shared_Forecast_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'Forecast', 186), Lcom_swietoslawski_weather_shared_ForecastInformation_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'ForecastInformation', 187), _3Lcom_swietoslawski_weather_shared_Forecast_2_classLit = createForArray('[Lcom.swietoslawski.weather.shared.', 'Forecast;', 245), Lcom_swietoslawski_weather_shared_WeatherException_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'WeatherException', 191), Lcom_swietoslawski_weather_shared_WeatherWrapper_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'WeatherWrapper', 193), Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('java.lang.', 'UnsupportedOperationException', 211), Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign', 34, values), _3Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForArray('[Lcom.google.gwt.dom.client.', 'Style$TextAlign;', 246), Lcom_google_gwt_dom_client_Style$TextAlign$1_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$1', 36, null), Lcom_google_gwt_dom_client_Style$TextAlign$2_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$2', 37, null), Lcom_google_gwt_dom_client_Style$TextAlign$3_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$3', 38, null), Lcom_google_gwt_dom_client_Style$TextAlign$4_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$4', 39, null), Lcom_google_gwt_user_client_ui_DirectionalTextHelper_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'DirectionalTextHelper', 149), Lcom_google_gwt_user_client_ui_WidgetCollection_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection', 170), _3Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForArray('[Lcom.google.gwt.user.client.ui.', 'Widget;', 247), Lcom_google_gwt_user_client_ui_WidgetCollection$WidgetIterator_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection$WidgetIterator', 171), Lcom_google_gwt_event_dom_client_HumanInputEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'HumanInputEvent', 42), Lcom_google_gwt_event_dom_client_MouseEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'MouseEvent', 41), Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'ClickEvent', 40), Lcom_google_gwt_event_shared_HandlerManager_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager', 54), Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'EventBus', 57), Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus', 56), Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager$Bus', 55), Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$1', 176), Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$2', 177), Lcom_google_gwt_user_client_Window$ClosingEvent_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$ClosingEvent', 94), Lcom_google_gwt_user_client_Window$WindowHandlers_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$WindowHandlers', 95), Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang.', 'NullPointerException', 204), Ljava_lang_IllegalArgumentException_2_classLit = createForClass('java.lang.', 'IllegalArgumentException', 198), Ljava_lang_IllegalStateException_2_classLit = createForClass('java.lang.', 'IllegalStateException', 199), Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit = createForClass('com.google.gwt.text.shared.', 'AbstractRenderer', 85), Lcom_google_gwt_text_shared_testing_PassthroughRenderer_2_classLit = createForClass('com.google.gwt.text.shared.testing.', 'PassthroughRenderer', 87), Lcom_google_gwt_text_shared_testing_PassthroughParser_2_classLit = createForClass('com.google.gwt.text.shared.testing.', 'PassthroughParser', 86), Lcom_google_gwt_event_dom_client_PrivateMap_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'PrivateMap', 51), Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared.', 'LegacyHandlerWrapper', 58), Ljava_lang_StringBuffer_2_classLit = createForClass('java.lang.', 'StringBuffer', 208), Lcom_google_gwt_event_logical_shared_CloseEvent_2_classLit = createForClass('com.google.gwt.event.logical.shared.', 'CloseEvent', 53), Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang.', 'IndexOutOfBoundsException', 200), Ljava_util_MapEntryImpl_2_classLit = createForClass('java.util.', 'MapEntryImpl', 232), Ljava_util_NoSuchElementException_2_classLit = createForClass('java.util.', 'NoSuchElementException', 233), Lcom_google_gwt_user_client_rpc_SerializationException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'SerializationException', 107), Lcom_google_gwt_xhr_client_XMLHttpRequest$ResponseType_2_classLit = createForEnum('com.google.gwt.xhr.client.', 'XMLHttpRequest$ResponseType', 175, values_3), _3Lcom_google_gwt_xhr_client_XMLHttpRequest$ResponseType_2_classLit = createForArray('[Lcom.google.gwt.xhr.client.', 'XMLHttpRequest$ResponseType;', 248), Ljava_util_AbstractList_2_classLit = createForClass('java.util.', 'AbstractList', 221), Ljava_util_ArrayList_2_classLit = createForClass('java.util.', 'ArrayList', 226), Ljava_util_AbstractList$IteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$IteratorImpl', 222), Ljava_util_AbstractList$ListIteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$ListIteratorImpl', 223), Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util.', 'Collections$EmptyList', 228), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter', 121), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader', 122, values_1), _3Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForArray('[Lcom.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader;', 249), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$1_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$1', 123, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$2_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$2', 126, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$3_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$3', 127, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$4_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$4', 128, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$5_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$5', 129, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$6_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$6', 130, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$7_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$7', 131, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$8_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$8', 132, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$9_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$9', 133, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$10_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$10', 124, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$11_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$11', 125, null), Lcom_google_gwt_http_client_Request_2_classLit = createForClass('com.google.gwt.http.client.', 'Request', 61), Lcom_google_gwt_http_client_Response_2_classLit = createForClass('com.google.gwt.http.client.', 'Response', 63), Lcom_google_gwt_http_client_Request$1_2_classLit = createForClass('com.google.gwt.http.client.', 'Request$1', 62), Lcom_google_gwt_user_client_Timer_2_classLit = createForClass('com.google.gwt.user.client.', 'Timer', 65), Lcom_google_gwt_http_client_Request$3_2_classLit = createForClass('com.google.gwt.http.client.', 'Request$3', 64), Lcom_google_gwt_user_client_Timer$1_2_classLit = createForClass('com.google.gwt.user.client.', 'Timer$1', 92), Lcom_google_gwt_user_client_rpc_impl_RpcStatsContext_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RpcStatsContext', 134), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStream_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStream', 114), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStreamWriter', 116), Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'ClientSerializationStreamWriter', 118), Lcom_google_gwt_http_client_RequestBuilder_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder', 66), Lcom_google_gwt_http_client_RequestBuilder$Method_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder$Method', 68), Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder$1', 67), Lcom_google_gwt_http_client_RequestException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestException', 69), Lcom_google_gwt_user_client_rpc_RpcRequestBuilder_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'RpcRequestBuilder', 104), Lcom_google_gwt_http_client_RequestPermissionException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestPermissionException', 70), Ljava_util_IdentityHashMap_2_classLit = createForClass('java.util.', 'IdentityHashMap', 231), Lcom_google_gwt_user_client_rpc_StatusCodeException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'StatusCodeException', 109), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStreamReader', 115), Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'ClientSerializationStreamReader', 117), Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestTimeoutException', 71);
+var Ljava_lang_Object_2_classLit = createForClass('java.lang.', 'Object', 1), Lcom_google_gwt_core_client_JavaScriptObject_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptObject$', 9), _3Ljava_lang_Object_2_classLit = createForArray('[Ljava.lang.', 'Object;', 248), Ljava_lang_Throwable_2_classLit = createForClass('java.lang.', 'Throwable', 8), Ljava_lang_Exception_2_classLit = createForClass('java.lang.', 'Exception', 7), Ljava_lang_RuntimeException_2_classLit = createForClass('java.lang.', 'RuntimeException', 6), Ljava_lang_StackTraceElement_2_classLit = createForClass('java.lang.', 'StackTraceElement', 219), _3Ljava_lang_StackTraceElement_2_classLit = createForArray('[Ljava.lang.', 'StackTraceElement;', 249), Lcom_google_gwt_lang_SeedUtil_2_classLit = createForClass('com.google.gwt.lang.', 'SeedUtil', 82), Ljava_lang_Enum_2_classLit = createForClass('java.lang.', 'Enum', 35), Lcom_swietoslawski_weather_client_Weather_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather', 187), Lcom_swietoslawski_weather_client_Weather$1_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$1', 188), Lcom_swietoslawski_weather_client_Weather$2_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$2', 189), Lcom_swietoslawski_weather_client_Weather$3_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$3', 190), Lcom_swietoslawski_weather_client_Weather$4_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$4', 191), Lcom_swietoslawski_weather_client_Weather$5_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$5', 192), Lcom_swietoslawski_weather_client_Weather$6_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$6', 193), Lcom_swietoslawski_weather_client_Weather$7_2_classLit = createForClass('com.swietoslawski.weather.client.', 'Weather$7', 194), Ljava_lang_Number_2_classLit = createForClass('java.lang.', 'Number', 215), _3C_classLit = createForArray('', '[C', 250), Ljava_lang_Class_2_classLit = createForClass('java.lang.', 'Class', 209), Ljava_lang_Integer_2_classLit = createForClass('java.lang.', 'Integer', 214), _3Ljava_lang_Integer_2_classLit = createForArray('[Ljava.lang.', 'Integer;', 251), Ljava_lang_String_2_classLit = createForClass('java.lang.', 'String', 2), _3Ljava_lang_String_2_classLit = createForArray('[Ljava.lang.', 'String;', 252), Ljava_lang_ClassCastException_2_classLit = createForClass('java.lang.', 'ClassCastException', 210), Ljava_lang_StringBuilder_2_classLit = createForClass('java.lang.', 'StringBuilder', 222), Ljava_lang_ArrayStoreException_2_classLit = createForClass('java.lang.', 'ArrayStoreException', 208), Lcom_google_gwt_core_client_JavaScriptException_2_classLit = createForClass('com.google.gwt.core.client.', 'JavaScriptException', 5), Lcom_google_gwt_core_client_impl_StringBufferImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImpl', 21), Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RemoteServiceProxy', 122), Lcom_swietoslawski_weather_client_WeatherService_1Proxy_2_classLit = createForClass('com.swietoslawski.weather.client.', 'WeatherService_Proxy', 195), Lcom_google_gwt_user_client_rpc_impl_RemoteServiceProxy$ServiceHelper_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RemoteServiceProxy$ServiceHelper', 123), Lcom_google_gwt_user_client_rpc_InvocationException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'InvocationException', 106), Lcom_google_gwt_user_client_rpc_ServiceDefTarget$NoServiceEntryPointSpecifiedException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'ServiceDefTarget$NoServiceEntryPointSpecifiedException', 111), Lcom_google_gwt_user_client_ui_UIObject_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'UIObject', 144), Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Widget', 143), Lcom_google_gwt_user_client_ui_FocusWidget_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'FocusWidget', 150), Lcom_google_gwt_user_client_ui_ButtonBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ButtonBase', 149), Lcom_google_gwt_user_client_ui_Button_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Button', 148), Lcom_google_gwt_user_client_ui_Panel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Panel', 142), Lcom_google_gwt_user_client_ui_ComplexPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ComplexPanel', 141), Lcom_google_gwt_user_client_ui_CellPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'CellPanel', 151), Lcom_google_gwt_user_client_ui_HorizontalPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HorizontalPanel', 160), Lcom_google_web_bindery_event_shared_UmbrellaException_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'UmbrellaException', 60), Lcom_google_gwt_event_shared_UmbrellaException_2_classLit = createForClass('com.google.gwt.event.shared.', 'UmbrellaException', 59), Lcom_google_gwt_user_client_ui_AttachDetachException_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException', 145), Lcom_google_gwt_user_client_ui_AttachDetachException$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$1', 146), Lcom_google_gwt_user_client_ui_AttachDetachException$2_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AttachDetachException$2', 147), Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$AutoHorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasHorizontalAlignment$AutoHorizontalAlignmentConstant', 157), Lcom_google_gwt_user_client_ui_HasHorizontalAlignment$HorizontalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasHorizontalAlignment$HorizontalAlignmentConstant', 158), Lcom_google_gwt_user_client_ui_HasVerticalAlignment$VerticalAlignmentConstant_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HasVerticalAlignment$VerticalAlignmentConstant', 159), Lcom_google_gwt_user_client_ui_AbsolutePanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'AbsolutePanel', 140), Lcom_google_gwt_user_client_ui_RootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel', 166), Lcom_google_gwt_user_client_ui_RootPanel$DefaultRootPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$DefaultRootPanel', 169), Lcom_google_gwt_user_client_ui_RootPanel$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$1', 167), Lcom_google_gwt_user_client_ui_RootPanel$2_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'RootPanel$2', 168), Lcom_google_gwt_core_client_impl_StringBufferImplAppend_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'StringBufferImplAppend', 22), Lcom_google_gwt_core_client_Scheduler_2_classLit = createForClass('com.google.gwt.core.client.', 'Scheduler', 12), Lcom_google_gwt_core_client_impl_SchedulerImpl_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl', 14), Lcom_google_gwt_core_client_impl_SchedulerImpl$Flusher_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl$Flusher', 15), Lcom_google_gwt_core_client_impl_SchedulerImpl$Rescuer_2_classLit = createForClass('com.google.gwt.core.client.impl.', 'SchedulerImpl$Rescuer', 16), Lcom_google_gwt_user_client_rpc_impl_SerializerBase_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'SerializerBase', 138), Lcom_swietoslawski_weather_client_WeatherService_1TypeSerializer_2_classLit = createForClass('com.swietoslawski.weather.client.', 'WeatherService_TypeSerializer', 196), Lcom_google_gwt_user_client_rpc_IncompatibleRemoteServiceException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'IncompatibleRemoteServiceException', 104), Lcom_google_gwt_user_client_rpc_RpcTokenException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'RpcTokenException', 108), Lcom_google_gwt_user_client_rpc_XsrfToken_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'XsrfToken', null), Lcom_swietoslawski_weather_shared_CurrentConditions_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'CurrentConditions', 197), Lcom_swietoslawski_weather_shared_Forecast_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'Forecast', 199), Lcom_swietoslawski_weather_shared_ForecastInformation_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'ForecastInformation', 200), _3Lcom_swietoslawski_weather_shared_Forecast_2_classLit = createForArray('[Lcom.swietoslawski.weather.shared.', 'Forecast;', 253), Lcom_swietoslawski_weather_shared_WeatherException_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'WeatherException', 204), Lcom_swietoslawski_weather_shared_WeatherWrapper_2_classLit = createForClass('com.swietoslawski.weather.shared.', 'WeatherWrapper', 206), Lcom_google_gwt_user_client_ui_LabelBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'LabelBase', 156), Lcom_google_gwt_user_client_ui_Label_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Label', 155), Lcom_google_gwt_user_client_ui_HTML_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'HTML', 154), Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForEnum('com.google.gwt.i18n.client.', 'HasDirection$Direction', 75, values_0), _3Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit = createForArray('[Lcom.google.gwt.i18n.client.', 'HasDirection$Direction;', 254), Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign', 34, values), _3Lcom_google_gwt_dom_client_Style$TextAlign_2_classLit = createForArray('[Lcom.google.gwt.dom.client.', 'Style$TextAlign;', 255), Lcom_google_gwt_dom_client_Style$TextAlign$1_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$1', 36, null), Lcom_google_gwt_dom_client_Style$TextAlign$2_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$2', 37, null), Lcom_google_gwt_dom_client_Style$TextAlign$3_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$3', 38, null), Lcom_google_gwt_dom_client_Style$TextAlign$4_2_classLit = createForEnum('com.google.gwt.dom.client.', 'Style$TextAlign$4', 39, null), Ljava_util_AbstractMap_2_classLit = createForClass('java.util.', 'AbstractMap', 227), Ljava_util_AbstractHashMap_2_classLit = createForClass('java.util.', 'AbstractHashMap', 226), Ljava_util_HashMap_2_classLit = createForClass('java.util.', 'HashMap', 242), Ljava_util_AbstractCollection_2_classLit = createForClass('java.util.', 'AbstractCollection', 225), Ljava_util_AbstractSet_2_classLit = createForClass('java.util.', 'AbstractSet', 229), Ljava_util_AbstractHashMap$EntrySet_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySet', 228), Ljava_util_AbstractHashMap$EntrySetIterator_2_classLit = createForClass('java.util.', 'AbstractHashMap$EntrySetIterator', 230), Ljava_util_AbstractMapEntry_2_classLit = createForClass('java.util.', 'AbstractMapEntry', 232), Ljava_util_AbstractHashMap$MapEntryNull_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryNull', 231), Ljava_util_AbstractHashMap$MapEntryString_2_classLit = createForClass('java.util.', 'AbstractHashMap$MapEntryString', 233), Ljava_util_AbstractMap$1_2_classLit = createForClass('java.util.', 'AbstractMap$1', 237), Ljava_util_AbstractMap$1$1_2_classLit = createForClass('java.util.', 'AbstractMap$1$1', 238), Ljava_util_HashSet_2_classLit = createForClass('java.util.', 'HashSet', 243), Ljava_lang_NullPointerException_2_classLit = createForClass('java.lang.', 'NullPointerException', 217), Ljava_lang_IllegalArgumentException_2_classLit = createForClass('java.lang.', 'IllegalArgumentException', 211), Lcom_google_web_bindery_event_shared_Event_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event', 45), Lcom_google_gwt_event_shared_GwtEvent_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent', 44), Lcom_google_gwt_event_dom_client_DomEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent', 43), Lcom_google_gwt_event_dom_client_HumanInputEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'HumanInputEvent', 42), Lcom_google_gwt_event_dom_client_MouseEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'MouseEvent', 41), Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'ClickEvent', 40), Lcom_google_web_bindery_event_shared_Event$Type_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'Event$Type', 48), Lcom_google_gwt_event_shared_GwtEvent$Type_2_classLit = createForClass('com.google.gwt.event.shared.', 'GwtEvent$Type', 47), Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'DomEvent$Type', 46), Ljava_lang_UnsupportedOperationException_2_classLit = createForClass('java.lang.', 'UnsupportedOperationException', 224), Lcom_google_gwt_user_client_ui_WidgetCollection_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection', 179), _3Lcom_google_gwt_user_client_ui_Widget_2_classLit = createForArray('[Lcom.google.gwt.user.client.ui.', 'Widget;', 256), Lcom_google_gwt_user_client_ui_WidgetCollection$WidgetIterator_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'WidgetCollection$WidgetIterator', 180), Lcom_google_gwt_user_client_Window$ClosingEvent_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$ClosingEvent', 97), Lcom_google_gwt_event_shared_HandlerManager_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager', 54), Lcom_google_gwt_user_client_Window$WindowHandlers_2_classLit = createForClass('com.google.gwt.user.client.', 'Window$WindowHandlers', 98), Lcom_google_web_bindery_event_shared_EventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'EventBus', 57), Lcom_google_web_bindery_event_shared_SimpleEventBus_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus', 56), Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit = createForClass('com.google.gwt.event.shared.', 'HandlerManager$Bus', 55), Lcom_google_web_bindery_event_shared_SimpleEventBus$1_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$1', 185), Lcom_google_web_bindery_event_shared_SimpleEventBus$2_2_classLit = createForClass('com.google.web.bindery.event.shared.', 'SimpleEventBus$2', 186), Lcom_google_gwt_user_client_ui_DirectionalTextHelper_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'DirectionalTextHelper', 152), Ljava_lang_IllegalStateException_2_classLit = createForClass('java.lang.', 'IllegalStateException', 212), Ljava_lang_StringBuffer_2_classLit = createForClass('java.lang.', 'StringBuffer', 221), Lcom_google_gwt_event_logical_shared_CloseEvent_2_classLit = createForClass('com.google.gwt.event.logical.shared.', 'CloseEvent', 53), Lcom_google_gwt_event_dom_client_PrivateMap_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'PrivateMap', 51), Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit = createForClass('com.google.gwt.event.shared.', 'LegacyHandlerWrapper', 58), Ljava_lang_IndexOutOfBoundsException_2_classLit = createForClass('java.lang.', 'IndexOutOfBoundsException', 213), Ljava_util_MapEntryImpl_2_classLit = createForClass('java.util.', 'MapEntryImpl', 245), Lcom_google_gwt_user_client_rpc_SerializationException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'SerializationException', 110), Ljava_util_NoSuchElementException_2_classLit = createForClass('java.util.', 'NoSuchElementException', 246), Lcom_google_gwt_xhr_client_XMLHttpRequest$ResponseType_2_classLit = createForEnum('com.google.gwt.xhr.client.', 'XMLHttpRequest$ResponseType', 184, values_3), _3Lcom_google_gwt_xhr_client_XMLHttpRequest$ResponseType_2_classLit = createForArray('[Lcom.google.gwt.xhr.client.', 'XMLHttpRequest$ResponseType;', 257), Ljava_util_AbstractList_2_classLit = createForClass('java.util.', 'AbstractList', 234), Ljava_util_ArrayList_2_classLit = createForClass('java.util.', 'ArrayList', 239), Ljava_util_AbstractList$IteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$IteratorImpl', 235), Ljava_util_AbstractList$ListIteratorImpl_2_classLit = createForClass('java.util.', 'AbstractList$ListIteratorImpl', 236), Ljava_util_Collections$EmptyList_2_classLit = createForClass('java.util.', 'Collections$EmptyList', 241), Lcom_google_gwt_user_client_ui_ValueBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'ValueBoxBase', 172), Lcom_google_gwt_user_client_ui_TextBoxBase_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'TextBoxBase', 171), Lcom_google_gwt_user_client_ui_TextBox_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'TextBox', 170), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment', 173, values_2), _3Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment_2_classLit = createForArray('[Lcom.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment;', 258), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$1_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$1', 174, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$2_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$2', 175, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$3_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$3', 176, null), Lcom_google_gwt_user_client_ui_ValueBoxBase$TextAlignment$4_2_classLit = createForEnum('com.google.gwt.user.client.ui.', 'ValueBoxBase$TextAlignment$4', 177, null), Lcom_google_gwt_i18n_client_AutoDirectionHandler_2_classLit = createForClass('com.google.gwt.i18n.client.', 'AutoDirectionHandler', 73), Lcom_google_gwt_event_dom_client_KeyEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'KeyEvent', 49), Lcom_google_gwt_event_dom_client_KeyPressEvent_2_classLit = createForClass('com.google.gwt.event.dom.client.', 'KeyPressEvent', 50), Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit = createForClass('com.google.gwt.text.shared.', 'AbstractRenderer', 88), Lcom_google_gwt_text_shared_testing_PassthroughRenderer_2_classLit = createForClass('com.google.gwt.text.shared.testing.', 'PassthroughRenderer', 90), Lcom_google_gwt_text_shared_testing_PassthroughParser_2_classLit = createForClass('com.google.gwt.text.shared.testing.', 'PassthroughParser', 89), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter', 124), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader', 125, values_1), _3Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader_2_classLit = createForArray('[Lcom.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader;', 259), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$1_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$1', 126, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$2_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$2', 129, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$3_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$3', 130, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$4_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$4', 131, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$5_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$5', 132, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$6_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$6', 133, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$7_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$7', 134, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$8_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$8', 135, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$9_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$9', 136, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$10_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$10', 127, null), Lcom_google_gwt_user_client_rpc_impl_RequestCallbackAdapter$ResponseReader$11_2_classLit = createForEnum('com.google.gwt.user.client.rpc.impl.', 'RequestCallbackAdapter$ResponseReader$11', 128, null), Lcom_google_gwt_http_client_Request_2_classLit = createForClass('com.google.gwt.http.client.', 'Request', 61), Lcom_google_gwt_http_client_Response_2_classLit = createForClass('com.google.gwt.http.client.', 'Response', 63), Lcom_google_gwt_http_client_Request$1_2_classLit = createForClass('com.google.gwt.http.client.', 'Request$1', 62), Lcom_google_gwt_user_client_Timer_2_classLit = createForClass('com.google.gwt.user.client.', 'Timer', 65), Lcom_google_gwt_http_client_Request$3_2_classLit = createForClass('com.google.gwt.http.client.', 'Request$3', 64), Lcom_google_gwt_user_client_Timer$1_2_classLit = createForClass('com.google.gwt.user.client.', 'Timer$1', 95), Lcom_google_gwt_user_client_rpc_impl_RpcStatsContext_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'RpcStatsContext', 137), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStream_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStream', 117), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStreamWriter', 119), Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamWriter_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'ClientSerializationStreamWriter', 121), Lcom_google_gwt_http_client_RequestBuilder_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder', 66), Lcom_google_gwt_http_client_RequestBuilder$Method_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder$Method', 68), Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestBuilder$1', 67), Lcom_google_gwt_http_client_RequestException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestException', 69), Lcom_google_gwt_user_client_rpc_RpcRequestBuilder_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'RpcRequestBuilder', 107), Lcom_google_gwt_http_client_RequestPermissionException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestPermissionException', 70), Ljava_util_IdentityHashMap_2_classLit = createForClass('java.util.', 'IdentityHashMap', 244), Lcom_google_gwt_user_client_rpc_StatusCodeException_2_classLit = createForClass('com.google.gwt.user.client.rpc.', 'StatusCodeException', 112), Lcom_google_gwt_user_client_rpc_impl_AbstractSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'AbstractSerializationStreamReader', 118), Lcom_google_gwt_user_client_rpc_impl_ClientSerializationStreamReader_2_classLit = createForClass('com.google.gwt.user.client.rpc.impl.', 'ClientSerializationStreamReader', 120), Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit = createForClass('com.google.gwt.http.client.', 'RequestTimeoutException', 71), Lcom_google_gwt_user_client_ui_Image_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image', 161), Lcom_google_gwt_user_client_ui_Image$State_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$State', 162), Lcom_google_gwt_user_client_ui_Image$UnclippedState_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$UnclippedState', 164), Lcom_google_gwt_user_client_ui_Image$State$1_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'Image$State$1', 163), Lcom_google_gwt_user_client_ui_FlowPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'FlowPanel', 153), Lcom_google_gwt_user_client_ui_VerticalPanel_2_classLit = createForClass('com.google.gwt.user.client.ui.', 'VerticalPanel', 178), Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit = createForClass('com.google.gwt.safehtml.shared.', 'SafeUriString', 86);
 $stats && $stats({moduleName:'weather',sessionId:$sessionId,subSystem:'startup',evtGroup:'moduleStartup',millis:(new Date()).getTime(),type:'moduleEvalEnd'});
 if ($wnd.weather) $wnd.weather.onScriptLoad();
 --></script></body></html>

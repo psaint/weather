@@ -11,22 +11,24 @@ h1 {
 
 /* Fit into iPhone 4 screen  iPhone 5 is just doubling this */
 body {
-	border: 1px solid black;
+	border: 3px solid black;
 	margin: 0px;
 	padding: 0px;
-	width: 320px;
-	height: 480px;
+	width: 700pt;
+	height: 960pt;
 	overflow: hidden;
+	position: relative;
 }
 
 #content {
-	height: 440px;
+	height: 880pt;
 }
 
 #toolbar {
 	background: navy;
 	border: 1px solid black;
-	height: 40px;
+	height: 80pt;
+	
 }
 
 #toolbar .gwt-Button {
@@ -34,10 +36,10 @@ body {
 	background: none;
 	color: white;
 	cursor: pointer;
-	font-size: 24px;
-	margin: 0px 5px;
-	height: 40px;
-	width: 70px;	
+	font-size: 24pt;
+	margin: 0pt 5pt;
+	height: 80pt;
+	width: 140pt;	
 }
 
 #toolbar .gwt-Button:hover {
@@ -46,8 +48,12 @@ body {
 }
 
 #info-page {
-	border-radius: 20px;
+	border-radius: 20pt;
 	background: whiteSmoke;
-	margin: 20px;
-	padding: 20px;
+	
+	margin: 0 20pt;
+	padding: 20pt;
+	
+	position: relative;
+	top: 20pt;
 }
