@@ -17,7 +17,6 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.swietoslawski.weather.client.views.AddCityDialogBox;
@@ -38,7 +37,8 @@ import com.swietoslawski.weather.shared.WeatherWrapper;
 public class Weather implements EntryPoint {
 	
 	// Eight weather casts should initially be more than enough
-	private ArrayList<String> cities = new ArrayList<String>(8);
+	private ArrayList<WeatherWrapper> weatherCasts = new ArrayList<WeatherWrapper>(8);
+	private int index = -1;
 	
 	private TextBox txBox;
 	HTML weatherHtml;
@@ -54,9 +54,7 @@ public class Weather implements EntryPoint {
 	private FlowPanel content;
 	private FlowPanel navigation;
 	
-	private Listener[] listeners;
-	
-	// Store weather objects
+	// Store current weather objects
 	private ForecastInformation forecastInformation;
 	private CurrentConditions currentConditions;
 	private Forecast[] forecasts;
@@ -76,41 +74,6 @@ public class Weather implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		
-		// TODO We need to delegate UI management to a separate class
-
-		
-		// We will create RootLayoutPanel that will give us ability to respond to resizing
-		// Then we add DockLayoutPanel that will allow to define content and toolbar
-		// areas and will fill in whole available space
-		// Then we add FlowPanel to centr area to stretch left right top bottom
-		// Then we add toolbar to south area
-		// Content area will either present user with welcome screen if no cities are 
-		// stored or weather cast for first city on the stred list
-		// West and East regions will hold navigation buttons (if user has more than
-		// one city in the list.
-		// In a center area below content we will show indicator rendering dots for number
-		// of cities user have
-		
-		// We will provide four buttons in a toolbar: adding new city, showing list of cities,
-		// showing config (update time etc), accessing help page
-		
-		// All the pages (views) will be generated in separate functions
-		
-		// adding city will be shown as dialog box where on success we will render name of city
-		// and a state for which we were able to pull weather and provide Add and Cancel buttons
-		// on failure we will provide message of either not being able to conenct to service, 
-		// or not being able to find city
-		
-		// Function calling service fetching weatcher will update fields related to weathercast
-		// in main controller (this class)
-		// However because this is an aynchronous call and we have callbacks for success
-		// we need to have ability to provide different callbacks depending what object
-		// is calling service. For instance when the home page is calling service the success
-		// callback should result in re-rendering currently displayed weather cast.
-		// On the other hand when the dialog box window for addding new city calls service 
-		// it should result in updating html on the box itself
-		
 		renderUI();
 		initEventHandlers();
 		
@@ -203,8 +166,32 @@ public class Weather implements EntryPoint {
 		toolbar.add(config);
 		toolbar.add(help);
 		
-		prev = new Button("<");
-		next = new Button(">");
+		prev = new Button("<", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// We don't have to check what position 
+				// in the list we are now as button is
+				// only available when user can move back
+				index--;
+				render();
+				
+			}
+		});
+		prev.setVisible(false);
+		next = new Button(">", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// We don't have to check what position 
+				// in the list we are now as button is
+				// only available when user can advance
+				index++;
+				render();
+				
+			}
+		});
+		next.setVisible(false);
 		
 		HTML info = new HTML("<h1>Welcome</h1><p>bla bla bla</p>");
 		HTML indicator = new HTML();
@@ -227,24 +214,32 @@ public class Weather implements EntryPoint {
 		root.add(layout);
 		
 	}
-
-
-	protected void validateAndSubmit() {
-		String city = txBox.getText().trim();
-		
-		if (!ZipValidator.isValid(city)) {
-			Window.alert("Zip-code must have 5 digits");
-			return;
+	
+	private void updatePrevNextVisibility() {
+		if (index != -1 && weatherCasts != null) {
+			
+			// We are at the beggining of weathercast stack
+			// so we only shows next button
+			if (index == 0 && weatherCasts.size() > 1) {
+				prev.setVisible(false);
+				next.setVisible(true);
+			}
+			
+			// At the end of weather casts stack
+			// show only previous button
+			else if (index == weatherCasts.size() - 1) {
+				prev.setVisible(true);
+				next.setVisible(false);
+			}
+			// In the middle of a stack
+			else {
+				prev.setVisible(true);
+				next.setVisible(true);
+			}
 		}
-		
-		// Disable the text box
-		txBox.setEnabled(false);
-		
-		// Get choice of temperature
-		fetchWeatherHtml(city);
 	}
 
-	private void fetchWeatherHtml(String city) {
+	private void refresh() {
 		
 		
 		// Setup callback
@@ -263,58 +258,53 @@ public class Weather implements EntryPoint {
 			@Override
 			public void onSuccess(WeatherWrapper weather) {
 				
-				// Extract data from weather cast
-				forecastInformation = weather.getForecastInformation();
-				currentConditions = weather.getCurrentConditions();
-				forecasts = weather.getForecastConditions();
-				
-				// TODO we should save the weather info in fields, reset failure falg
-				// and not update forecasts updating forecast should be invoked 
-				// only when user is viewing home page
-				
-				// Update forecast
-				//updateForecast();
-				
-				broadcastEvent("weatherFetched");
 			}
 		};
 		
+		
+		
 		// Call remote service and define callback behavior
-		weatherService.getWeather(city, callback);
+		//weatherService.getWeather(city, callback);
 		
 	}
 
-	protected void broadcastEvent(String event) {
-		for (Listener listener : listeners) {
-			listener.getNotified(event);
-		}		
-	}
+	public void addWeatherCast(WeatherWrapper weather) {
 
-	protected void updateForecast() {
+		// Save weather cast
+		weatherCasts.add(weather);
 		
-		// Remove current forecast
-		RootPanel.get("content").clear();
-		RootPanel.get("content").clear();
-		
-		// Re-render city search box
-		//showAddCityView();
-		
-		// Update current forecast
-		updateCurrent(forecastInformation.getCity(), currentConditions.getIcon(), currentConditions.getTemp_f(), currentConditions.getTemp_c(), currentConditions.getHumidity());
+		// Reset index to the last element on the stack
+		index = weatherCasts.size() - 1;
 				
-		// Render forecast for four days
-		// Each forecast in one row with:
-		//   - condition icon
-		//   - Week day name
-		//   - High and low temperature in Fahrenheit 
-		updateForecast(forecasts);
-		
-		// Reenable textbox
-		txBox.setEnabled(true);
-		
+		// Re-render view
+		render();
 	}
 
-	private void updateCurrent(String city, String icon, String temp_f, String temp_c, String humidity) {
+	protected void render() {
+				
+		// Update forecast view
+		// Extract current weather
+		WeatherWrapper weather = weatherCasts.get(index);
+		forecastInformation = weather.getForecastInformation();
+		currentConditions = weather.getCurrentConditions();
+		forecasts = weather.getForecastConditions();
+
+		FlowPanel current = updateCurrent(forecastInformation.getCity(), currentConditions.getIcon(), 
+				currentConditions.getTemp_f(), currentConditions.getTemp_c(), currentConditions.getHumidity()); 
+		VerticalPanel forecasts = updateForecast(this.forecasts);
+		
+		// Clear panel
+		content.clear();
+
+		// Render new weather cast
+		content.add(current);
+		content.add(forecasts);
+		
+		// Update previous and next buttons visibility
+		updatePrevNextVisibility();
+	}
+
+	private FlowPanel updateCurrent(String city, String icon, String temp_f, String temp_c, String humidity) {
 		Label c = new Label(city);
 		Label t_f = new Label(temp_f);
 		Label t_c = new Label(temp_c);
@@ -328,11 +318,10 @@ public class Weather implements EntryPoint {
 		flowPanel.add(t_c);
 		flowPanel.add(h);
 			
-		RootPanel.get("content").add(flowPanel);
+		return flowPanel;
 	}
 
-	private void updateForecast(Forecast[] forecasts) {
-		
+	private VerticalPanel updateForecast(Forecast[] forecasts) {
 		
 		// Forecast for following days will be rendered in rows
 		VerticalPanel vPanel = new VerticalPanel();
@@ -352,13 +341,7 @@ public class Weather implements EntryPoint {
 			vPanel.add(hPanel);	
 		}
 		
-		RootPanel.get("content").add(vPanel);
-	}
-
-	public void addCity(String city) {
-		cities.add(city);
-		
-		// At that point we should also re-render view
+		return vPanel;
 	}
 
 }

@@ -4,7 +4,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyPressEvent;
-import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -27,6 +26,8 @@ public class AddCityDialogBox extends DialogBox {
 	}
 	
 	private Weather controller;
+	
+	protected WeatherWrapper weatherCast;
 	
 	@UiField TextBox city;
 	@UiField Button search;
@@ -93,7 +94,7 @@ public class AddCityDialogBox extends DialogBox {
     void onClickAdd(ClickEvent event) {
 		// Let controller update it's list of cities
 		if (city.getValue() != "") {
-			controller.addCity(city.getValue());
+			controller.addWeatherCast(weatherCast);
 		}
 		
     	hide();
@@ -105,7 +106,10 @@ public class AddCityDialogBox extends DialogBox {
 
 			@Override
 			public void onFailure(Throwable caught) {
-				// TODO Add generic errors to weather service
+				
+				// Delete saved weather cast
+				weatherCast = null;
+				
 				message.setHTML("Error: " + caught.getMessage());
 				message.setVisible(true);
 			}
@@ -113,10 +117,8 @@ public class AddCityDialogBox extends DialogBox {
 			@Override
 			public void onSuccess(WeatherWrapper weather) {
 				
-				// Save weather in controller
-				//forecastInformation = weather.getForecastInformation();
-				//currentConditions = weather.getCurrentConditions();
-				//forecasts = weather.getForecastConditions();
+				// Save weather cast
+				weatherCast = weather;
 				
 				message.setHTML(weather.getForecastInformation().getCity());
 				message.setVisible(true);
