@@ -118,3 +118,402 @@ Translatable source found in...
 Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
 Removing invalidated units
 Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.google.gwt.user.client.ui.HorizontalSplitPanel.Resources
+   Invoking generator com.google.gwt.resources.rebind.context.InlineClientBundleGenerator
+      Preparing method horizontalSplitPanelThumb
+         Adding image 'com.google.gwt.user.client.ui.HorizontalSplitPanel.Resources.horizontalSplitPanelThumb'
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.google.gwt.user.client.ui.impl.ClippedImageImpl.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.google.gwt.user.client.ui.impl.ClippedImageImpl.Template
+         Generating method body for image()
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2722 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2721 cached/archived units.  Used 2721 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2720 cached/archived units.  Used 2720 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2720 cached/archived units.  Used 2720 / 2721 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2741 units from cache.
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2741 units from cache.
+Validating units:
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/TestThrowaway.java'
+      [ERROR] Line 13: No source code is available for type java.text.SimpleDateFormat; did you forget to inherit a required module?
+   [ERROR] Errors in 'file:/Users/peter.swietoslawski/Code/Java/Weather/src/com/swietoslawski/weather/shared/WeatherXML.java'
+      [ERROR] Line 51: No source code is available for type org.w3c.dom.Document; did you forget to inherit a required module?
+      [ERROR] Line 53: No source code is available for type org.w3c.dom.Node; did you forget to inherit a required module?
+      [ERROR] Line 55: No source code is available for type org.w3c.dom.NodeList; did you forget to inherit a required module?
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar.ToolbarUiBinder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831455184.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831455184.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831455184_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar.ToolbarUiBinder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831456503.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831456503.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831456503_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar.ToolbarUiBinder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831487769.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831487769.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weather.client.Toolbar_ToolbarUiBinderImpl_designTime1345831487769_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units

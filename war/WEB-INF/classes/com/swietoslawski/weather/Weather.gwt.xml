@@ -8,6 +8,8 @@
 <module rename-to='weather'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.place.Place"/>
+  <inherits name="com.google.gwt.activity.Activity"/>
   
   <!-- Uncomment if you want to parse XML on client side -->
   <!-- <inherits name='com.google.gwt.xml.XML'/> -->

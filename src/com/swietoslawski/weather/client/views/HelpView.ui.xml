@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+		.panel {
+			background-color: ivory;
+		}
+	</ui:style>
+
+	<g:FlowPanel styleName="{style.panel}">
+		<g:HTML>
+			<h1>Help</h1>
+			<p>Lorizzle ipsizzle dolor sit amizzle, shit adipiscing for sure. Fizzle mammasay mammasa mamma oo sa velizzle, fo shizzle my nizzle volutpat, suscipit shizzlin dizzle, for sure vizzle, crunk. Pellentesque sure tortor. Its fo rizzle erizzle. Go to hizzle izzle shizzle my nizzle crocodizzle dapibus turpis tempizzle get down get down. Maurizzle pellentesque nibh et turpizzle. Dawg izzle tortizzle. Break yo neck, yall mammasay mammasa mamma oo sa rhoncus nisi. In hac break it down platea dictumst. Fo dapibizzle. Daahng dawg cool urna, pretizzle yippiyo, mattizzle daahng dawg, eleifend gizzle, nunc. Tellivizzle suscipit. Integizzle bling bling gangsta boofron bling bling.</p>
+			<p>Vestibulum fo shizzle ipsizzle own yo' izzle things orci luctizzle check out this own yo' posuere owned Curae; Sed phat for sure quizzle we gonna chung izzle aliquam. Phasellizzle euismod erat. Nizzle volutpizzle accumsan velit. Praesent dizzle shit, adipiscing vitae, uhuh ... yih! cool, interdizzle doggy, . Etizzle check it out bibendizzle pizzle. Dawg owned bow wow wow things augue porta pimpin'. Nizzle sizzle augue. Owned sagittizzle. Dizzle eu lacus quizzle fo pimpin' da bomb. Donizzle shizzle my nizzle crocodizzle tellus a felizzle bling bling dawg. Integizzle that's the shizzle. Nam scelerisque. For sure magna boofron, dignissizzle vitae, porttitizzle ghetto, imperdizzle egestizzle, sure. Integer dope sodales lectus. Bling bling sollicitudizzle tristique sizzle. Gizzle mi erizzle, convallizzle the bizzle, pellentesque gangster, ultricizzle izzle, shiz. Fusce erizzle mauris, facilisizzle da bomb, go to hizzle eu, aliquizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle, lectizzle. That's the shizzle mauris risizzle, varizzle tellivizzle, fo gangster, blandit sit amizzle, enim.</p>
+		</g:HTML>
+	</g:FlowPanel>
+</ui:UiBinder>
