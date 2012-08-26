@@ -7,6 +7,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import com.swietoslawski.weather.shared.JSO.CurrentConditions;
+import com.swietoslawski.weather.shared.JSO.Forecast;
+import com.swietoslawski.weather.shared.JSO.ForecastInformation;
+import com.swietoslawski.weather.shared.JSO.Weather;
+
 //Google weather API respond with XML:
 /*
  * <xml_api_reply version="1">
@@ -195,10 +200,10 @@ public class WeatherXML {
 		return forecastConditions.get(day).get("condition");
 	}
 
-	public WeatherWrapper asWeather() {
+	public Weather asWeather() {
 		// TODO assemble Weather objec of: ForecastInformation,
 		//      Current conditions and array of Forecasts.
-		WeatherWrapper weather;
+		Weather weather;
 		ForecastInformation forecastInformation = new ForecastInformation(getCity(), getDate());
 		CurrentConditions currentConditions = new CurrentConditions(getCondition(), getTempF(), getTempC(), getHumidity(), getIcon(), getWind());
 		Forecast[] forecasts = new Forecast[4];
@@ -206,7 +211,7 @@ public class WeatherXML {
 			forecasts[i] = new Forecast(getDay(i), getLow(i), getHight(i), getIcon(i), getCondition(i));
 		}
 		
-		weather = new WeatherWrapper(forecastInformation, currentConditions, forecasts);
+		weather = new Weather(forecastInformation, currentConditions, forecasts);
 		
 		return weather;
 	}

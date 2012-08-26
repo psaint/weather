@@ -14,9 +14,9 @@ import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.swietoslawski.weather.client.Weather;
+import com.swietoslawski.weather.client.WeatherMainPresenter;
 import com.swietoslawski.weather.client.WeatherServiceAsync;
-import com.swietoslawski.weather.shared.WeatherWrapper;
+import com.swietoslawski.weather.shared.JSO.Weather;
 
 public class AddCityDialogBox extends DialogBox {
 
@@ -25,9 +25,9 @@ public class AddCityDialogBox extends DialogBox {
 	interface Binder extends UiBinder<Widget, AddCityDialogBox> {
 	}
 	
-	private Weather controller;
+	private WeatherMainPresenter controller;
 	
-	protected WeatherWrapper weatherCast;
+	protected Weather weatherCast;
 	
 	@UiField TextBox city;
 	@UiField Button search;
@@ -36,7 +36,7 @@ public class AddCityDialogBox extends DialogBox {
 	@UiField Button cancel;
 	
 	
-	public AddCityDialogBox(Weather controller) {
+	public AddCityDialogBox(WeatherMainPresenter controller) {
 		
 		this.controller = controller;
 		
@@ -102,7 +102,7 @@ public class AddCityDialogBox extends DialogBox {
 	
 	private void searchHandler() {
 		// Setup callback
-		AsyncCallback<WeatherWrapper> callback = new AsyncCallback<WeatherWrapper>() {
+		AsyncCallback<Weather> callback = new AsyncCallback<Weather>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -115,7 +115,7 @@ public class AddCityDialogBox extends DialogBox {
 			}
 
 			@Override
-			public void onSuccess(WeatherWrapper weather) {
+			public void onSuccess(Weather weather) {
 				
 				// Save weather cast
 				weatherCast = weather;

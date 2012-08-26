@@ -18,10 +18,9 @@ import org.xml.sax.SAXException;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.swietoslawski.weather.client.WeatherService;
-import com.swietoslawski.weather.client.ZipValidator;
-import com.swietoslawski.weather.shared.WeatherWrapper;
 import com.swietoslawski.weather.shared.WeatherException;
 import com.swietoslawski.weather.shared.WeatherXML;
+import com.swietoslawski.weather.shared.JSO.Weather;
 
 public class WeatherServiceImpl extends RemoteServiceServlet implements
 		WeatherService {
@@ -30,15 +29,13 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 	private final String weatherURL = "http://www.google.com/ig/api?";
 	
 	@Override
-	public WeatherWrapper getWeather(String city)
+	public Weather getWeather(String city)
 			throws WeatherException {
 
 		// Validation of the code in client side does not guarantee that the such
 		// validated input was not tampered after by man in the middle attack 
 		// For AJAX application the input should be also re-validated on server side!!!
-		if (!ZipValidator.isValid(city)) {
-			throw new WeatherException("Zip-code must have 5 digits");
-		}
+		// TODO Add some validation
 		
 		Document weatherDOM = null;
 		
@@ -65,14 +62,11 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 	private Document getWeatherDOM(String city) 
 		throws IOException, ParserConfigurationException, SAXException {
 		
+		// TODO This fetching of XML and parsing is a joke. I have to have a
+		// look in RequestBuilder
+		
 		String url_string = getWeatherUrl(city);
 		URL url = new URL(url_string);
-		
-		// Reading XML file
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setNamespaceAware(true);
-		     
-		DocumentBuilder builder = factory.newDocumentBuilder();
 		
 		// The below which should in theory be feed to DocumentBuilder.parse
 		// results in error thus we need to do this ridiculous
@@ -113,6 +107,11 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements
 		//Document doc = builder.parse(in);
 		StringReader str = new StringReader(responseBuilder.toString());
 		InputSource in = new InputSource(str);
+		
+		// Reading XML file
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setNamespaceAware(true);
+		DocumentBuilder builder = factory.newDocumentBuilder();
 		Document doc = builder.parse(in);
 		
 		return doc;
