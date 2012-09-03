@@ -12,6 +12,6 @@ import com.swietoslawski.weatherbox.shared.Weather;
 public interface WeatherService extends RemoteService {
 	
 	List<City> findCityLike(String name);
-	List<Weather> getWeatherFor(String country, String state, String city);
+	List<Weather> getWeatherFor(City city);
 	
 }

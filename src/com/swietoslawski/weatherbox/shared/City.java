@@ -22,6 +22,29 @@ public class City implements IsSerializable {
 		this.country = country;
 	}
 
+	public City(String path) {
+		
+		path = path.replace("%20", " ");
+		
+		String[] url = path.split("/");
+		
+		// We only have country and city
+		if (url.length == 2) {
+			country = url[0];
+			state = "";
+			city = url[1];
+		}
+		// Adding state for US
+		else if (url.length == 3) {
+			country = url[0];
+			state = url[1];
+			city = url[2];
+		}
+		else {
+			// This shoud throw exception as something is wrong with path
+		}
+	}
+
 	public String getCity() {
 		return city;
 	}
@@ -47,10 +70,14 @@ public class City implements IsSerializable {
 	}
 	
 	public String toURL() {
-		String country_str = country.replace(" ", "%20");
+		String country_str = (!state.equals("")) ? country : "";
 		String state_str = (!state.equals("")) ? "/" + state : "";
 		String city_str = "/" + city.replace(" ", "%20");
 		
-		return country_str + state_str + city_str;
+		return encodeSpaces(country_str + state_str + city_str);
+	}
+	
+	private String encodeSpaces(String string) {
+		return string.replace(" ", "%20");
 	}
 }

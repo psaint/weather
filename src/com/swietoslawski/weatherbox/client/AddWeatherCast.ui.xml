@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+		.panel {
+			background-color: ivory;
+		}
+	</ui:style>
+
+	<g:VerticalPanel styleName="{style.panel}">
+		<g:TextBox ui:field="city_text"></g:TextBox>
+		<g:ListBox ui:field="cities_list"></g:ListBox>
+	</g:VerticalPanel>
+</ui:UiBinder>
