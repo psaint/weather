@@ -13,5 +13,7 @@ public interface WeatherService extends RemoteService {
 	
 	List<City> findCityLike(String name);
 	List<Weather> getWeatherFor(City city);
+	void saveToFile(List<City> cities);
+	List<City> readFromFile();
 	
 }

@@ -9,6 +9,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.storage.client.Storage;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
@@ -19,6 +20,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.view.client.ListDataProvider;
 import com.swietoslawski.weatherbox.client.widgets.AddCityDialog;
 import com.swietoslawski.weatherbox.shared.City;
 import com.swietoslawski.weatherbox.shared.Weather;
@@ -34,6 +36,8 @@ public class WeatherMainController implements EntryPoint {
 	private final WeatherServiceAsync weatherService = GWT.create(WeatherService.class);
 	
 	private List<City> cities = new ArrayList<City>(8);
+//	private ListDataProvider<City> cities_dp = new ListDataProvider<City>(cities);
+	
 	private List<List<Weather>> weather_casts = new ArrayList<List<Weather>>();
 	
 	// Keep track of current city city on weather casts stack
@@ -43,6 +47,7 @@ public class WeatherMainController implements EntryPoint {
 	// Keep track of position of current city in weather casts stack
 	private int index = -1;
 	
+	private Button home;
 	private Button add;
 	private Button list;
 	private Button help;
@@ -60,22 +65,43 @@ public class WeatherMainController implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		
+		loadFromLocalStorage();
+		
 		renderUI();
 		
 		initEventHandlers();
 		
 		renderWeatherCast();
-		
-//		if (cities.size() == 0) {
-//			showAddCityDialog();
-//		}
-//		else {
-//			showWeatherCast();
-//		}
 	}
 	
 	
+	private void loadFromLocalStorage() {
+		if (cities.size() == 0) {
+			Storage storage = Storage.getLocalStorageIfSupported();
+			if (storage != null) {
+				
+				// LOAD only first city
+				
+				for (int i = 0; i < storage.getLength(); i++) {
+					String key = storage.key(i);
+					//String item = storage.getItem(key);
+					City city = new City(key);
+					
+					addCity(city);
+				}
+			}
+		}
+	}
+	
 	private void initEventHandlers() {
+		
+		home.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				renderWeatherCast();
+			}
+		});
 		
 		add.addClickHandler(new ClickHandler() {
 			
@@ -89,7 +115,7 @@ public class WeatherMainController implements EntryPoint {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-//				showListView();
+				showListView();
 			}
 		});
 		
@@ -109,11 +135,13 @@ public class WeatherMainController implements EntryPoint {
 		// return to app's home screen
 		navigation = new FlowPanel();
 		
+		home = new Button("Home");
 		add = new Button("Add");
 		list = new Button("List");
 		help = new Button("Help");
 		
 		FlowPanel toolbar = new FlowPanel();
+		toolbar.add(home);
 		toolbar.add(add);
 		toolbar.add(list);
 		toolbar.add(help);
@@ -177,8 +205,7 @@ public class WeatherMainController implements EntryPoint {
 		if (index != -1 && cities != null) {
 			
 			if (cities.size() <= 1) {
-				prev.setVisible(false);
-				next.setVisible(false);
+				hidePrevNextButton();
 			}
 			// We are at the beginning of weathercast stack
 			// so we only shows next button
@@ -214,7 +241,9 @@ public class WeatherMainController implements EntryPoint {
 		
 		
 		// Render weather cast if user has any saved
-		if (cities.size() > 0) {	
+		if (cities.size() > 0) {
+			list.setEnabled(true);
+			
 			FlowPanel weatherPanel = updateWeatherPanel(); 
 			VerticalPanel forecastPanel = updateForecastPanel();
 			
@@ -229,28 +258,32 @@ public class WeatherMainController implements EntryPoint {
 			updatePrevNextVisibility();
 		}
 		else {
+			list.setEnabled(false);
 			showHelpView();
 		}
 	}
 
 	private FlowPanel updateWeatherPanel() {
-		
-		// Weather for today
-		Weather weather = this.weather.get(0);
-		
-		City city = new City(weather.getCity());
-		Label city_name = new Label(city.getCity() + " " + city.getState());
-		Label tempH = new Label(weather.getTemp_h());
-		Label tempL = new Label(weather.getTemp_l());
-		Image icon = new Image(weather.getIcon());
-		Label humidity = new Label(weather.getHumidity());
-		
 		FlowPanel flowPanel = new FlowPanel();
-		flowPanel.add(city_name);
-		flowPanel.add(icon);
-		flowPanel.add(tempH);
-		flowPanel.add(tempL);
-		flowPanel.add(humidity);
+		
+		if (this.weather.size() > 0) {
+			// Weather for today
+			Weather weather = this.weather.get(0);
+			
+			City city = new City(weather.getCity());
+			Label city_name = new Label(city.getCity() + " " + city.getState());
+			Label tempH = new Label(weather.getTemp_h());
+			Label tempL = new Label(weather.getTemp_l());
+			Image icon = new Image(weather.getIcon());
+			Label humidity = new Label(weather.getHumidity());
+			
+			
+			flowPanel.add(city_name);
+			flowPanel.add(icon);
+			flowPanel.add(tempH);
+			flowPanel.add(tempL);
+			flowPanel.add(humidity);
+		}
 			
 		return flowPanel;
 	}
@@ -282,13 +315,13 @@ public class WeatherMainController implements EntryPoint {
 	}
 	
 	
-	
-	
-	
 	public void showHelpView() {
 		HTML info = new HTML("<h1>Welcome</h1><p>bla bla bla</p>");
 		HTML indicator = new HTML();
 		
+		hidePrevNextButton();
+		
+		content.clear();
 		content.add(info);
 		content.add(indicator);
 	}
@@ -305,7 +338,21 @@ public class WeatherMainController implements EntryPoint {
 	}
 	
 	public void addCity(City city) {
+		
+		// Add city to local storage if available
+		// So the next time user will load app her favorite 
+		// cities will be persisted
+		Storage storage = Storage.getLocalStorageIfSupported();
+		if (storage != null) {
+			storage.setItem(city.toURL(), city.toURL());
+		}
+		
 		cities.add(city);
+		
+		// Update current city
+		// TODO Get rid of this current city and current weather as we
+		// can calculate them dynamically based on the value of index
+		// when and where we need them.
 		this.city = city;
 		
 		// update index to point to the last added city
@@ -313,9 +360,24 @@ public class WeatherMainController implements EntryPoint {
 		getWeather();
 	}
 	
-	public void removeCity(City city) {
-		cities.remove(city);
+	public void removeCity(int row_nr) {
+		
+		// Remove from local storage if available
+		Storage storage = Storage.getLocalStorageIfSupported();
+		if (storage != null) {
+			City city = cities.get(row_nr);
+			storage.removeItem(city.toURL());
+		}
+
+		cities.remove(row_nr);
 		index = cities.size() - 1;
+		
+			
+		// Make sure that we update weather
+		if (index >= 0)
+			weather = weather_casts.get(index);
+		else 
+			weather = null;
 	}
 	
 	public void getWeather() {
@@ -337,7 +399,10 @@ public class WeatherMainController implements EntryPoint {
 				weather = weather_cast;
 				
 				// TODO Once new weather cast is added we need to re-render UI
-				addCityDialog.hide();
+				if (addCityDialog != null) {
+					addCityDialog.hide();
+				}
+				
 				renderWeatherCast();
 			}
 			
@@ -347,5 +412,60 @@ public class WeatherMainController implements EntryPoint {
 				
 			}
 		});
+	}
+	
+	private void showListView() {
+		if (cities.size() == 0) {
+			renderWeatherCast();
+			return;
+		}
+		
+		// TODO Another, prolly better, way to do this would be to use ListDataProvider 
+		//		together with CellTable. However this would be a lot more complicated
+		//      than this simple solution where we track index of element listed in 
+		//      html's Title attribute.
+		VerticalPanel vPanel = new VerticalPanel();
+		int row_nr = 0;
+		for (City city : cities) {
+			FlowPanel layout = new FlowPanel();
+			Label city_name = new Label(city.getCity());
+			Button delete = new Button("Delete");
+			delete.setTitle(String.valueOf(row_nr));
+			row_nr++;
+			
+			layout.add(city_name);
+			layout.add(delete);
+			
+			delete.addClickHandler(new ClickHandler() {
+				
+				@Override
+				public void onClick(ClickEvent event) {
+					Button btn = (Button) event.getSource();
+					String row_nr  = btn.getTitle();
+					removeCity(Integer.parseInt(row_nr));
+					
+					// Re-render page
+					// IMPORTANT: This is a must to make sure that row numbers (indexes)
+					//            of tracked elements will be re-calculated again.
+					showListView();
+				}
+			});
+			
+			vPanel.add(layout);
+		}
+		
+		
+		
+		hidePrevNextButton();
+		
+		content.clear();
+		content.add(vPanel);
+	}
+
+
+	private void hidePrevNextButton() {
+		// Hide buttons
+		prev.setVisible(false);
+		next.setVisible(false);
 	}
 }

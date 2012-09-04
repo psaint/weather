@@ -1,6 +1,9 @@
 package com.swietoslawski.weatherbox.server;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,6 +32,8 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 	private final static String API = "a780a20159174771";
 	private final static String SERVICE = "/forecast/geolookup/q/";
 	private final static String RESPONSE_FORMAT = ".xml";
+	
+	private final static String FILE_STORAGE = "storage.txt";
 	
     private URL url;
     
@@ -186,5 +191,23 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+
+	@Override
+	public void saveToFile(List<City> cities) {
+		// IMPORTANT: Saving to file system is not supported on Google App Engine 
+		// @link http://stackoverflow.com/questions/2693081/does-google-app-engine-allow-creation-of-files-and-folders-on-the-server
+		
+		// NOTE: To store data on Google App Engine we can use NoSQL schemaless object datastore
+		// @link https://developers.google.com/appengine/docs/java/datastore/
+		// @link https://developers.google.com/appengine/docs/java/gettingstarted/usingdatastore
+	}
+
+
+	@Override
+	public List<City> readFromFile() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
