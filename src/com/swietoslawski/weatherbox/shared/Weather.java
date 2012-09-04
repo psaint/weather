@@ -9,6 +9,10 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  */
 public class Weather implements IsSerializable {
 	
+	/**
+	 * @gwt.typeArgs <
+	 */
+	private String city;
 	private String weekday;
 	private String time;
 	private String temp_h;
@@ -21,10 +25,11 @@ public class Weather implements IsSerializable {
 	
 	public Weather() {}
 	
-	public Weather(String weekday, String time, String temp_h,
+	public Weather(String city, String weekday, String time, String temp_h,
 			String temp_l, String condition, String icon_url,
 			String avehumidity, String wind) {
 
+		this.city = city;
 		this.weekday = weekday;
 		this.time = time;
 		this.temp_h = temp_h;
@@ -35,31 +40,80 @@ public class Weather implements IsSerializable {
 		this.wind = wind;
 	}
 	
+
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getWeekday() {
 		return weekday;
 	}
+
+	public void setWeekday(String weekday) {
+		this.weekday = weekday;
+	}
+
 	public String getTime() {
 		return time;
 	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public String getTemp_h() {
 		return temp_h;
 	}
+
+	public void setTemp_h(String temp_h) {
+		this.temp_h = temp_h;
+	}
+
 	public String getTemp_l() {
 		return temp_l;
 	}
+
+	public void setTemp_l(String temp_l) {
+		this.temp_l = temp_l;
+	}
+
 	public String getCondition() {
 		return condition;
 	}
-	public String getIcon_url() {
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
+
+	public String getIcon() {
 		return icon;
 	}
-	public String getAvehumidity() {
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getHumidity() {
 		return humidity;
 	}
+
+	public void setHumidity(String humidity) {
+		this.humidity = humidity;
+	}
+
 	public String getWind() {
 		return wind;
 	}
-	
+
+	public void setWind(String wind) {
+		this.wind = wind;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder output = new StringBuilder();
@@ -67,7 +121,8 @@ public class Weather implements IsSerializable {
 		// Normally would use reflection with Field this.getClass().getDeclaredFields()
 		// but it's not available on client side 
 		final String EOL = "\n";
-		
+	
+		output.append("city: " + city.toString() + EOL);
 		output.append("weekday: " + weekday + EOL);
 		output.append("time: " + time + EOL);
 		output.append("high: " + temp_h + EOL);

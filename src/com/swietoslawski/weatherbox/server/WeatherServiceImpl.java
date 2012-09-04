@@ -112,7 +112,7 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 				
 				// Process if child item we got is a node
 				if (forecastdayNode.getNodeType() == Node.ELEMENT_NODE) {
-					weather_casts.add(extractWeatherFromNode(forecastdayNode));
+					weather_casts.add(extractWeatherFromNode(forecastdayNode, city));
 				}
 			}
 			
@@ -141,7 +141,7 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 		return doc;
 	}
 	
-	private Weather extractWeatherFromNode(Node forecastdayNode) {
+	private Weather extractWeatherFromNode(Node forecastdayNode, City city) {
 		// Forecast has only few fields we are interested in keeping
 		//   - date
 		//     -  weekday
@@ -176,7 +176,7 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 		Node avewind = ((Element) forecastdayNode).getElementsByTagName("avewind").item(0);
 		String wind = ((Element) avewind).getElementsByTagName("mph").item(0).getFirstChild().getTextContent();
 		
-		return new Weather(weekday, time, temp_h, temp_l, condition, icon, humidity, wind);
+		return new Weather(city.toURL(), weekday, time, temp_h, temp_l, condition, icon, humidity, wind);
 	}
 	
 	private void buildURL(City city) {

@@ -9,6 +9,6 @@ import com.swietoslawski.weatherbox.shared.Weather;
 public interface WeatherServiceAsync {
 	
 	void findCityLike(String name, AsyncCallback<List<City>> callback);
-	void getWeatherFor(City city, AsyncCallback<List<Weather>> callback);
+	void getWeatherFor(City city, AsyncCallback<List<Weather>> asyncCallback);
 	
 }

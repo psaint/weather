@@ -8,15 +8,25 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
+  	<!-- This assures the app is scalled on iPhone correctly yet does not allow user to zoom in/out -->
+ 	<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+	<!-- This hide search bar -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<!-- Only works if apple-mobile-web-app-capable is enabled -->
+	<!-- This will hide status bar -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <!--                                                               -->
     <!-- Consider inlining CSS to reduce the number of requested files -->
     <!--                                                               -->
-    <link type="text/css" rel="stylesheet" href="Weather_Box.css">
+    <link type="text/css" rel="stylesheet" href="main.css">
 
     <!--                                           -->
     <!-- Any title is fine                         -->
     <!--                                           -->
-    <title>Web Application Starter Project</title>
+    <title>Weather by Peter Swietoslawski</title>
     
     <!--                                           -->
     <!-- This script loads your compiled module.   -->

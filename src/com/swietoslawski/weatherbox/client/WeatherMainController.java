@@ -6,8 +6,22 @@ import java.util.List;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DockLayoutPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.swietoslawski.weatherbox.client.widgets.AddCityDialog;
 import com.swietoslawski.weatherbox.shared.City;
+import com.swietoslawski.weatherbox.shared.Weather;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -20,17 +34,270 @@ public class WeatherMainController implements EntryPoint {
 	private final WeatherServiceAsync weatherService = GWT.create(WeatherService.class);
 	
 	private List<City> cities = new ArrayList<City>(8);
+	private List<List<Weather>> weather_casts = new ArrayList<List<Weather>>();
+	
+	// Keep track of current city city on weather casts stack
+	private City city = new City();
+	private List<Weather> weather = new ArrayList<Weather>();
+	
+	// Keep track of position of current city in weather casts stack
+	private int index = -1;
+	
+	private Button add;
+	private Button list;
+	private Button help;
+	
+	private Button prev;
+	private Button next;
+	private FlowPanel content;
+	private FlowPanel navigation;
+	
+	private AddCityDialog addCityDialog; 
+	
 
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
 		
-		// Create Add Weathercast Dialog widget and bind it to controller
-		AddWeatherCast add_weather = new AddWeatherCast(this);
+		renderUI();
 		
-		RootPanel.get().add(add_weather);
+		initEventHandlers();
+		
+		renderWeatherCast();
+		
+//		if (cities.size() == 0) {
+//			showAddCityDialog();
+//		}
+//		else {
+//			showWeatherCast();
+//		}
+	}
+	
+	
+	private void initEventHandlers() {
+		
+		add.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				showAddCityDialog();
+			}
+		});
+		
+		list.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+//				showListView();
+			}
+		});
+		
+		help.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				showHelpView();
+			}
+		});
+	}
+	
+	private void renderUI() {
+		
+		
+		// This is a view navigation that will have Home button to 
+		// return to app's home screen
+		navigation = new FlowPanel();
+		
+		add = new Button("Add");
+		list = new Button("List");
+		help = new Button("Help");
+		
+		FlowPanel toolbar = new FlowPanel();
+		toolbar.add(add);
+		toolbar.add(list);
+		toolbar.add(help);
+		
+		prev = new Button("<", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// We don't have to check what position 
+				// in the list we are now as button is
+				// only available when user can move back
+				index--;
+				
+				// Update weather
+				weather = weather_casts.get(index);
+				
+				renderWeatherCast();
+				
+			}
+		});
+		prev.setVisible(false);
+		
+		next = new Button(">", new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				// We don't have to check what position 
+				// in the list we are now as button is
+				// only available when user can advance
+				index++;
+				
+				// Update weather
+				weather = weather_casts.get(index);
+				
+				renderWeatherCast();
+				
+			}
+		});
+		next.setVisible(false);
+		
+		content = new FlowPanel();
+		
+		// Order by which you add to DockLayoutPanel is crucial. Content region always has to be added last.
+		// If you want North or South to stretch above West and East they have to be added before West/East.
+		// And last we add to center region...has to be the last call
+		// otherwise it will fail
+		DockLayoutPanel layout = new DockLayoutPanel(Unit.PT);
+		layout.addNorth(navigation, 40);
+		layout.addSouth(toolbar, 40);
+		layout.addWest(prev, 20);
+		layout.addEast(next, 20);
+		layout.add(content);
+		
+		RootLayoutPanel root = RootLayoutPanel.get();
+		root.add(layout);
+	}
+	
+	
 
+	private void updatePrevNextVisibility() {
+		if (index != -1 && cities != null) {
+			
+			if (cities.size() <= 1) {
+				prev.setVisible(false);
+				next.setVisible(false);
+			}
+			// We are at the beginning of weathercast stack
+			// so we only shows next button
+			else if (cities.size() > 1) {
+				
+				// At the beginning of a list
+				if (index == 0) {
+					prev.setVisible(false);
+					next.setVisible(true);
+				} 
+				// At the end of list
+				else if (index == cities.size() - 1) {
+					prev.setVisible(true);
+					next.setVisible(false);
+				}
+				// In the middle of a stack
+				else {
+					prev.setVisible(true);
+					next.setVisible(true);
+				}
+				
+			}
+			
+			
+		}
+	}
+	
+	
+	
+	
+	
+	protected void renderWeatherCast() {		
+		
+		
+		// Render weather cast if user has any saved
+		if (cities.size() > 0) {	
+			FlowPanel weatherPanel = updateWeatherPanel(); 
+			VerticalPanel forecastPanel = updateForecastPanel();
+			
+			// Clear panel
+			content.clear();
+	
+			// Render new weather cast
+			content.add(weatherPanel);
+			content.add(forecastPanel);
+			
+			// Update previous and next buttons visibility
+			updatePrevNextVisibility();
+		}
+		else {
+			showHelpView();
+		}
+	}
+
+	private FlowPanel updateWeatherPanel() {
+		
+		// Weather for today
+		Weather weather = this.weather.get(0);
+		
+		City city = new City(weather.getCity());
+		Label city_name = new Label(city.getCity() + " " + city.getState());
+		Label tempH = new Label(weather.getTemp_h());
+		Label tempL = new Label(weather.getTemp_l());
+		Image icon = new Image(weather.getIcon());
+		Label humidity = new Label(weather.getHumidity());
+		
+		FlowPanel flowPanel = new FlowPanel();
+		flowPanel.add(city_name);
+		flowPanel.add(icon);
+		flowPanel.add(tempH);
+		flowPanel.add(tempL);
+		flowPanel.add(humidity);
+			
+		return flowPanel;
+	}
+
+	private VerticalPanel updateForecastPanel() {
+		
+		// Forecast for following days will be rendered in rows
+		VerticalPanel vPanel = new VerticalPanel();
+		
+		// We start at 1 as the 0 is current weather cast
+		for (int i = 1; i < this.weather.size(); i++) {
+			Weather weather = this.weather.get(i);
+			
+			Image icon = new Image(weather.getIcon());
+			Label day = new Label(weather.getWeekday());
+			Label high = new Label(weather.getTemp_h());
+			Label low = new Label(weather.getTemp_l());
+			
+			HorizontalPanel hPanel = new HorizontalPanel();
+			hPanel.add(icon);
+			hPanel.add(day);
+			hPanel.add(high);
+			hPanel.add(low);
+			
+			vPanel.add(hPanel);	
+		}
+		
+		return vPanel;
+	}
+	
+	
+	
+	
+	
+	public void showHelpView() {
+		HTML info = new HTML("<h1>Welcome</h1><p>bla bla bla</p>");
+		HTML indicator = new HTML();
+		
+		content.add(info);
+		content.add(indicator);
+	}
+	
+	public void showAddCityDialog() {
+		addCityDialog = new AddCityDialog(this);
+		
+		// Show the dialog box rather than attach it to RootLayout
+		addCityDialog.show();
 	}
 	
 	public WeatherServiceAsync getWeatherService() {
@@ -39,5 +306,46 @@ public class WeatherMainController implements EntryPoint {
 	
 	public void addCity(City city) {
 		cities.add(city);
+		this.city = city;
+		
+		// update index to point to the last added city
+		index = cities.size() - 1;
+		getWeather();
+	}
+	
+	public void removeCity(City city) {
+		cities.remove(city);
+		index = cities.size() - 1;
+	}
+	
+	public void getWeather() {
+		
+		weatherService.getWeatherFor(city, new AsyncCallback<List<Weather>>() {
+			
+			@Override
+			public void onSuccess(List<Weather> weather_cast) {
+				
+				StringBuilder response = new StringBuilder();
+				for (Weather elem : weather_cast) {
+					response.append(elem.toString());
+				}
+				System.out.println(response.toString());
+				
+				// TODO Change definition of service so it passes back the city for which we get the weathercast
+				//City city = new City(weather_cast.get(0).getCity());
+				weather_casts.add(weather_cast);
+				weather = weather_cast;
+				
+				// TODO Once new weather cast is added we need to re-render UI
+				addCityDialog.hide();
+				renderWeatherCast();
+			}
+			
+			@Override
+			public void onFailure(Throwable caught) {
+				System.out.println(caught.getMessage());
+				
+			}
+		});
 	}
 }
