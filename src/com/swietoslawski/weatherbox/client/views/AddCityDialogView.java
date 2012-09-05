@@ -1,4 +1,4 @@
-package com.swietoslawski.weatherbox.client.widgets;
+package com.swietoslawski.weatherbox.client.views;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.swietoslawski.weatherbox.client.WeatherController;
 import com.swietoslawski.weatherbox.shared.City;
 
-public class AddCityDialog extends DialogBox {
+public class AddCityDialogView extends DialogBox {
 
 
 	private static final Binder binder = GWT.create(Binder.class);
@@ -34,10 +34,10 @@ public class AddCityDialog extends DialogBox {
 	@UiField Button cancel_button;
 	
 
-	interface Binder extends UiBinder<Widget, AddCityDialog> {
+	interface Binder extends UiBinder<Widget, AddCityDialogView> {
 	}
 	
-	public AddCityDialog(WeatherController mainController) {
+	public AddCityDialogView(WeatherController mainController) {
 		setWidget(binder.createAndBindUi(this));
 		
 		this.main_controller = mainController;
@@ -46,7 +46,7 @@ public class AddCityDialog extends DialogBox {
 		cities_list.setVisible(false);    
 		
 		// Center on screen
-        centerOnScreen();
+        positionOnScreen();
 		
         // Set the dialog box's caption.
         setText("Search for weathercast");
@@ -55,7 +55,7 @@ public class AddCityDialog extends DialogBox {
         setAnimationEnabled(true);
 
         // Enable glass background.
-        setGlassEnabled(true);
+        //setGlassEnabled(true);
         
         // Setting focus for the text box didn't work other than when scheduled
         Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
@@ -67,7 +67,7 @@ public class AddCityDialog extends DialogBox {
 		});
 	}
 	
-	private void centerOnScreen() {
+	private void positionOnScreen() {
 		int width = 200;
 		int height = 200;
 		
@@ -85,12 +85,12 @@ public class AddCityDialog extends DialogBox {
 	}
 	
 	@UiHandler("cancel_button")
-	public void onClick(ClickEvent event) {
+	public void onClickCancel(ClickEvent event) {
 		this.hide();
 	}
 	
 	@UiHandler("city_text")
-	public void onKeyPress(KeyPressEvent event) {
+	public void onKeyPressCityText(KeyPressEvent event) {
 		
 		// Process only if user hits Enter
 		if (event.getCharCode() == KeyCodes.KEY_ENTER) {
@@ -125,7 +125,7 @@ public class AddCityDialog extends DialogBox {
 	}
 	
 	@UiHandler("cities_list")
-	public void onChange(ChangeEvent event) {
+	public void onChangeCityList(ChangeEvent event) {
 		int index = cities_list.getSelectedIndex();
 		String selected = cities_list.getItemText(index);
 		

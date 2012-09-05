@@ -15,14 +15,13 @@ import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.swietoslawski.weatherbox.client.WeatherController;
-import com.swietoslawski.weatherbox.client.widgets.AddCityDialog;
 import com.swietoslawski.weatherbox.shared.City;
 
 public class MainView extends Composite {
 
 	private static final Binder binder = GWT.create(Binder.class);
 	private final WeatherController weather_controller;
-	private AddCityDialog addCityDialog;
+	private AddCityDialogView addCityDialog;
 	
 	@UiField PushButton prev;
 	@UiField PushButton next;
@@ -126,7 +125,7 @@ public class MainView extends Composite {
 	}
 	
 	public void showAddCityDialog() {
-		addCityDialog = new AddCityDialog(weather_controller);
+		addCityDialog = new AddCityDialogView(weather_controller);
 		
 		// Show the dialog box rather than attach it to RootLayout
 		addCityDialog.show();
@@ -157,10 +156,7 @@ public class MainView extends Composite {
 					prev.setVisible(true);
 					next.setVisible(true);
 				}
-				
 			}
-			
-			
 		}
 	}
 	

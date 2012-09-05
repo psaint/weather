@@ -9,23 +9,23 @@
 
 	
 		<g:DockLayoutPanel unit="PCT" width="100%" height="100%">
-			<g:north size="8.5">
+			<g:north size="10.0">
 				<g:FlowPanel>
 					<g:Label text="Header" horizontalAlignment="ALIGN_CENTER"/>
 				</g:FlowPanel>
 			</g:north>
-			<g:south size="19.2">
-				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER" width="100%" height="40px" verticalAlignment="ALIGN_MIDDLE">
+			<g:south size="20.0">
+				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER" width="100%" height="100%" verticalAlignment="ALIGN_MIDDLE">
 					<g:PushButton text="Home" width="40px" ui:field="home"/>
 					<g:PushButton text="Add" width="40px" ui:field="add"/>
 					<g:PushButton text="List" width="40px" ui:field="list"/>
 					<g:PushButton text="Help" width="40px" ui:field="help"/>
 				</g:HorizontalPanel>
 			</g:south>
-			<g:west size="7.1">
+			<g:west size="10.0">
 				<g:PushButton text="&lt;" ui:field="prev"/>
 			</g:west>
-			<g:east size="7.1">
+			<g:east size="10.0">
 				<g:PushButton text="&gt;" ui:field="next"/>
 			</g:east>
 			<g:center>
