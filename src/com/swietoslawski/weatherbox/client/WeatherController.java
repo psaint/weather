@@ -8,9 +8,8 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.storage.client.Storage;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.swietoslawski.weatherbox.client.views.MainView;
 import com.swietoslawski.weatherbox.shared.City;
 import com.swietoslawski.weatherbox.shared.Weather;
 
@@ -24,7 +23,7 @@ import com.swietoslawski.weatherbox.shared.Weather;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class WeatherMainController implements EntryPoint {
+public class WeatherController implements EntryPoint {
 		
 	/**
 	 * Create a remote service proxy to talk to the server-side Weather service.
@@ -40,15 +39,16 @@ public class WeatherMainController implements EntryPoint {
 	
 	// Keep track of position of current city in weather casts stack
 	private int index = -1;
-	private Main main;
+	private MainView main;
 	 
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		main = new Main(this);
+		main = new MainView(this);
 		
-		//loadFromLocalStorage();
+		loadFromLocalStorage();
+		
 		RootLayoutPanel.get().add(main);
 	}
 		

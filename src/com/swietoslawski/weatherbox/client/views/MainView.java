@@ -1,4 +1,4 @@
-package com.swietoslawski.weatherbox.client;
+package com.swietoslawski.weatherbox.client.views;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -10,20 +10,18 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.swietoslawski.weatherbox.client.WeatherController;
 import com.swietoslawski.weatherbox.client.widgets.AddCityDialog;
 import com.swietoslawski.weatherbox.shared.City;
-import com.swietoslawski.weatherbox.shared.Weather;
 
-public class Main extends Composite {
+public class MainView extends Composite {
 
 	private static final Binder binder = GWT.create(Binder.class);
-	private final WeatherMainController main_controller;
+	private final WeatherController weather_controller;
 	private AddCityDialog addCityDialog;
 	
 	@UiField PushButton prev;
@@ -34,17 +32,15 @@ public class Main extends Composite {
 	@UiField PushButton help;
 	@UiField FlowPanel content;
 	
-	interface Binder extends UiBinder<Widget, Main> {
+	interface Binder extends UiBinder<Widget, MainView> {
 	}
 
-	public Main(WeatherMainController main_controller) {
+	public MainView(WeatherController weather_controller) {
 		initWidget(binder.createAndBindUi(this));
 		
-		this.main_controller = main_controller;
+		this.weather_controller = weather_controller;
 		
-		//hidePrevNextButton();
 		renderWeatherCast();
-		//showHelpView();
 	}	
 	
 	@UiHandler("home")
@@ -72,10 +68,10 @@ public class Main extends Composite {
 		// We don't have to check what position 
 		// in the list we are now as button is
 		// only available when user can move back
-		main_controller.decIndex();
+		weather_controller.decIndex();
 		
 		// Update weather
-		main_controller.updateCurrentWeather();
+		weather_controller.updateCurrentWeather();
 		
 		renderWeatherCast();
 	}
@@ -86,37 +82,30 @@ public class Main extends Composite {
 		// We don't have to check what position 
 		// in the list we are now as button is
 		// only available when user can advance
-		main_controller.incIndex();
+		weather_controller.incIndex();
 		
 		// Update weather
-		main_controller.updateCurrentWeather();
+		weather_controller.updateCurrentWeather();
 		
 		renderWeatherCast();
 		
 	}
 	
-	protected void renderWeatherCast() {	
+	public void renderWeatherCast() {	
 		
-		// TODO Once new weather cast is added we need to re-render UI
 		if (addCityDialog != null) {
 			addCityDialog.hide();
 		}
 
 		// Render weather cast if user has any saved
-		if (main_controller.getCities().size() > 0) {
+		if (weather_controller.getCities().size() > 0) {
 			list.setEnabled(true);
 			
-			FlowPanel weatherPanel = updateWeatherPanel(); 
-			VerticalPanel forecastPanel = updateForecastPanel();
+			WeatherCastView weather = new WeatherCastView(weather_controller); 
 			
-			// Clear panel
 			content.clear();
-	
-			// Render new weather cast
-			content.add(weatherPanel);
-			content.add(forecastPanel);
+			content.add(weather);
 			
-			// Update previous and next buttons visibility
 			updatePrevNextVisibility();
 		}
 		else {
@@ -124,60 +113,6 @@ public class Main extends Composite {
 			showHelpView();
 		}
 	}
-	
-	
-	private FlowPanel updateWeatherPanel() {
-		FlowPanel flowPanel = new FlowPanel();
-		
-		if (main_controller.getWeatherField().size() > 0) {
-			
-			// Weather for today
-			Weather weather = main_controller.getWeatherField().get(0);
-			
-			City city = new City(weather.getCity());
-			Label city_name = new Label(city.getCity() + " " + city.getState());
-			Label tempH = new Label(weather.getTemp_h());
-			Label tempL = new Label(weather.getTemp_l());
-			Image icon = new Image(weather.getIcon());
-			Label humidity = new Label(weather.getHumidity());
-			
-			
-			flowPanel.add(city_name);
-			flowPanel.add(icon);
-			flowPanel.add(tempH);
-			flowPanel.add(tempL);
-			flowPanel.add(humidity);
-		}
-			
-		return flowPanel;
-	}
-
-	private VerticalPanel updateForecastPanel() {
-		
-		// Forecast for following days will be rendered in rows
-		VerticalPanel vPanel = new VerticalPanel();
-		
-		// We start at 1 as the 0 is current weather cast
-		for (int i = 1; i < main_controller.getWeatherField().size(); i++) {
-			Weather weather = main_controller.getWeatherField().get(i);
-			
-			Image icon = new Image(weather.getIcon());
-			Label day = new Label(weather.getWeekday());
-			Label high = new Label(weather.getTemp_h());
-			Label low = new Label(weather.getTemp_l());
-			
-			HorizontalPanel hPanel = new HorizontalPanel();
-			hPanel.add(icon);
-			hPanel.add(day);
-			hPanel.add(high);
-			hPanel.add(low);
-			
-			vPanel.add(hPanel);	
-		}
-		
-		return vPanel;
-	}
-	
 	
 	public void showHelpView() {
 		HTML info = new HTML("<h1>Welcome</h1><p>bla bla bla</p>");
@@ -191,29 +126,29 @@ public class Main extends Composite {
 	}
 	
 	public void showAddCityDialog() {
-		addCityDialog = new AddCityDialog(main_controller);
+		addCityDialog = new AddCityDialog(weather_controller);
 		
 		// Show the dialog box rather than attach it to RootLayout
 		addCityDialog.show();
 	}
 	
 	private void updatePrevNextVisibility() {
-		if (main_controller.getIndex() != -1 && main_controller.getCities() != null) {
+		if (weather_controller.getIndex() != -1 && weather_controller.getCities() != null) {
 			
-			if (main_controller.getCities().size() <= 1) {
+			if (weather_controller.getCities().size() <= 1) {
 				hidePrevNextButton();
 			}
 			// We are at the beginning of weathercast stack
 			// so we only shows next button
-			else if (main_controller.getCities().size() > 1) {
+			else if (weather_controller.getCities().size() > 1) {
 				
 				// At the beginning of a list
-				if (main_controller.getIndex() == 0) {
+				if (weather_controller.getIndex() == 0) {
 					prev.setVisible(false);
 					next.setVisible(true);
 				} 
 				// At the end of list
-				else if (main_controller.getIndex() == main_controller.getCities().size() - 1) {
+				else if (weather_controller.getIndex() == weather_controller.getCities().size() - 1) {
 					prev.setVisible(true);
 					next.setVisible(false);
 				}
@@ -230,7 +165,7 @@ public class Main extends Composite {
 	}
 	
 	private void showListView() {
-		if (main_controller.getCities().size() == 0) {
+		if (weather_controller.getCities().size() == 0) {
 			renderWeatherCast();
 			return;
 		}
@@ -241,7 +176,7 @@ public class Main extends Composite {
 		//      html's Title attribute.
 		VerticalPanel vPanel = new VerticalPanel();
 		int row_nr = 0;
-		for (City city : main_controller.getCities()) {
+		for (City city : weather_controller.getCities()) {
 			FlowPanel layout = new FlowPanel();
 			Label city_name = new Label(city.getCity());
 			Button delete = new Button("Delete");
@@ -257,7 +192,7 @@ public class Main extends Composite {
 				public void onClick(ClickEvent event) {
 					Button btn = (Button) event.getSource();
 					String row_nr  = btn.getTitle();
-					main_controller.removeCity(Integer.parseInt(row_nr));
+					weather_controller.removeCity(Integer.parseInt(row_nr));
 					
 					// Re-render page
 					// IMPORTANT: This is a must to make sure that row numbers (indexes)

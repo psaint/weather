@@ -1091,3 +1091,825 @@ Rebinding com.swietoslawski.weatherbox.client.Main.Binder
 Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346822575797_GenBundle
    Adding '1' new generated units
       Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2716 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824133262_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824134362_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824177509_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824185173_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824187492_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824187608_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346824205226_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2717 units from cache.
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2717 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825708852_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825709744_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825790040_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825793327_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825813430_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825834990_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825839398_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825874764_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825883105_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825889579_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825891831_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825934905_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825937149_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825937222_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825940363_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825947538_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825951403_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825955885_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825974852_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346825997447_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.google.gwt.i18n.client.CurrencyList
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826016080_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826033547_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826039567_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826045977_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826050311_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826062421_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826068371_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826091874_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826098686_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826105245_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826131771_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826167022_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826185283_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826194532_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826203035_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826210478_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346826219797_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827104711_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827104845_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827139307_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827144277_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827157062_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827183689_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827186660_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827190088_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827198536_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827202297_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827207459_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827211675_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827215073_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827236719_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827243190_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827248361_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827297011_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827315744_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827320472_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827324455_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827342768_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827359815_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827376077_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827386546_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827391855_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827462617_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827468087_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827550139_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827557836_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827619463_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Invoking generator com.google.gwt.uibinder.rebind.UiBinderGenerator
+      [ERROR] Element may only contain a single child element, but found <g:VerticalPanel width='100%'> and <g:VerticalPanel height='0%' ui:field='weather_casts' width='100%'>.: <ui:UiBinder> (:3)
+[ERROR] Deferred binding failed for 'com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder'; expect subsequent failures
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2717 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827715814_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827716681_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827731644_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827753691_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827862770_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827867533_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827903181_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827909772_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827916859_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827961519_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827969427_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827981940_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827989690_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346827997751_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2718 units from cache.
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2718 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828712138_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828712950_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828729411_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828745605_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828759887_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828772695_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828779529_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828819056_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828823191_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828827466_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828832150_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828838800_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828849028_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828855071_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828862818_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346828868595_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346829508983_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346829548521_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346829570641_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastRowView_BinderImpl_designTime1346829580030_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units

@@ -18,7 +18,7 @@ import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.swietoslawski.weatherbox.client.WeatherMainController;
+import com.swietoslawski.weatherbox.client.WeatherController;
 import com.swietoslawski.weatherbox.shared.City;
 
 public class AddCityDialog extends DialogBox {
@@ -27,7 +27,7 @@ public class AddCityDialog extends DialogBox {
 	private static final Binder binder = GWT.create(Binder.class);
 	
 	private String selected_city;
-	private final WeatherMainController main_controller;
+	private final WeatherController main_controller;
 	
 	@UiField TextBox city_text;
 	@UiField ListBox cities_list;
@@ -37,7 +37,7 @@ public class AddCityDialog extends DialogBox {
 	interface Binder extends UiBinder<Widget, AddCityDialog> {
 	}
 	
-	public AddCityDialog(WeatherMainController mainController) {
+	public AddCityDialog(WeatherController mainController) {
 		setWidget(binder.createAndBindUi(this));
 		
 		this.main_controller = mainController;
@@ -45,17 +45,9 @@ public class AddCityDialog extends DialogBox {
 		// Hide drop down as we don't have any cities loaded into yet
 		cities_list.setVisible(false);    
 		
-		// Size and position
-		int width = 300;
-		int height = 500;
+		// Center on screen
+        centerOnScreen();
 		
-		setWidth(width + "pt");
-        setHeight(height + "pt");
-		
-        int left = (Window.getClientWidth() - width) / 3;
-        int top = (Window.getClientHeight() - height) / 3;
-        setPopupPosition(left, top);
-        
         // Set the dialog box's caption.
         setText("Search for weathercast");
 
@@ -64,14 +56,8 @@ public class AddCityDialog extends DialogBox {
 
         // Enable glass background.
         setGlassEnabled(true);
-
-        // We'll re-attach Add button only if we were able to find a 
-        // weather cast for the city user typed in
-        //message.setVisible(false);
-        //add.setVisible(false);
         
-        // Setting focus for the text box didn't work other than when scheduled 
-        // for deffered execution
+        // Setting focus for the text box didn't work other than when scheduled
         Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
 			
 			@Override
@@ -81,12 +67,21 @@ public class AddCityDialog extends DialogBox {
 		});
 	}
 	
+	private void centerOnScreen() {
+		int width = 200;
+		int height = 200;
+		
+		setWidth(width + "pt");
+        setHeight(height + "pt");
+		
+        int left = (Window.getClientWidth() - width) / 2;
+        int top = (Window.getClientHeight() - height) / 2;
+        
+        setPopupPosition(left, top);
+	}
+
 	private void addCity(String path) {
-		
-		// Instantiate city from url path
-		City city = new City(path);
-		
-		main_controller.addCity(city);
+		main_controller.addCity(new City(path));
 	}
 	
 	@UiHandler("cancel_button")

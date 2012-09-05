@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+		.panel {
+			background-color: ivory;
+		}
+	</ui:style>
+
+	<g:FlowPanel styleName="{style.panel}">
+		<g:VerticalPanel width="100%">
+			<g:Cell width="30%">
+				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE" width="100%">
+				<g:Label text="City" ui:field="city" width=""/>
+				<g:Image ui:field="icon" width=""/>
+				<g:VerticalPanel>
+					<g:Label ui:field="temp_h" text="F"/>
+					<g:Label ui:field="temp_l" text="F"/>
+				</g:VerticalPanel>
+			</g:HorizontalPanel>
+			</g:Cell>
+			<g:Cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+				<g:FlowPanel width="100%">
+				<g:InlineLabel text="Humidity" width="215px" horizontalAlignment="ALIGN_RIGHT"/>
+				<g:InlineLabel ui:field="humidity" horizontalAlignment="ALIGN_LEFT"/>
+			</g:FlowPanel>
+			</g:Cell>
+		</g:VerticalPanel>
+		<g:VerticalPanel width="100%" height="0%" ui:field="weather_casts"/>
+	</g:FlowPanel>
+</ui:UiBinder>
