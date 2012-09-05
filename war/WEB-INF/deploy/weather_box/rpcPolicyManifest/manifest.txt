@@ -1,3 +1,2 @@
 # Module weather_box
 # RPC service class, partial path of RPC policy file
-com.swietoslawski.weatherbox.client.WeatherService, DA496AF0E9B406AEE6B31B62E2D74F2D.gwt.rpc

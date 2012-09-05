@@ -1,9 +1,6 @@
 package com.swietoslawski.weatherbox.server;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -32,8 +29,6 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 	private final static String API = "a780a20159174771";
 	private final static String SERVICE = "/forecast/geolookup/q/";
 	private final static String RESPONSE_FORMAT = ".xml";
-	
-	private final static String FILE_STORAGE = "storage.txt";
 	
     private URL url;
     
