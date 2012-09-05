@@ -25,6 +25,13 @@ import com.swietoslawski.weatherbox.client.widgets.AddCityDialog;
 import com.swietoslawski.weatherbox.shared.City;
 import com.swietoslawski.weatherbox.shared.Weather;
 
+// TODO Add timer to poll weather every 1-5 minutes
+// TODO Move the UI code to separate UX Builder classes
+// TODO Tidy up code
+// TODO Add styling
+//TODO Test on iPhone
+// TODO Add gestures support at least swipe for moving between weathers.
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */

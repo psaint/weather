@@ -51,3 +51,803 @@ Rebinding com.swietoslawski.weatherbox.client.AddWeatherCast_BinderImpl_designTi
 Rebinding com.swietoslawski.weatherbox.client.AddWeatherCast_BinderImpl_designTime1346700992493_GenBundle
    Adding '1' new generated units
       Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2716 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815782320_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815783167_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815843406_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815852234_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815880610_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815884931_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815891469_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815894413_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815904646_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815904735_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815906518_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815906592_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815907351_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815907441_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815909002_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815909055_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815930812_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815935762_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815942288_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815942342_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815969183_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815973597_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815975820_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815980577_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346815982328_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816062502.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816062502.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816062502_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816070734.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816070734.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816070734_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816085929.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816085929.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816085929_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816091131.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816091131.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816091131_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816107121.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816107121.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816107121_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816111141.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816111141.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816111141_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816116947.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816116947.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816116947_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816118305.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816118305.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816118305_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816128864.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816128864.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816128864_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816135857.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816135857.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816135857_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816142744.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816142744.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816142744_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816149532.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816149532.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816149532_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816153686.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816153686.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816153686_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816161918.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816161918.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816161918_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816183691.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816183691.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816183691_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816198839.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816198839.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816198839_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816211962.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816211962.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816211962_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816220372.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816220372.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816220372_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816225351.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816225351.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816225351_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816229344.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816229344.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816229344_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816233594.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816233594.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816233594_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235301.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235301.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235301_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235381.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235381.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816235381_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816242592.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816242592.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816242592_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816279828.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816279828.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816279828_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281421.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281421.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281421_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281510.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281510.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816281510_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816296708.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816296708.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816296708_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816317218.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816317218.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816317218_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816324677.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816324677.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816324677_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816348281.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816348281.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816348281_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816353542.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816353542.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816353542_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467185.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467185.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467185_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467284.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467284.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816467284_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Invoking generator com.google.gwt.uibinder.rebind.UiBinderGenerator
+      [ERROR] Cannot parse value: "40px" as type double: <g:south size='40px'> (:15)
+[ERROR] Deferred binding failed for 'com.swietoslawski.weatherbox.client.Main.Binder'; expect subsequent failures
+Public resources found in...
+Translatable source found in...
+Found 2715 cached/archived units.  Used 2715 / 2716 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816563342.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816563342.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816563342_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816564147.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816564147.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816564147_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Invoking generator com.google.gwt.uibinder.rebind.UiBinderGenerator
+      [ERROR] Cannot parse value: "40px" as type double: <g:south size='40px'> (:15)
+[ERROR] Deferred binding failed for 'com.swietoslawski.weatherbox.client.Main.Binder'; expect subsequent failures
+Public resources found in...
+Translatable source found in...
+Found 2715 cached/archived units.  Used 2715 / 2716 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816612361.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816612361.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816612361_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816613140.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816613140.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816613140_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687870.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687870.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687870_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687970.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687970.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816687970_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816705782.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816705782.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816705782_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816722033.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816722033.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816722033_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816726452.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816726452.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816726452_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816730848.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816730848.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816730848_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816735069.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816735069.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.Main_BinderImpl_designTime1346816735069_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
