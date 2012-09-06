@@ -7,25 +7,25 @@
 		}
 	</ui:style>
 
-	<g:FlowPanel styleName="">
-		<g:VerticalPanel width="100%">
+	<g:FlowPanel>
+		<g:VerticalPanel width="100%" styleName="weather-cast">
 			<g:Cell width="30%">
 				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE" width="100%">
-				<g:Label text="City" ui:field="city" width=""/>
-				<g:Image ui:field="icon" width=""/>
-				<g:VerticalPanel>
-					<g:Label ui:field="temp_h" text="F"/>
-					<g:Label ui:field="temp_l" text="F"/>
-				</g:VerticalPanel>
-			</g:HorizontalPanel>
+					<g:Label text="City" ui:field="city" styleName="city"/>
+					<g:Image ui:field="icon" styleName="icon" />
+					<g:VerticalPanel styleName="temp">
+						<g:Label ui:field="temp_h" text="F" styleName="high"/>
+						<g:Label ui:field="temp_l" text="F" styleName="low"/>
+					</g:VerticalPanel>
+				</g:HorizontalPanel>
 			</g:Cell>
 			<g:Cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
-				<g:FlowPanel width="100%">
-				<g:InlineLabel text="Humidity" width="215px" horizontalAlignment="ALIGN_RIGHT"/>
-				<g:InlineLabel ui:field="humidity" horizontalAlignment="ALIGN_LEFT"/>
-			</g:FlowPanel>
+				<g:FlowPanel width="100%" styleName="humidity">
+					<g:InlineLabel text="Humidity" width="215px" horizontalAlignment="ALIGN_RIGHT"/>
+					<g:InlineLabel ui:field="humidity" horizontalAlignment="ALIGN_LEFT"/>
+				</g:FlowPanel>
 			</g:Cell>
 		</g:VerticalPanel>
-		<g:VerticalPanel width="100%" height="0%" ui:field="weather_casts"/>
+		<g:VerticalPanel styleName="weather-casts" width="100%" height="0%" ui:field="weather_casts"/>
 	</g:FlowPanel>
 </ui:UiBinder>

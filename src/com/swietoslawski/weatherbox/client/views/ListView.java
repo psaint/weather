@@ -27,6 +27,7 @@ public class ListView extends Composite {
 	
 	public void render() {
 		int row_nr = 0;
+		root.clear();
 		
 		// TODO Another, prolly better, way to do this would be to use ListDataProvider 
 		//		together with CellTable. However this would be a lot more complicated

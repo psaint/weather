@@ -33,7 +33,7 @@
 	border: 2pt solid #6D7899;
 	border-radius: 10pt;
 	box-shadow: 0pt 1pt 8pt rgba(128, 128, 128, 0.9);
-	margin: 10pt 5pt;
+	margin: 30pt 5pt;
 }
 
 .prev {
@@ -52,7 +52,7 @@
 .list-of-cities .row {
 	border-bottom: 1px solid #CCC;
 	background: white;
-	padding: 5pt 0pt 5pt 20pt;
+	padding: 5pt 20pt;
 }
 
 .list-of-cities .row .gwt-Label {
@@ -66,4 +66,62 @@
 	font-size: 12pt;
 	text-transform: uppercase;
 	border-radius: 4pt;
+}
+
+
+.weather-cast {
+	background: #0D3550;
+	color: whiteSmoke;
+	border-top-left-radius: 8pt;
+	border-top-right-radius: 8pt;
+	height: 80pt;
+}
+
+.weather-cast .city {
+	font-size: 22pt;
+	text-align: left;
+	padding: 20pt 10pt 10pt 10pt;
+}
+
+
+.weather-cast .icon {
+	position: absolute;
+	top: -40pt;
+	left: 35%;
+	height: 80pt;
+}
+
+.weather-cast .temp {
+	font-size: 15pt;
+}
+
+.weather-cast .humidity {
+	padding: 0pt 0pt 5pt;
+	font-size: 14pt;
+}
+
+.weather-cast .humidity .gwt-InlineLabel {
+	margin-right: 10pt;
+}
+
+.weather-casts td {
+	border-bottom: 1px solid #CCC;
+	background: white;
+}
+
+.weather-casts table td:first-child {
+	width: 60pt;
+	text-align: center;
+}
+
+.weather-casts table td:nth-child(2) {
+	width: 140pt;
+}
+
+.weather-casts table td:nth-child(3) {
+	
+}
+
+.weather-casts table td:nth-child(4) {
+	padding: 0pt 10pt;
 }
