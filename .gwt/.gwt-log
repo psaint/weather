@@ -1984,3 +1984,363 @@ Rebinding com.swietoslawski.weatherbox.client.views.MainView.Binder
 Rebinding com.swietoslawski.weatherbox.client.views.MainView_BinderImpl_designTime1346830128138_GenBundle
    Adding '1' new generated units
       Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2719 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901597011_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901597910_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901630423_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901635504_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901649266_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901656408_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901666761.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901666761.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901666761_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901673086.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901673086.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901673086_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901688108.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901688108.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901688108_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901697753.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901697753.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901697753_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901702322.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901702322.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901702322_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901709619.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901709619.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901709619_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901718989.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901718989.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901718989_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901764180.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901764180.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901764180_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901776645.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901776645.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901776645_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901787989.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901787989.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901787989_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901795145.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901795145.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901795145_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901824004.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901824004.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901824004_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901850131.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901850131.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.CityRowView_BinderImpl_designTime1346901850131_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2719 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346903491072_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.WeatherCastView_BinderImpl_designTime1346903491956_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 2717 cached/archived units.  Used 2717 / 2720 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346903745961_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346903746543_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346903758843_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346903763117_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346903787057_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346904384233_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346904939985_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346904994950_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.ListView_BinderImpl_designTime1346904995002_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units

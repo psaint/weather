@@ -14,10 +14,8 @@ import com.swietoslawski.weatherbox.shared.City;
 import com.swietoslawski.weatherbox.shared.Weather;
 
 // TODO Add timer to poll weather every 1-5 minutes
-// TODO Move the UI code to separate UX Builder classes
-// TODO Tidy up code
 // TODO Add styling
-//TODO Test on iPhone
+// TODO Test on iPhone
 // TODO Add gestures support at least swipe for moving between weathers.
 
 /**
@@ -39,17 +37,16 @@ public class WeatherController implements EntryPoint {
 	
 	// Keep track of position of current city in weather casts stack
 	private int index = -1;
-	private MainView main;
+	private MainView main_view;
 	 
 	/**
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		main = new MainView(this);
-		
 		loadFromLocalStorage();
 		
-		RootLayoutPanel.get().add(main);
+		main_view = new MainView(this);
+		RootLayoutPanel.get().add(main_view);
 	}
 		
 	public List<City> getCities() {
@@ -92,19 +89,13 @@ public class WeatherController implements EntryPoint {
 			
 			@Override
 			public void onSuccess(List<Weather> weather_cast) {
-				
-				StringBuilder response = new StringBuilder();
-				for (Weather elem : weather_cast) {
-					response.append(elem.toString());
-				}
-				System.out.println(response.toString());
-				
+								
 				// TODO Change definition of service so it passes back the city for which we get the weathercast
 				//City city = new City(weather_cast.get(0).getCity());
 				weather_casts.add(weather_cast);
 				weather = weather_cast;
 				
-				main.renderWeatherCast();
+				main_view.renderWeatherCast();
 			}
 			
 			@Override
@@ -117,9 +108,7 @@ public class WeatherController implements EntryPoint {
 	
 	public void addCity(City city) {
 		
-		// Add city to local storage if available
-		// So the next time user will load app her favorite 
-		// cities will be persisted
+		// Save city to local storage...if supported
 		Storage storage = Storage.getLocalStorageIfSupported();
 		if (storage != null) {
 			storage.setItem(city.toURL(), city.toURL());
@@ -140,38 +129,33 @@ public class WeatherController implements EntryPoint {
 	
 	public void removeCity(int row_nr) {
 		
-		// Remove from local storage if available
+		// Remove from local storage
 		Storage storage = Storage.getLocalStorageIfSupported();
 		if (storage != null) {
-			City city = cities.get(row_nr);
-			storage.removeItem(city.toURL());
+			storage.removeItem(cities.get(row_nr).toURL());
 		}
 
-		cities.remove(row_nr);
-		index = cities.size() - 1;
+		// Remove from list of cities
+		cities.remove(row_nr);		
 		
-			
-		// Make sure that we update weather
-		if (index >= 0)
-			weather = weather_casts.get(index);
-		else 
-			weather = null;
+		// Remove related weather cast
+		weather_casts.remove(row_nr);
+		
+		// Reset index to last element
+		index = cities.size() - 1;
+					
+		// Make sure that we update current weather
+		if (index >= 0) updateCurrentWeather();
+		else weather = null;
 	}
-	
-	
 	
 	
 	private void loadFromLocalStorage() {
 		if (cities.size() == 0) {
 			Storage storage = Storage.getLocalStorageIfSupported();
 			if (storage != null) {
-				
 				for (int i = 0; i < storage.getLength(); i++) {
-					String key = storage.key(i);
-					//String item = storage.getItem(key);
-					City city = new City(key);
-					
-					addCity(city);
+					addCity(new City(storage.key(i)));
 				}
 			}
 		}

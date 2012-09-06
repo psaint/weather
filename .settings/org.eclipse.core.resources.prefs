@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/com/swietoslawski/weatherbox/client/views/AddCityDialogView.ui.xml=UTF-8
+encoding//src/com/swietoslawski/weatherbox/client/views/CityRowView.ui.xml=UTF-8
+encoding//src/com/swietoslawski/weatherbox/client/views/ListView.ui.xml=UTF-8
 encoding//src/com/swietoslawski/weatherbox/client/views/MainView.ui.xml=UTF-8
 encoding//src/com/swietoslawski/weatherbox/client/views/WeatherCastRowView.ui.xml=UTF-8
 encoding//src/com/swietoslawski/weatherbox/client/views/WeatherCastView.ui.xml=UTF-8

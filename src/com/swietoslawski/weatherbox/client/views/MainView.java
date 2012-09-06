@@ -22,6 +22,7 @@ public class MainView extends Composite {
 	private static final Binder binder = GWT.create(Binder.class);
 	private final WeatherController weather_controller;
 	private AddCityDialogView addCityDialog;
+	private ListView list_view;
 	
 	@UiField PushButton prev;
 	@UiField PushButton next;
@@ -88,6 +89,10 @@ public class MainView extends Composite {
 		
 		renderWeatherCast();
 		
+	}
+	
+	public WeatherController getController() {
+		return weather_controller;
 	}
 	
 	public void renderWeatherCast() {	
@@ -160,7 +165,7 @@ public class MainView extends Composite {
 		}
 	}
 	
-	private void showListView() {
+	public void showListView() {
 		if (weather_controller.getCities().size() == 0) {
 			renderWeatherCast();
 			return;
@@ -170,40 +175,10 @@ public class MainView extends Composite {
 		//		together with CellTable. However this would be a lot more complicated
 		//      than this simple solution where we track index of element listed in 
 		//      html's Title attribute.
-		VerticalPanel vPanel = new VerticalPanel();
-		int row_nr = 0;
-		for (City city : weather_controller.getCities()) {
-			FlowPanel layout = new FlowPanel();
-			Label city_name = new Label(city.getCity());
-			Button delete = new Button("Delete");
-			delete.setTitle(String.valueOf(row_nr));
-			row_nr++;
-			
-			layout.add(city_name);
-			layout.add(delete);
-			
-			delete.addClickHandler(new ClickHandler() {
-				
-				@Override
-				public void onClick(ClickEvent event) {
-					Button btn = (Button) event.getSource();
-					String row_nr  = btn.getTitle();
-					weather_controller.removeCity(Integer.parseInt(row_nr));
-					
-					// Re-render page
-					// IMPORTANT: This is a must to make sure that row numbers (indexes)
-					//            of tracked elements will be re-calculated again.
-					showListView();
-				}
-			});
-			
-			vPanel.add(layout);
-		}
+		list_view = new ListView(this);
+		list_view.render();
 
 		hidePrevNextButton();
-
-		content.clear();
-		content.add(vPanel);
 	}
 
 	/**

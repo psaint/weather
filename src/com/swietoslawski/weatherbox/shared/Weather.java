@@ -9,9 +9,6 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  */
 public class Weather implements IsSerializable {
 	
-	/**
-	 * @gwt.typeArgs <
-	 */
 	private String city;
 	private String weekday;
 	private String time;
