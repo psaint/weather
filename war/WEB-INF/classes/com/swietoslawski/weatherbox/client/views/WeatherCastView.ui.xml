@@ -7,7 +7,7 @@
 		}
 	</ui:style>
 
-	<g:FlowPanel styleName="{style.panel}">
+	<g:FlowPanel styleName="">
 		<g:VerticalPanel width="100%">
 			<g:Cell width="30%">
 				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE" width="100%">

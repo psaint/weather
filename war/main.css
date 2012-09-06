@@ -1,0 +1,41 @@
+.main-wrapper {
+	background: url('images/bg_slanted.png') repeat;
+}
+
+.header {
+	background-color: none;
+}
+
+.toolbar {
+	background-color: #394F64;
+}
+
+.toolbar .gwt-PushButton {
+	height: 100%;
+	width: 40pt;
+	display: inline-block;
+	color: white;
+	font-family: Helvetica Neue, Tahoma;
+	border-right: 1px solid #999;
+	border-left: 1px solid #CCC;
+	text-align: center;
+	line-height: 40pt;
+	font-size: 20pt;
+	cursor: pointer;
+}
+
+.content {
+	background-color: whiteSmoke;
+	border: 2pt solid #6D7899;
+	border-radius: 10pt;
+	box-shadow: 0pt 1pt 8pt rgba(128, 128, 128, 0.9);
+	margin: 10pt 5pt;
+}
+
+.prev {
+	background: url('images/prev.png') no-repeat center center;
+}
+
+.next {
+	background: url('images/next.png') no-repeat center center;
+}

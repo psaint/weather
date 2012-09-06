@@ -2,20 +2,15 @@ package com.swietoslawski.weatherbox.client.views;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PushButton;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.swietoslawski.weatherbox.client.WeatherController;
-import com.swietoslawski.weatherbox.shared.City;
 
 public class MainView extends Composite {
 
@@ -29,7 +24,6 @@ public class MainView extends Composite {
 	@UiField PushButton home;
 	@UiField PushButton add;
 	@UiField PushButton list;
-	@UiField PushButton help;
 	@UiField FlowPanel content;
 	
 	interface Binder extends UiBinder<Widget, MainView> {
@@ -56,11 +50,6 @@ public class MainView extends Composite {
 	@UiHandler("list")	
 	public void onClickList(ClickEvent event) {
 		showListView();
-	}
-	
-	@UiHandler("help")	
-	public void onClickHelp(ClickEvent event) {
-		showHelpView();
 	}
 	
 	@UiHandler("prev")
@@ -94,39 +83,17 @@ public class MainView extends Composite {
 	public WeatherController getController() {
 		return weather_controller;
 	}
-	
-	public void renderWeatherCast() {	
 		
-		if (addCityDialog != null) {
-			addCityDialog.hide();
-		}
-
+	public void showHomeView() {
 		// Render weather cast if user has any saved
 		if (weather_controller.getCities().size() > 0) {
 			list.setEnabled(true);
-			
-			WeatherCastView weather = new WeatherCastView(weather_controller); 
-			
-			content.clear();
-			content.add(weather);
-			
-			updatePrevNextVisibility();
+			renderWeatherCast();
 		}
 		else {
 			list.setEnabled(false);
 			showHelpView();
 		}
-	}
-	
-	public void showHelpView() {
-		HTML info = new HTML("<h1>Welcome</h1><p>bla bla bla</p>");
-		HTML indicator = new HTML();
-		
-		hidePrevNextButton();
-		
-		content.clear();
-		content.add(info);
-		content.add(indicator);
 	}
 	
 	public void showAddCityDialog() {
@@ -135,6 +102,33 @@ public class MainView extends Composite {
 		// Show the dialog box rather than attach it to RootLayout
 		addCityDialog.show();
 	}
+	
+	public void showListView() {
+		hidePrevNextButton();
+		list_view = new ListView(this);
+		list_view.render();
+	}
+	
+	public void showHelpView() {
+		hidePrevNextButton();
+		
+		HTML info = new HTML("<h1>Welcome</h1><p>Looks like you don't have any weathercasts</p><p>Click on Add button below to add new city</p>");
+		HTML indicator = new HTML();
+		
+		content.clear();
+		content.add(info);
+		content.add(indicator);
+	}
+	
+	public void renderWeatherCast() {	
+		WeatherCastView weather = new WeatherCastView(weather_controller); 
+		
+		content.clear();
+		content.add(weather);
+		
+		updatePrevNextVisibility();
+	}
+	
 	
 	private void updatePrevNextVisibility() {
 		if (weather_controller.getIndex() != -1 && weather_controller.getCities() != null) {
@@ -163,22 +157,6 @@ public class MainView extends Composite {
 				}
 			}
 		}
-	}
-	
-	public void showListView() {
-		if (weather_controller.getCities().size() == 0) {
-			renderWeatherCast();
-			return;
-		}
-		
-		// TODO Another, prolly better, way to do this would be to use ListDataProvider 
-		//		together with CellTable. However this would be a lot more complicated
-		//      than this simple solution where we track index of element listed in 
-		//      html's Title attribute.
-		list_view = new ListView(this);
-		list_view.render();
-
-		hidePrevNextButton();
 	}
 
 	/**

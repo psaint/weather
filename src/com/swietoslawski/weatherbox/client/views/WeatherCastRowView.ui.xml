@@ -7,7 +7,7 @@
 		}
 	</ui:style>
 
-	<g:FlowPanel styleName="{style.panel}">
+	<g:FlowPanel styleName="">
 		<g:HorizontalPanel width="100%" verticalAlignment="ALIGN_MIDDLE">
 			<g:Image ui:field="icon"/>
 			<g:Label text="Weekday" ui:field="weekday" horizontalAlignment="ALIGN_LEFT"/>

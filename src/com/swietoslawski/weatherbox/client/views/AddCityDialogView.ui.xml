@@ -7,7 +7,7 @@
 		}
 	</ui:style>
 
-	<g:VerticalPanel styleName="{style.panel}">
+	<g:VerticalPanel styleName="">
 		<g:TextBox ui:field="city_text"></g:TextBox>
 		<g:ListBox ui:field="cities_list"></g:ListBox>
 		<g:Button ui:field="cancel_button">Cancel</g:Button>

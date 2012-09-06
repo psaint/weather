@@ -27,6 +27,11 @@ public class ListView extends Composite {
 	
 	public void render() {
 		int row_nr = 0;
+		
+		// TODO Another, prolly better, way to do this would be to use ListDataProvider 
+		//		together with CellTable. However this would be a lot more complicated
+		//      than this simple solution where we track index of element listed in 
+		//      html's Title attribute.
 		for (City city : parent.getController().getCities()) {
 			CityRowView city_row = new CityRowView(this, parent.getController());
 			city_row.city.setText(city.getCity());

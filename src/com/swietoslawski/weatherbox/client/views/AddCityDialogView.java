@@ -138,6 +138,8 @@ public class AddCityDialogView extends DialogBox {
 		else {
 			System.out.println("Nothing was selected");
 		}
+		
+		this.hide();
 	}
 	
 }
