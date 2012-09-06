@@ -7,7 +7,7 @@
 		}
 	</ui:style>
 
-	<g:FlowPanel styleName="">
-		<g:FlowPanel width="100%" height="100%" ui:field="root"/>
+	<g:FlowPanel>
+		<g:FlowPanel width="100%" height="100%" ui:field="root" styleName="list-of-cities"/>
 	</g:FlowPanel>
 </ui:UiBinder>
