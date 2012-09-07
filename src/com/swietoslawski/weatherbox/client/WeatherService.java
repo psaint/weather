@@ -1,5 +1,6 @@
 package com.swietoslawski.weatherbox.client;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -12,7 +13,7 @@ import com.swietoslawski.weatherbox.shared.Weather;
 public interface WeatherService extends RemoteService {
 	
 	List<City> findCityLike(String name);
-	List<Weather> getWeatherFor(City city);
+	List<Weather> getWeatherFor(City city) throws IOException;
 	void saveToFile(List<City> cities);
 	List<City> readFromFile();
 	

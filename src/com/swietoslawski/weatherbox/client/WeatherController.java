@@ -90,17 +90,17 @@ public class WeatherController implements EntryPoint {
 			@Override
 			public void onSuccess(List<Weather> weather_cast) {
 								
-				// TODO Change definition of service so it passes back the city for which we get the weathercast
-				//City city = new City(weather_cast.get(0).getCity());
 				weather_casts.add(weather_cast);
 				weather = weather_cast;
 				
 				main_view.renderWeatherCast();
+				System.out.println("weather fetched");
 			}
 			
 			@Override
 			public void onFailure(Throwable caught) {
 				System.out.println(caught.getMessage());
+				main_view.showErrorView();
 				
 			}
 		});

@@ -120,6 +120,15 @@ public class MainView extends Composite {
 		content.add(indicator);
 	}
 	
+	public void showErrorView() {
+		hidePrevNextButton();
+		
+		HTML error = new HTML("<h1>Error</h1><p>We could not connect to Wunderground weather service.</p><p>Please check your Internet connection.</p>");
+		
+		content.clear();
+		content.add(error);
+	}
+	
 	public void renderWeatherCast() {	
 		WeatherCastView weather = new WeatherCastView(weather_controller); 
 		

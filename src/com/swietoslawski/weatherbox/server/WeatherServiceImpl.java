@@ -92,7 +92,7 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 		return cities;
 	}
 	
-	public List<Weather> getWeatherFor(City city) {
+	public List<Weather> getWeatherFor(City city) throws IOException {
 				
 		List<Weather> weather_casts = new ArrayList<Weather>(4);
 		
@@ -121,7 +121,7 @@ public class WeatherServiceImpl extends RemoteServiceServlet implements WeatherS
 		} catch (SAXException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw e;
 		}
 		
 		return weather_casts;
