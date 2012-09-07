@@ -45,8 +45,8 @@ public class WeatherCastView extends Composite {
 			City city_name = new City(weather.getCity());
 			
 			city.setText(city_name.getCity() + " " + city_name.getState());
-			temp_h.setText("Hi " + weather.getTemp_h() + "F");
-			temp_l.setText("Lo " + weather.getTemp_l() + "F");
+			temp_h.setText("Hi " + weather.getTemp_h() + "\u00B0 F");
+			temp_l.setText("Lo " + weather.getTemp_l() + "\u00B0 F");
 			icon.setUrl(weather.getIcon());
 			humidity.setText(weather.getHumidity() + "%");
 			

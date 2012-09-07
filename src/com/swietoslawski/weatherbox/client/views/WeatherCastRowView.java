@@ -26,8 +26,8 @@ public class WeatherCastRowView extends Composite {
 		icon.setUrl(weather.getIcon());
 		icon.setHeight("48px");
 		weekday.setText(weather.getWeekday());
-		temp_h.setText(weather.getTemp_h());
-		temp_l.setText(weather.getTemp_l());
+		temp_h.setText(weather.getTemp_h() + "\u00B0");
+		temp_l.setText(weather.getTemp_l() + "\u00B0");
 	}
 
 }

@@ -9,8 +9,8 @@
 
 	<g:FlowPanel styleName="">
 		<g:HorizontalPanel width="100%" verticalAlignment="ALIGN_MIDDLE">
-			<g:Image ui:field="icon"/>
 			<g:Label text="Weekday" ui:field="weekday" horizontalAlignment="ALIGN_LEFT"/>
+			<g:Image ui:field="icon"/>
 			<g:Label text="Hi" ui:field="temp_h" horizontalAlignment="ALIGN_LEFT"/>
 			<g:Label text="Lo" ui:field="temp_l" horizontalAlignment="ALIGN_RIGHT"/>
 		</g:HorizontalPanel>
