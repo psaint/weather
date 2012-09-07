@@ -24,6 +24,7 @@ public class MainView extends Composite {
 	@UiField PushButton home;
 	@UiField PushButton add;
 	@UiField PushButton list;
+	@UiField PushButton update;
 	@UiField FlowPanel content;
 	
 	interface Binder extends UiBinder<Widget, MainView> {
@@ -50,6 +51,12 @@ public class MainView extends Composite {
 	@UiHandler("list")	
 	public void onClickList(ClickEvent event) {
 		showListView();
+	}
+	
+	@UiHandler("update")	
+	public void onClickUpdate(ClickEvent event) {
+		weather_controller.getWeather();
+		renderWeatherCast();
 	}
 	
 	@UiHandler("prev")

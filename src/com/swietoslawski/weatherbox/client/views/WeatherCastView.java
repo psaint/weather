@@ -1,6 +1,9 @@
 package com.swietoslawski.weatherbox.client.views;
 
+import java.util.Date;
+
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
@@ -24,6 +27,7 @@ public class WeatherCastView extends Composite {
 	@UiField Label temp_l;
 	@UiField InlineLabel humidity;
 	@UiField VerticalPanel weather_casts;
+	@UiField Label updated;
 
 	interface Binder extends UiBinder<Widget, WeatherCastView> {
 	}
@@ -57,6 +61,9 @@ public class WeatherCastView extends Composite {
 				WeatherCastRowView row = new WeatherCastRowView(weather_cast);
 				weather_casts.add(row);
 			}
+			
+			String date = DateTimeFormat.getFormat(DateTimeFormat.PredefinedFormat.DATE_TIME_SHORT).format(new Date(weather_controller.getLastUpdate()));
+			updated.setText("Last updated: " + date);
 		}
 	}
 

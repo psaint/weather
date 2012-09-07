@@ -27,5 +27,6 @@
 			</g:Cell>
 		</g:VerticalPanel>
 		<g:VerticalPanel styleName="weather-casts" width="100%" height="0%" ui:field="weather_casts"/>
+		<g:Label text="updated" horizontalAlignment="ALIGN_RIGHT" ui:field="updated" styleName="updated"/>
 	</g:FlowPanel>
 </ui:UiBinder>

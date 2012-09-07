@@ -19,6 +19,7 @@
 					<g:PushButton text="H" ui:field="home"/>
 					<g:PushButton text="+" ui:field="add"/>
 					<g:PushButton text="..." ui:field="list"/>
+					<g:PushButton text="@" ui:field="update"/>
 				</g:FlowPanel>
 			</g:south>
 			<g:west size="20">

@@ -16,7 +16,7 @@
 
 .toolbar .gwt-PushButton {
 	height: 100%;
-	width: 40pt;
+	width: 48pt;
 	display: inline-block;
 	color: white;
 	font-family: Helvetica Neue, Tahoma;
@@ -135,7 +135,7 @@
 .weather-cast .city {
 	font-size: 20pt;
 	text-align: left;
-	padding: 20pt 10pt 10pt 10pt;
+	padding: 25pt 10pt 5pt 10pt;
 }
 
 
@@ -167,10 +167,11 @@
 .weather-casts table td:first-child {
 	width: 60pt;
 	text-align: center;
+	padding: 0pt 10pt;
 }
 
 .weather-casts table td:nth-child(2) {
-	width: 140pt;
+	width: 60pt;
 }
 
 .weather-casts table td:nth-child(3) {
@@ -179,4 +180,13 @@
 
 .weather-casts table td:nth-child(4) {
 	padding: 0pt 10pt;
+}
+
+
+.content .updated {
+	position: absolute;
+	bottom: 5pt;
+	right: 5pt;
+	font-style: italic;
+	font-size: 10pt;
 }

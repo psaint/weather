@@ -2,6 +2,7 @@ package com.swietoslawski.weatherbox.client;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -38,6 +39,8 @@ public class WeatherController implements EntryPoint {
 	// Keep track of position of current city in weather casts stack
 	private int index = -1;
 	private MainView main_view;
+	private long last_updated = 0L;
+	
 	 
 	/**
 	 * This is the entry point method.
@@ -75,6 +78,10 @@ public class WeatherController implements EntryPoint {
 		return index;
 	}
 	
+	public Long getLastUpdate() {
+		return last_updated;
+	}
+	
 	public List<Weather> getWeatherField() {
 		return weather;
 	}
@@ -92,9 +99,11 @@ public class WeatherController implements EntryPoint {
 								
 				weather_casts.add(weather_cast);
 				weather = weather_cast;
+				Date now = new Date();
+				last_updated = now.getTime();
 				
 				main_view.renderWeatherCast();
-				System.out.println("weather fetched");
+				
 			}
 			
 			@Override
