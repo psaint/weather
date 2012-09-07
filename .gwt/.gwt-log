@@ -2493,3 +2493,256 @@ Translatable source found in...
 Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
 Removing invalidated units
 Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2720 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920231534.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920231534.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920231534_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920233031.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920233031.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920233031_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920263950.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920263950.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920263950_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920269242.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920269242.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920269242_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920277556.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920277556.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920277556_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920297204.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920297204.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920297204_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920302995.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920302995.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920302995_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920468142.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920468142.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346920468142_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2709 units from cache.
+Removing invalidated units
+Finding entry point classes
+Public resources found in...
+Translatable source found in...
+Found 2709 cached/archived units.  Used 2709 / 2720 units from cache.
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987077760.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987077760.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987077760_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987080770.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987080770.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987080770_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987126866.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987126866.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987126866_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128701.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128701.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128701_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128815.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128815.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987128815_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987488664.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987488664.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346987488664_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView.Binder
+   Adding '3' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346988295455.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346988295455.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Removing invalidated units
+Rebinding com.swietoslawski.weatherbox.client.views.AddCityDialogView_BinderImpl_designTime1346988295455_GenBundle
+   Adding '1' new generated units
+      Removing invalidated units

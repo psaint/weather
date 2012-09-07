@@ -15,6 +15,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -32,7 +33,7 @@ public class AddCityDialogView extends DialogBox {
 	@UiField TextBox city_text;
 	@UiField ListBox cities_list;
 	@UiField Button cancel_button;
-	
+	@UiField Label message;
 
 	interface Binder extends UiBinder<Widget, AddCityDialogView> {
 	}
@@ -45,17 +46,18 @@ public class AddCityDialogView extends DialogBox {
 		// Hide drop down as we don't have any cities loaded into yet
 		cities_list.setVisible(false);    
 		
+		
+		// Enable animation.
+        setAnimationEnabled(true);
+
+        // Enable glass background.
+        setGlassEnabled(true);
+		
 		// Center on screen
         positionOnScreen();
 		
         // Set the dialog box's caption.
-        setText("Search for weathercast");
-
-        // Enable animation.
-        setAnimationEnabled(true);
-
-        // Enable glass background.
-        //setGlassEnabled(true);
+        // setText("Search for weathercast");
         
         // Setting focus for the text box didn't work other than when scheduled
         Scheduler.get().scheduleDeferred(new Scheduler.ScheduledCommand() {
@@ -68,14 +70,17 @@ public class AddCityDialogView extends DialogBox {
 	}
 	
 	private void positionOnScreen() {
-		int width = 200;
-		int height = 200;
+		int width = 240;
+		int height = 100;
 		
+		// This is shitty as we need to use pixels to position window correctly
+		// based on getClientWidth() while we would want to set width  and
+		// height in points
 		setWidth(width + "pt");
-        setHeight(height + "pt");
+        setHeight(height + "%");
 		
-        int left = (Window.getClientWidth() - width) / 2;
-        int top = (Window.getClientHeight() - height) / 2;
+        int left = 0;//(Window.getClientWidth() - width) / 2;
+        int top = 30;
         
         setPopupPosition(left, top);
 	}
@@ -103,17 +108,21 @@ public class AddCityDialogView extends DialogBox {
 					cities_list.addItem("Found cities:");
 					
 					for (City city : cities) {
-						System.out.println(city.toString());
+						//System.out.println(city.toString());
 						cities_list.addItem(city.toString(), city.toURL());
 					}
 					
 					if (cities_list.getItemCount() < 2) {
 						cities_list.clear();
-						cities_list.addItem("No cities found");
+						message.setText("City not found");
+						message.setVisible(true);
+						city_text.setFocus(true);
 					}
-					
-					cities_list.setVisible(true);
-					cities_list.setFocus(true);
+					else {
+						message.setVisible(false);
+						cities_list.setVisible(true);
+						cities_list.setFocus(true);	
+					}
 				}
 				
 				@Override

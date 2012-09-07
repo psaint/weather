@@ -34,12 +34,12 @@ public class MainView extends Composite {
 		
 		this.weather_controller = weather_controller;
 		
-		renderWeatherCast();
+		showHomeView();
 	}	
 	
 	@UiHandler("home")
 	public void onClickHome(ClickEvent event) {
-		renderWeatherCast();
+		showHomeView();
 	}
 		
 	@UiHandler("add")
@@ -112,7 +112,7 @@ public class MainView extends Composite {
 	public void showHelpView() {
 		hidePrevNextButton();
 		
-		HTML info = new HTML("<h1>Welcome</h1><p>Looks like you don't have any weathercasts</p><p>Click on Add button below to add new city</p>");
+		HTML info = new HTML("<h1>Wather Box</h1><p>Looks like you don't have any weathercasts.</p><p>Click on <strong>+</strong> button below to add new city.</p>");
 		HTML indicator = new HTML();
 		
 		content.clear();

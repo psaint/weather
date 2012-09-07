@@ -36,6 +36,60 @@
 	margin: 30pt 5pt;
 }
 
+.gwt-HTML {
+	padding: 10pt 20pt;
+}
+
+.gwt-PopupPanelGlass {
+	background: rgba(30, 30, 30, 0.8);
+}
+
+
+.dialogTop {
+	display: none;
+}
+
+.dialogMiddleCenter {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+}
+
+
+.add-city-dialog .gwt-TextBox {
+	font-size: 14pt;
+	border: 1px solid white;
+	border-radius: 30pt;
+	padding: 5pt 10pt;
+	width: 70%;
+	z-index: 10;
+	position: relative;
+}
+
+.add-city-dialog .gwt-Label {
+	font-size: 14pt;	
+	color: white;
+}
+
+.add-city-dialog .gwt-ListBox {
+	font-size: 14pt;	
+	width: 80%;
+}
+
+.add-city-dialog .gwt-Button {
+	
+	font-size: 14pt;
+	border: 0pt solid white;
+	border-top-right-radius: 20pt;
+	color: white;
+	background: #888;
+	text-transform: uppercase;
+	margin-left: -15pt;
+	padding: 5pt 20pt;
+	width: 40pt;
+	z-index: 1;
+	border-bottom-right-radius: 20pt;
+}
 .prev {
 	background: url('images/prev.png') no-repeat center center;
 }
@@ -86,9 +140,9 @@
 
 .weather-cast .icon {
 	position: absolute;
-	top: -40pt;
+	top: -26pt;
 	left: 35%;
-	height: 80pt;
+	height: 60pt;
 }
 
 .weather-cast .temp {
