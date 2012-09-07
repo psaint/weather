@@ -10,6 +10,25 @@
 	background-color: none;
 }
 
+.pager {
+	text-align: center;
+}
+
+.pager span {
+	display: inline-block;
+	border: 2px solid #DDD;
+	height: 10pt;
+	width: 10pt;
+	border-radius: 3pt;
+	background: whiteSmoke;
+	margin: 0pt 2pt;
+}
+
+.pager span.active {
+	background: #07BFEC;
+	border-color: #0687A7;
+}
+
 .toolbar {
 	background-color: #394F64;
 }

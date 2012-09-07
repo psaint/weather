@@ -1,5 +1,7 @@
 package com.swietoslawski.weatherbox.client.views;
 
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -25,6 +27,7 @@ public class MainView extends Composite {
 	@UiField PushButton add;
 	@UiField PushButton list;
 	@UiField PushButton update;
+	@UiField HTML pager;
 	@UiField FlowPanel content;
 	
 	interface Binder extends UiBinder<Widget, MainView> {
@@ -141,6 +144,19 @@ public class MainView extends Composite {
 		
 		content.clear();
 		content.add(weather);
+		
+		// Render indicator of how many weathercasts we have and which are we viewing now
+		StringBuilder output = new StringBuilder();
+		
+		for (int i = 0; i < weather_controller.getCities().size(); i++) {
+			
+			if (i == weather_controller.getIndex()) {
+				output.append("<span class='active'>&nbsp</span>");
+			} else {
+				output.append("<span>&nbsp</span>");
+			}
+		}
+		pager.setHTML(output.toString());
 		
 		updatePrevNextVisibility();
 	}
